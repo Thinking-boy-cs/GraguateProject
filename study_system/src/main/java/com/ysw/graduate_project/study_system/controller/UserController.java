@@ -41,7 +41,7 @@ public class UserController {
 
     @RequestMapping("test")
     public String test(){
-        return "index";
+        return "index"; //跳转到以"index"为名的jsp了
     }
 
     @RequestMapping("insert")
