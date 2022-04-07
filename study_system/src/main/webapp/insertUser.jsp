@@ -22,10 +22,10 @@
 <br>
 
 <form id="userForm">
-    姓名：<input type="text" name="name" id="userName"/> <br>
-    年龄：<input type="text" name="age" id="userAge"/> <br>
-    工资：<input type="text" name="salary" id="userSalary"/> <br>
-    <input type="button" value="保存" id="btn">
+    电话号码：<input type="text" name="telNumber" id="telNumber"/> <br>
+    密码：<input type="text" name="passWord" id="passWord"/> <br>
+    邮箱：<input type="text" name="mail" id="mail"/> <br>
+    <input type="button" value="确认" id="btn">
 </form>
 
 <%--引入公共页面，js--%>

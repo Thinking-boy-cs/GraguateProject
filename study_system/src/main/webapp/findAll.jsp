@@ -24,7 +24,7 @@
 
 <div id="userDiv" >
     <div id="userData" style="display: none">
-        <span>#ID#</span> <span>#NAME#</span><span>#AGE#</span><span>#SALARY#</span>
+        <span>#ID#</span> <span>#TELNUMBER#</span><span>#MAIL#</span><span>#ID#</span>
         <a href="${pageContext.request.contextPath}/user/findById?id=#ID#">修改</a>
         <a href="${pageContext.request.contextPath}/user/delete?id=#ID#">删除</a>
         <br>
@@ -44,11 +44,8 @@
                 for(var i = 0,l=data.length;i<l;i++){
                     $("#userDiv").append($("#userData").html()
                             .replace("#ID#",data[i].id)
-                            .replace("#NAME#", data[i].name)
-                            .replace("#AGE#", data[i].age)
-                            .replace("#SALARY#", data[i].salary)
-                            .replace("#ID#", data[i].id)
-                            .replace("#ID#", data[i].id)
+                            .replace("#TELNUMBER#", data[i].telNumber)
+                            .replace("#MAIL#", data[i].mail)
                     )
                 }
             }

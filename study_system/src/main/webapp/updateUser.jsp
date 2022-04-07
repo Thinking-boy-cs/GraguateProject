@@ -13,10 +13,10 @@
 <body>
 
 <form action="${pageContext.request.contextPath}/user/updateUser" method="post">
-    Id: <input type="text" name="id" readonly value="${requestScope.findUser.id}"> <br>
-    name: <input type="text" name="name" value="${requestScope.findUser.name}"> <br>
-    age: <input type="text" name="age" value="${requestScope.findUser.age}"> <br>
-    salary: <input type="text" name="salary" value="${requestScope.findUser.salary}"> <br>
+    id: <input type="text" name="id" readonly value="${requestScope.findUser.id}"> <br>
+    电话号码: <input type="text" name="telNumber" readonly value="${requestScope.findUser.telNumber}"> <br>
+    密码: <input type="text" name="passWord" readonly value="${requestScope.findUser.passWord}"> <br>
+    邮箱: <input type="text" name="mail"  value="${requestScope.findUser.mail}"> <br>
     <input type="submit" value="保存">
 </form>
 
@@ -37,9 +37,9 @@
         console.log("here"+data);
         //赋值
         $("input[name='id']").val(data.id);
-        $("input[name='name']").val(data.name);
-        $("input[name='age']").val(data.age);
-        $("input[name='salary']").val(data.salary);
+        $("input[name='telNumber']").val(data.telNumber);
+        $("input[name='passWord']").val(data.passWord);
+        $("input[name='mail']").val(data.mail);
     });
 
 </script>

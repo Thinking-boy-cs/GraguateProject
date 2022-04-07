@@ -3,19 +3,19 @@
 
 <mapper namespace="com.ysw.graduate_project.study_system.dao.UserDao">
     <select id="findAll" resultType="User">
-        select id, name, age, salary from user
+        select id, telNumber,mail from user
         <trim prefix="where" prefixOverrides="AND | OR">
-            <if test="name != null and name !=''">
-                and name = #{name}
+            <if test="telNumber != null and telNumber !=''">
+                and telNumber = #{telNumber}
             </if>
-            <if test="age != null and age !=''">
-                and age = #{age}
+            <if test="mail != null and mail !=''">
+                and mail = #{mail}
             </if>
         </trim>
     </select>
 
     <insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
-        insert into user values(#{id}, #{name}, #{age},#{salary})
+        insert into user values(#{id}, #{telNumber}, #{passWord},#{mail})
     </insert>
 
     <delete id="deleteUser" parameterType="Integer">
@@ -23,10 +23,10 @@
     </delete>
 
     <update id="updateUser" parameterType="User">
-        update user set name=#{name},age=#{age},salary=#{salary} where id=#{id}
+        update user set mail=#{mail} where id=#{id}
     </update>
 
     <select id="findById" parameterType="Integer" resultType="User">
-        select id, name, age, salary from user where id=#{id}
+        select id, telNumber,passWord,mail from user where id=#{id}
     </select>
 </mapper>
