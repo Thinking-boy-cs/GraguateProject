@@ -24,9 +24,9 @@
 
 <div id="userDiv" >
     <div id="userData" style="display: none">
-        <span>#ID#</span> <span>#TELNUMBER#</span><span>#MAIL#</span><span>#ID#</span>
-        <a href="${pageContext.request.contextPath}/user/findById?id=#ID#">修改</a>
-        <a href="${pageContext.request.contextPath}/user/delete?id=#ID#">删除</a>
+        <span>#ID#</span> <span>#TELNUMBER#</span><span>#MAIL#</span>
+        <a href="${pageContext.request.contextPath}/user/findById?id=#ID2#">修改</a>
+        <a href="${pageContext.request.contextPath}/user/delete?id=#ID3#">删除</a>
         <br>
     </div>
 </div>
@@ -44,6 +44,8 @@
                 for(var i = 0,l=data.length;i<l;i++){
                     $("#userDiv").append($("#userData").html()
                             .replace("#ID#",data[i].id)
+                            .replace("#ID2#",data[i].id)
+                            .replace("#ID3#",data[i].id)
                             .replace("#TELNUMBER#", data[i].telNumber)
                             .replace("#MAIL#", data[i].mail)
                     )
