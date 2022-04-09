@@ -75,5 +75,11 @@ public class UserController {
         return userService.findById(id);
     }
 
+    @RequestMapping("login")
+    @ResponseBody
+    public User login(Integer id){
+        return userService.findById(id);
+    }
+
 
 }
