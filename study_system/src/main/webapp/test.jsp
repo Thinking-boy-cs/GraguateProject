@@ -70,7 +70,7 @@
 </style>
 <body>
 
-
+<%--跳转--右边框框--%>
 <div class="box">
     <div class="box_top">
 
