@@ -70,7 +70,7 @@
 </style>
 <body>
 
-<%--跳转--右边框框--%>
+
 <div class="box">
     <div class="box_top">
 
@@ -80,7 +80,7 @@
             <a href="#"> 首页</a>
         </div>
         <div class="bar">
-            <a href="#"> 年级列表</a>
+            <a href="http://localhost:9999/study_system/view/showDataItem"> 年级列表</a>
         </div>
         <div class="bar">
             <a href="#"> 班级列表</a>
@@ -133,8 +133,8 @@
             <a href="#"> 退出系统</a>
         </div>
     </div>
-    <div class="box_main">
-
+    <div class="box_main" id="test1">
+        <h1>hahhha</h1>
 
     </div>
 </div>
