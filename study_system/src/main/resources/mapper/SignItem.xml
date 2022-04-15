@@ -6,3 +6,6 @@
        select id,telNumber,temperature,location,`time` from SignItem
    </select>
 </mapper>
+
+
+<!--lunwen-->
