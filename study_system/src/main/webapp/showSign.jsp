@@ -12,42 +12,68 @@
 </head>
 <body>
 
-<%--&lt;%&ndash;精确作用域查找&ndash;%&gt;--%>
-<%--<c:forEach items="${requestScope.userList}" var="user">--%>
-<%--    ID: ${user.id} Name: ${user.name} Age: ${user.age} Salary: ${user.salary}--%>
-<%--    <a href="${pageContext.request.contextPath}/user/findById?id=${user.id}">修改</a>--%>
-<%--    <a href="${pageContext.request.contextPath}/user/delete?id=${user.id}">删除</a>--%>
-<%--    <br>--%>
-<%--</c:forEach>--%>
-<%--<a href="${pageContext.request.contextPath}/insertUser.jsp">添加</a>--%>
+<%--<form id="signForm" action="http://localhost:9999/study_system/sign/showSignByTelNumber" method="post">--%>
+<%--    电话号码：<input type="text" name="telNumber" id="telNumber"/> <br>--%>
+<%--    <input type="button" value="查询" id="btn">--%>
+<%--</form>--%>
 
+<form id="signForm"  method="post">
+    电话号码：<input type="text" name="telNumber" id="telNumber"/> <br>
+    <input type="button" value="查询" id="btn">
+</form>
 
-<div id="userDiv" >
-    <div id="userData" style="display: none">
-        <span>#ID#</span> <span>#TELNUMBER#</span><span>#MAIL#</span>
-        <a href="${pageContext.request.contextPath}/user/findById?id=#ID2#">修改</a>
-        <a href="${pageContext.request.contextPath}/user/delete?id=#ID3#">删除</a>
+<%--<a href="${pageContext.request.contextPath}/view/findSignItemByTelNumber">查询（按电话）</a>--%>
+<%--<a href="${pageContext.request.contextPath}/view/insert">查询（按时间）</a>--%>
+<div id="signDiv" >
+    <div id="signData" style="display: none">
+        <span>#ID#</span> <span>#TELNUMBER#</span><span>#TEMPERATURE#</span><span>#LOCATION#</span><span>#TIME#</span>
         <br>
     </div>
 </div>
-<a href="${pageContext.request.contextPath}/view/insert">添加</a>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+    $("#btn").click(function () {
+        <%--//json对象(失败)--%>
+        <%--$.post("${pageContext.request.contextPath}/user/insert",--%>
+        <%--    {"name":$("#userName"),"age":$("#userAge"),"salary":$("#userSalary")},function (data) {--%>
+        <%--        --%>
+        <%--})--%>
+
+        //form序列化(成功)
+        $.post("${pageContext.request.contextPath}/sign/showSignByTelNumber",
+            $("#signForm").serialize(),
+            function (data) {
+                console.log("This data is :"+data.toString())
+                if(data){
+                    window.location.href = "${pageContext.request.contextPath}/sign/showSignByTelNumber?telNumber=18390071892";
+                    //window.location.href = "${pageContext.request.contextPath}/sign/showSignByTelNumber";
+                }
+            }
+        )
+
+    })
+
+</script>
+
 <script type="text/javascript">
     $.ajax({
         type:'get',
-        url:'${pageContext.request.contextPath}/user/findUserAll',
+        url:'${pageContext.request.contextPath}/sign/showSign',
         data:'',
         dataType:'json',
         success: function(data) {
             console.log("成功===",data);
             if(data.length>0){
                 for(var i = 0,l=data.length;i<l;i++){
-                    $("#userDiv").append($("#userData").html()
+                    $("#signDiv").append($("#signData").html()
                         .replace("#ID#",data[i].id)
                         .replace("#ID2#",data[i].id)
                         .replace("#ID3#",data[i].id)
                         .replace("#TELNUMBER#", data[i].telNumber)
-                        .replace("#MAIL#", data[i].mail)
+                        .replace("#TEMPERATURE#", data[i].temperature)
+                        .replace("#LOCATION#", data[i].location)
+                        .replace("#TIME#", data[i].time)
                     )
                 }
             }

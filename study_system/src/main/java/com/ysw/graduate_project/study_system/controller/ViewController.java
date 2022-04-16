@@ -30,4 +30,14 @@ public class ViewController {
     public String showDataItem(){
         return "showData";
     }
+
+    @RequestMapping("showSignItem")
+    public String showSignItem(){
+        return "showSign";
+    }
+
+//    @RequestMapping("findSignItemByTelNumber")
+//    public String findSignItemByTelNumber(){
+//        return "findSignItemByTelNumber";
+//    }
 }
