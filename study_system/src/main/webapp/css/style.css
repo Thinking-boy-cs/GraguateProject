@@ -21,7 +21,8 @@
 	#topheader {
 			padding: 25px 15px 15px 15px;
 			margin: 0 auto 0 auto;
-			background: url(../img/top_left.gif) top left repeat-x #85C329;
+			/*background: url(../img/top_left.gif) top left repeat-x #3b95db;*/
+		background:  top left repeat-x #3b95db;
 	}
 
 	#rightheader {
@@ -63,7 +64,7 @@
 	}
 
 	#navigation {
-		background: #FE9E0F;
+		background: #1045e0;
 		border-top: 1px solid #ffffff;
 		height: 25px;
 		clear: both
@@ -109,7 +110,7 @@
 	
 	#content h1, #content h2, 
 	#content h3, #content h4 , #content h5 {
-		color: #FE9E0F;
+		color: #4488dc;
 	}
 	#content h1 {
 		font-family: "Trebuchet MS", Arial, Helvetica;
@@ -129,7 +130,8 @@
 	}
 
 	#footer {
-		background: url(../img/footer.gif) no-repeat center bottom ;
+		/*background: url(../img/footer.gif) no-repeat center bottom ;*/
+		background:  no-repeat center bottom ;
 		color: #FFFFFF;
 		padding: 0 10px 13px 10px;
 	}
@@ -143,9 +145,10 @@
 		text-decoration: none;
 	}
 	#footer #footer_bg {
-		background: url(../img/footer_bg.gif) repeat-x left bottom #85C329;
+		/*background: url(../img/footer_bg.gif) repeat-x left bottom #4f7dde;*/
+		background: repeat-x left bottom #4f7dde;
 		padding: 15px 15px 25px 15px;
-		border-top: 1px solid #7BB425;
+		border-top: 1px solid #2ba8ee;
 	}
 
 	#footer #design {
@@ -249,7 +252,7 @@
 	#content p a:link, #content p a:visited, 
 	.table a:link, .table a:visited,
 	.link a {
-		color: #73A822;
+		color: #1f14b1;
 		text-decoration: none;
 	}
 	#content p a:hover, .table a:hover, .link a:hover {
@@ -265,11 +268,11 @@
 		font-size: 1.1em;
 	}
 	#content ul.green li a:link, #content ul.green li a:visited {
-		color: #73A822;
+		color: #260bc2;
 		text-decoration: none;
 	}
 	#content ul.green li a:hover {
-		color: #73A822;
+		color: #26bae3;
 		text-decoration: underline;
 	}
 	
@@ -385,8 +388,8 @@
 /* .notice - messages to user
 --------------------------------*/
 	.notice {
-		background: #CAEA99; 
-		border: 1px solid #70A522; 
+		background: #3153a8;
+		border: 1px solid #1637b1;
 		padding: 15px 15px 15px 15px; 
 		margin-bottom: 15px;
 		font-size: 1.2em;
@@ -437,5 +440,5 @@
 /* code */
 	code {
 		font-size: 1.2em;
-		color: #73A822;
+		color: #2451d7;
 	}

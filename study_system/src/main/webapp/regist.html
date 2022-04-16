@@ -4,32 +4,59 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<meta charset="UTF-8">
-	<title>Title</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
 <body>
-<table class="main">
-	<tr></tr>
-	<tr>
-		<td class="hr1">新用户注册</td>
-	</tr>
-	<tr>
+<div id="wrap">
+	<div id="top_content">
+		<div id="header">
+			<div id="rightheader">
+				<p>
+					2022/4/16
+					<br />
+				</p>
+			</div>
+			<div id="topheader">
+				<h1 id="title">
+					<a href="#">main</a>
+				</h1>
+			</div>
+			<div id="navigation">
+			</div>
+		</div>
+
+<!--	<tr>-->
+<!--		<td class="hr1">新用户注册</td>-->
+<!--	</tr>-->
+	<div id="content">
+		<p id="whereami">
+		</p>
+		<h1>
+			注册
+		</h1>
 		<form action="">
-	<tr>
-		<td>
-			<table>
+			<table cellpadding="0" cellspacing="0" border="0"
+				   class="form_table">
+<!--				<tr>-->
+<!--					<td valign="middle" align="right">电话号：</td>-->
+<!--					<td valign="middle" align="left"><input type="text" id="user" class="inputgri" onblur="checkUser()"></td>-->
+<!--					<td>-->
+<!--						<div id="userPrompt">用户名由英文字母和数字组成的4-16位字符，以字母开头</div>-->
+<!--					</td>-->
+<!--				</tr>-->
+
 				<tr>
-					<td class="left">用户名：</td>
-					<td class="centar"><input type="text" id="user" class="in" onblur="checkUser()"></td>
+					<td valign="middle" align="right">手机号码：</td>
+					<td valign="middle" align="left"><input type="text" id="mobile" class="inputgri" onblur="checkMobile()"></td>
 					<td>
-						<div id="userPrompt">用户名由英文字母和数字组成的4-16位字符，以字母开头</div>
+						<div id="mobilePrompt"></div>
 					</td>
 				</tr>
+
 				<tr>
-					<td class="left">密码：</td>
-					<td class="center"><input type="password" id="pwd" class="in" onblur="checkpwd()"></td>
+					<td valign="middle" align="right">密码：</td>
+					<td valign="middle" align="left"><input type="password" id="pwd" class="inputgri" onblur="checkpwd()"></td>
 					<td>
 						<div id="pwdPrompt">
 							密码由英文字母和数字组成的4-10位字符
@@ -37,30 +64,24 @@
 					</td>
 				</tr>
 				<tr>
-					<td class="left">
+					<td valign="middle" align="right">
 						确认密码：
 					</td>
-					<td class="center"><input type="password" id="repwd" class="in" onblur="checkRepwd()"></td>
+					<td valign="middle" align="left"><input type="password" id="repwd" class="inputgri" onblur="checkRepwd()"></td>
 					<td>
 						<div id="repwdPrompt"></div>
 					</td>
 				</tr>
 				<tr>
-					<td class="left">
+					<td valign="middle" align="right">
 						电子邮箱：
 					</td>
-					<td class="center"> <input type="text" id="email" class="in" onblur="checkEmail()"></td>
+					<td valign="middle" align="left"> <input type="text" id="email" class="inputgri" onblur="checkEmail()"></td>
 					<td>
 						<div id="emailPrompt"></div>
 					</td>
 				</tr>
-				<tr>
-					<td class="left">手机号码：</td>
-					<td class="center"><input type="text" id="mobile" class="in" onblur="checkMobile()"></td>
-					<td>
-						<div id="mobilePrompt"></div>
-					</td>
-				</tr>
+
 				<tr>
 					<td></td>
 					<td class="center"><button>提交</button></td>
@@ -68,10 +89,16 @@
 				</tr>
 			</table>
 		</td>
-	</tr>
 	</form>
-	</tr>
-</table>
+	</div>
+	</div>
+	<div id="footer">
+		<div id="footer_bg">
+
+		</div>
+	</div>
+</div>
+</body>
 <script>
 	function $(elementId) {
 		return document.getElementById(elementId).value;

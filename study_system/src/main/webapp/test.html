@@ -1,59 +1,172 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        h1{
-            text-align: center;
-        }
-        form{
-            width: 300px;
-            margin: 0 auto;
-        }
-        .text{
-            width: 200px;
-            height: 20px;
-            margin: 5px;
-            border-radius: 5px;
-        }
-
-        form input[type="button"]{
-            width: 70px;
-            height: 30px;
-            margin: 0 auto;
-            border-radius: 5px;
-            margin: 0 auto;
-            display: block;
-        }
-    </style>
+    <title>regist</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
-<h1>登录注册</h1>
-<form action="" method="get">
-    账号：<input class="text" type="text"><br>
-    密码：<input class="text" type="password"><br>
-    <input type="button" value="登录" onclick="test()">
+<div id="wrap">
+    <div id="top_content">
+        <div id="header">
+            <div id="rightheader">
+                <p>
+                    2020/11/13
+                    <br />
+                </p>
+            </div>
+            <div id="topheader">
+                <h1 id="title">
+                    <a href="#">main</a>
+                </h1>
+            </div>
+            <div id="navigation">
+            </div>
+        </div>
+        <div id="content">
+            <p id="whereami">
+            </p>
+            <h1>
+                注册
+            </h1>
+            <form action="login.html" method="post">
+                <table cellpadding="0" cellspacing="0" border="0"
+                       class="form_table">
+                    <tr>
+                        <td valign="middle" align="right">
+                            电话号:
+                        </td>
+                        <td valign="middle" align="left">
+                            <input type="text" class="inputgri" v-model="user.id"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="middle" align="right">
+                            邮箱:
+                        </td>
+                        <td valign="middle" align="left">
+                            <input type="text" class="inputgri" v-model="user.username"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="middle" align="right">
+                            密码:
+                        </td>
+                        <td valign="middle" align="left">
+                            <input type="password" class="inputgri" v-model="user.password" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="middle" align="right">
+                            性别:
+                        </td>
+                        <td valign="middle" align="left">
+                            男
+                            <input type="radio" class="inputgri"  v-model="user.sex" value="男" checked="checked"/>
+                            女
+                            <input type="radio" class="inputgri" v-model="user.sex"  value="女"/>
+                        </td>
+                    </tr>
 
-</form>
-<script>
-    function test(){
-        var user = /^\w{1,}$/;
-        var pass = /^.{6,}$/
-        var userName = document.getElementsByClassName("text")[0];
-        var passWord = document.getElementsByClassName("text")[1];
-        if (user.test(userName.value) && pass.test(passWord.value)){
-            alert("登录成功！")
-            location.href="http://localhost:9999/study_system/backSystem/backControl";
-        } else {
-            alert("账号或密码格式错误")
-        }
-    }
-</script>
+                    <tr>
+                        <td valign="middle" align="right">
+                            验证码:
+                        </td>
+                        <td valign="middle" align="left">
+                            <input type="text" v-model="code" class="inputgri" />
+                        </td>
+                        <td>
+                            <img id="num" :src="url" />
+                            <a href="javascript:;" @click="getImg">换一张</a>
+                        </td>
+                    </tr>
+                </table>
+                <p>
+                    <input type="button" @click="register" class="button" value="Submit &raquo;" />
+                </p>
+            </form>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="footer_bg">
 
+        </div>
+    </div>
+</div>
 </body>
 </html>
+
+<script>
+    function $(elementId) {
+        return document.getElementById(elementId).value;
+    }
+
+    function divId(elementId) {
+        return document.getElementById(elementId);
+    }
+
+    function checkUser() {
+        var user = $('user');
+        var userId = divId('userPrompt')
+        userId.innerHTML = '';
+        var reg = /^[a-z][a-zA-Z0-9]{3,15}$/;
+        if (reg.test(user) == false) {
+            userId.innerHTML = '用户名不正确';
+            return false;
+        }
+        userId.innerHTML = '用户名可用';
+        return true;
+    }
+
+    function checkpwd() {
+        var pwd = $('pwd');
+        var pwdId = divId('pwdPrompt');
+        pwdId.innerHTMl = ' ';
+        var reg = /^[a-zA-z0-9]{4,10}$/;
+        if (reg.test(pwd) == false) {
+            pwdId.innerHTML = '密码不能含有非法字符，长度在4-10之间'
+            return false;
+        }
+        return true;
+    }
+
+    function checkRepwd() {
+        var repwd = $('repwd');
+        var pwd = $('pwd');
+        var Rpwd = divId('repwdPrompt');
+        Rpwd.innerHTMl = '';
+        if (pwd != repwd) {
+            Rpwd.innerHTML = '两次输入的密码不一致';
+            //console.log('密码不一致')
+            return false;
+        }
+        Rpwd.innerHTML = '';
+        // console.log('密码一致')
+        return true;
+    }
+
+    function checkEmail() {
+        var email = $('email');
+        var emailPrompt = divId('emailPrompt');
+        emailPrompt.innerHTML = ' ';
+        var reg = /^\w+@\w+(\.[a-zA-Z]{2,3}){1,2}$/;
+        if (reg.test(email) == false) {
+            emailPrompt.innerHTML = 'Email格式不正确，例如web@sohu.com';
+            return false;
+        }
+        return true
+    }
+
+    function checkMobile() {
+        var mobile = $('mobile');
+        var mobileId = divId('mobilePrompt');
+        var regMobile = /^1\d{10}$/;
+        if (regMobile.test(mobile) == false) {
+            mobileId.innerHTML = '手机号码不正确，请重新输入';
+            return false;
+        }
+        mobileId.innerHTML = ' ';
+        return true;
+    };
+</script>
+
