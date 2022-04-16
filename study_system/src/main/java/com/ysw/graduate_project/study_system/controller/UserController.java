@@ -75,6 +75,7 @@ public class UserController {
         return userService.findById(id);
     }
 
+    //登录注册
     @RequestMapping("login")
     public String login(User user, HttpServletRequest request){
         log.info("I am Here!!!");
@@ -88,5 +89,6 @@ public class UserController {
         }
     }
 
+    //
 
 }
