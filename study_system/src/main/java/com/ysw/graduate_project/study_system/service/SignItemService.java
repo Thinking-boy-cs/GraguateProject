@@ -16,5 +16,6 @@ public interface SignItemService {
     //2.搜索某天打卡记录
 
     //3.搜索某人打卡记录
+    List<SignItem> showSignItemByTelNumber(String telNumber);
 
 }

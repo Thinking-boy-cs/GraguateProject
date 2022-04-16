@@ -33,4 +33,10 @@ public class SignController {
         return signItemService.showSignItem();
     }
 
+    @RequestMapping("showSignByTelNumber")
+    @ResponseBody
+    public List<SignItem> showSignById(String telNumber){
+        return signItemService.showSignItemByTelNumber(telNumber);
+    }
+
 }

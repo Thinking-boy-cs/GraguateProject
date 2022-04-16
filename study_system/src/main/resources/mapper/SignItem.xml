@@ -5,7 +5,11 @@
     <select id="showSignItem" resultType="SignItem">
        select id,telNumber,temperature,location,`time` from SignItem
    </select>
+
+    <select id="showSignItemByTelNumber" resultType="SignItem">
+        select id,telNumber,temperature,location,`time` from SignItem where telNumber=#{telNumber}
+    </select>
+
+
 </mapper>
 
-
-<!--lunwen-->

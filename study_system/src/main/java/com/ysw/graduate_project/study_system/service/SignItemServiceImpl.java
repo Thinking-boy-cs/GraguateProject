@@ -25,4 +25,9 @@ public class SignItemServiceImpl implements SignItemService{
     public List<SignItem> showSignItem() {
         return signItemDao.showSignItem();
     }
+
+    @Override
+    public List<SignItem> showSignItemByTelNumber(String telNumber) {
+        return signItemDao.showSignItemByTelNumber(telNumber);
+    }
 }
