@@ -17,10 +17,10 @@
 <%--    <input type="button" value="查询" id="btn">--%>
 <%--</form>--%>
 
-<form id="signForm"  method="post">
-    电话号码：<input type="text" name="telNumber" id="telNumber"/> <br>
-    <input type="button" value="查询" id="btn">
-</form>
+<%--<form id="signForm"  method="post">--%>
+<%--    电话号码：<input type="text" name="telNumber" id="telNumber"/> <br>--%>
+<%--    <input type="button" value="查询" id="btn">--%>
+<%--</form>--%>
 
 <%--<a href="${pageContext.request.contextPath}/view/findSignItemByTelNumber">查询（按电话）</a>--%>
 <%--<a href="${pageContext.request.contextPath}/view/insert">查询（按时间）</a>--%>

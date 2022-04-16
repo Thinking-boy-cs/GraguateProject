@@ -22,7 +22,7 @@
         height: 103px;
         background-color: #FFFFFF;
         margin-top: 1px;
-        border-bottom: 2px solid #00ad5f;
+        border-bottom: 2px solid #1962F1;
     }
 
     .box_bar {
@@ -34,18 +34,18 @@
 
     .bar {
         width: 202.25px;
-        height: 33px;
+        height: 65px;
         margin: 0 auto;
-        background-color: #26ab65;
+        background-color: #5b54d0;
 
     }
 
     .box_main {
         width: 997.75px;
         height: 620px;
-        background-color: #FFFFFF;
-        margin-top: 2px;
-        margin-left: 2px;
+
+        margin-top: -520px;
+        margin-left: 220px;
     }
 
     .box_bar, .box_main {
@@ -67,6 +67,31 @@
         line-height: 33px;
         margin-left: 10px;
     }
+
+
+    /*轮播图*/
+    #pp2{
+        width:9999px;
+        height:9999px;
+        animation:switch 15s infinite;
+    }
+    #pp2>img{
+        float:left;
+    }
+    #pp1{
+        width:1020px;
+        height:550px;
+        overflow:hidden;
+    }
+    @keyframes switch{
+        0%{}
+    20%{transform:translateX(0px);}
+    40%{transform:translateX(-1020px);}
+    60%{transform:translateX(-2040px);}
+    80%{transform:translateX(-3060px);}
+    /*100%{transform:translateX(-4080px);}*/
+    }
+
 </style>
 <body>
 
@@ -79,65 +104,78 @@
         <div class="bar">
             <a href="#"> 首页</a>
         </div>
+<%--        <div class="bar">--%>
+<%--            <a href="http://localhost:9999/study_system/view/showDataItem"> 年级列表</a>--%>
+<%--        </div>--%>
         <div class="bar">
-            <a href="http://localhost:9999/study_system/view/showDataItem"> 年级列表</a>
+            <a href="#"> 本人信息</a>
         </div>
         <div class="bar">
-            <a href="#"> 班级列表</a>
-        </div>
-        <div class="bar">
-            <a href="#"> 学生基本信息</a>
-        </div>
-
-        <div class="bar">
-            <a href="#"> 学生信息统计</a>
-        </div>
-        <div class="bar">
-            <a href="#"> 新增学生信息</a>
-        </div>
-        <div class="bar">
-            <a href="#"> 修改学生信息</a>
-        </div>
-        <div class="bar">
-            <a href="#"> 删除学生信息</a>
+            <a href="#"> 通知公告</a>
         </div>
 
         <div class="bar">
-            <a href="#"> 课程列表</a>
+            <a href="#"> 查看资料</a>
         </div>
         <div class="bar">
-            <a href="#"> 新增课程</a>
+            <a href="#"> 上传资料</a>
         </div>
         <div class="bar">
-            <a href="#"> 考试信息</a>
+            <a href="#"> 打卡</a>
         </div>
         <div class="bar">
-            <a href="#"> 考试信息统计</a>
+            <a href="#"> 推荐系统</a>
         </div>
+
         <div class="bar">
-            <a href="#"> 新增考试</a>
-        </div>
-        <div class="bar">
-            <a href="#"> 学生成绩</a>
-        </div>
-        <div class="bar">
-            <a href="#"> 成绩统计</a>
-        </div>
-        <div class="bar">
-            <a href="#"> 学生通讯录</a>
-        </div>
-        <div class="bar">
-            <a href="#"> 管理员信息</a>
-        </div>
+            <a href="#"> 关于</a>
+<%--        </div>--%>
+<%--        <div class="bar">--%>
+<%--            <a href="#"> 新增课程</a>--%>
+<%--        </div>--%>
+<%--        <div class="bar">--%>
+<%--            <a href="#"> 考试信息</a>--%>
+<%--        </div>--%>
+<%--        <div class="bar">--%>
+<%--            <a href="#"> 考试信息统计</a>--%>
+<%--        </div>--%>
+<%--        <div class="bar">--%>
+<%--            <a href="#"> 新增考试</a>--%>
+<%--        </div>--%>
+<%--        <div class="bar">--%>
+<%--            <a href="#"> 学生成绩</a>--%>
+<%--        </div>--%>
+<%--        <div class="bar">--%>
+<%--            <a href="#"> 成绩统计</a>--%>
+<%--        </div>--%>
+<%--        <div class="bar">--%>
+<%--            <a href="#"> 学生通讯录</a>--%>
+<%--        </div>--%>
+<%--        <div class="bar">--%>
+<%--            <a href="#"> 管理员信息</a>--%>
+<%--        </div>--%>
         <div class="bar">
             <a href="#"> 退出系统</a>
         </div>
     </div>
-    <div class="box_main" id="test1">
-        <h1>hahhha</h1>
 
+<%--        <div class="box_main">--%>
+<%--            <img src="../pic/betbg.png">--%>
+<%--        </div>--%>
+<div class="box_main">
+    <div id="pp1">
+        <div id="pp2">
+            <img src="../pic/1.jpg"/>
+            <img src="../pic/2.jpg"/>
+            <img src="../pic/3.jpg"/>
+            <img src="../pic/4.jpg"/>
+            <img src="../pic/5.jpg"/>
+        </div>
     </div>
 </div>
+
+
+
 </body>
 <script>
     $(function () {
