@@ -6,9 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -76,9 +76,16 @@ public class UserController {
     }
 
     @RequestMapping("login")
-    @ResponseBody
-    public User login(Integer id){
-        return userService.findById(id);
+    public String login(User user, HttpServletRequest request){
+        log.info("I am Here!!!");
+        if(user!=null){
+            User thisUser = userService.findByTelNumber(user.getTelNumber());
+            request.getSession().setAttribute("thisUser", thisUser);
+            log.info("当前登录用户的信息2: [{}]", thisUser.toString());
+            return "yes";
+        }else{
+            return "no";
+        }
     }
 
 

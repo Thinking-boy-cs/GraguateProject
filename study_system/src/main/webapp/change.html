@@ -1,0 +1,151 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:border="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>change</title>
+    <script src="/study_system/js/jquery-3.5.1.js"></script>
+    <script>
+        $(function () {
+            $("#upload").click(function () {
+                //$('#uploadForm')[0]为选择器，不规定为id选择器，前提是该选择器能获取file文件，然后放入到formData中
+                var formData = new FormData($('#changeForm')[0]);
+                var sex = $("#sex").val();
+                var telNumber = $("#telNumber").val();
+                var email = $("#email").val();
+                var signature = $("#signature").val();
+                console.log(formData.get("file"))
+                console.log(sex)
+                console.log(telNumber)
+                console.log(email)
+                console.log(signature)
+                if (formData ==={} || formData===""){
+                    alert("请选择文件")
+                }
+                formData.append("multipartFile",formData.get("file"));
+                formData.append("sex",sex);
+                formData.append("telNumber",telNumber);
+                formData.append("email",email);
+                formData.append("signature",signature);
+                //调用formData的append方法，将book属性都添加进去，img填空白即可。
+                // formData.append("name","龙哥传");
+                // formData.append("author","龙哥");
+                // formData.append("price","10.33");
+                // formData.append("","")
+                // formData.append("sex","")
+                // formData.append("id","");
+                // formData.append("username","");
+                // formData.append("dept","");
+                // formData.append("password","");
+                // formData.append("sex","");
+                // formData.append("status","");
+                // formData.append("registerTime","");
+                formData.append("icon","");
+                // formData.append("telNumber","");
+
+                $.ajax({
+                    type: 'post',
+                    url: "http://localhost:8989/api/pigeon/user/changeUserInfo",
+                    data: formData,
+                    dataType:'json',
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    success:(function (results) {
+                        if (results.status === 0){
+                            alert("成功")
+                        }
+                    }),
+                    error:(function () {
+                        alert("上传失败");
+                    }),
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="wrap">
+    <form id = "changeForm"  method="post" enctype="multipart/form-data">
+        <table cellpadding="0" cellspacing="0" border="0"
+               class="form_table">
+            <tr>
+                <td valign="middle" align="right">
+                    性别
+                </td>
+                <td valign="middle" align="left">
+                    <input type="text" id = "sex" class="inputgri" v-model="user.sex"  />
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle" align="right">
+                    电话
+                </td>
+                <td valign="middle" align="left">
+                    <input type="text" id = "telNumber" class="inputgri" v-model="user.telNumber"  />
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle" align="right">
+                    电子邮箱
+                </td>
+                <td valign="middle" align="left">
+                    <input type="text" id = "email" class="inputgri" v-model="user.email"  />
+                </td>
+            </tr>
+            <tr>
+                <td valign="middle" align="right">
+                    个性签名
+                </td>
+                <td valign="middle" align="left">
+                    <input type="text" id = "signature" class="inputgri" v-model="user.signature"  />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    icon
+                </td>
+                <td>
+                    <input type="file" id="file" name="file">
+                </td>
+            </tr>
+        </table>
+<!--        <p>-->
+<!--            <input type="button" id="upload" class="button" value="Submit &raquo;" />-->
+<!--        </p>-->
+    </form>
+    <p>
+        <input type="button" id="upload" class="button" @Click = "changeInfo" value="Submit &raquo;" />
+    </p>
+</div>
+</body>
+</html>
+<!--<script src="/pigeon/js/vue.js"></script>-->
+<!--<script src="/pigeon/js/axios.min.js"></script>-->
+<!--<script>-->
+
+<!--    var app = new Vue({-->
+<!--        el: "#wrap",-->
+<!--        data: {-->
+<!--            url: "",-->
+<!--            user: {},-->
+<!--        },-->
+<!--        methods: {-->
+<!--            //用来签到-->
+<!--            changeInfo() {-->
+<!--                var formData = new FormData($('#changeForm')[0])-->
+<!--                if(formData === {} || formData ===""){-->
+<!--                    alert("请选择文件")-->
+<!--                }-->
+<!--                formData.append("multipartFile",formData.get("file"));-->
+<!--                axios.post("http://localhost:8989/pigeon/user/changeInfo?",this.user,formData).then(res => {-->
+<!--                    console.log(res.data);-->
+<!--                    if (!res.data.status) {-->
+<!--                        alert(res.data.msg + ",修改成功!");-->
+<!--                    } else {-->
+<!--                        alert(res.data.msg);-->
+<!--                    }-->
+<!--                });-->
+<!--            }-->
+<!--        },-->
+<!--    })-->
+<!--</script>-->

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        form{
+            width: 300px;
+            margin: 0 auto;
+        }
+        .text{
+            width: 200px;
+            height: 20px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        form input[type="button"]{
+            width: 70px;
+            height: 30px;
+            margin: 0 auto;
+            border-radius: 5px;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<h1>登录注册</h1>
+<form action="" method="get">
+    账号：<input class="text" type="text"><br>
+    密码：<input class="text" type="password"><br>
+    <input type="button" value="登录" onclick="test()">
+
+</form>
+<script>
+    function test(){
+        var user = /^\w{1,}$/;
+        var pass = /^.{6,}$/
+        var userName = document.getElementsByClassName("text")[0];
+        var passWord = document.getElementsByClassName("text")[1];
+        if (user.test(userName.value) && pass.test(passWord.value)){
+            alert("登录成功！")
+            location.href="http://localhost:9999/study_system/backSystem/backControl";
+        } else {
+            alert("账号或密码格式错误")
+        }
+    }
+</script>
+
+</body>
+</html>

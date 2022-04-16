@@ -23,4 +23,6 @@ public interface UserDao {
 
     User findById(Integer id);
 
+    User findByTelNumber(String telNumber);
+
 }
