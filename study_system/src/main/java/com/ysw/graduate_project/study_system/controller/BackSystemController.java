@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 @Slf4j
-@RequestMapping("test")
-public class testController {
+@RequestMapping("backSystem")
+public class BackSystemController {
 
     @RequestMapping("backControl")
     public String test(){
-        return "test"; //跳转到以"index"为名的jsp了
+        return "backSystem"; //跳转到以"index"为名的jsp了
     }
 
 }

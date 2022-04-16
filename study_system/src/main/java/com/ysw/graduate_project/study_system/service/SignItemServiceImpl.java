@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,6 +25,11 @@ public class SignItemServiceImpl implements SignItemService{
     @Override
     public List<SignItem> showSignItem() {
         return signItemDao.showSignItem();
+    }
+
+    @Override
+    public List<SignItem> findSignByTime(Date startTime, Date endTime) {
+        return signItemDao.findSignByTime(startTime,endTime);
     }
 
     @Override

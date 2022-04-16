@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,6 +38,12 @@ public class SignController {
     @ResponseBody
     public List<SignItem> showSignById(String telNumber){
         return signItemService.showSignItemByTelNumber(telNumber);
+    }
+
+    @RequestMapping("showSignByTime")
+    @ResponseBody
+    public List<SignItem> showSignById(Date startTime, Date endTime){
+        return signItemService.findSignByTime(startTime,endTime);
     }
 
 }

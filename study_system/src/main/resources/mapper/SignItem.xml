@@ -11,5 +11,12 @@
     </select>
 
 
+    <select id="findSignByTime" parameterType="Date" resultType="SignItem">
+        select *
+        from SignItem
+        where `time` between #{startTime} and #{endTime}
+    </select>
+
+
 </mapper>
 

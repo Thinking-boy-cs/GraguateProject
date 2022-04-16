@@ -1,7 +1,9 @@
 package com.ysw.graduate_project.study_system.service;
 
 import com.ysw.graduate_project.study_system.entity.SignItem;
+import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,6 +16,7 @@ public interface SignItemService {
     List<SignItem> showSignItem();
 
     //2.搜索某天打卡记录
+    List<SignItem> findSignByTime(Date startTime,Date endTime);
 
     //3.搜索某人打卡记录
     List<SignItem> showSignItemByTelNumber(String telNumber);

@@ -2,6 +2,7 @@ package com.ysw.graduate_project.study_system.dao;
 
 import com.ysw.graduate_project.study_system.entity.SignItem;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.*;
 
@@ -17,6 +18,8 @@ public interface SignItemDao {
     List<SignItem> showSignItem();
 
     //2.搜索某天打卡记录
+    List<SignItem> findSignByTime(@Param("startTime") Date startTime, @Param("endTime") Date endTime);
+
 
     //3.搜索某人打卡记录
     List<SignItem> showSignItemByTelNumber(String telNumber);
