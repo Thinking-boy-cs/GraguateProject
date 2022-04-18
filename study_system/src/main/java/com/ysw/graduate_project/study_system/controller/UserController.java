@@ -79,13 +79,19 @@ public class UserController {
     @RequestMapping("login")
     public String login(User user, HttpServletRequest request){
         log.info("I am Here!!!");
-        if(user!=null){
+        user.setId(1);
+        user.setMail("1");
+        user.setPassWord("123456");
+        user.setTelNumber("18390071892");
+
+        int userId = user.getId();
+        if(user.getPassWord().equals(userService.findById(userId).getPassWord())){
             User thisUser = userService.findByTelNumber(user.getTelNumber());
             request.getSession().setAttribute("thisUser", thisUser);
-            log.info("当前登录用户的信息2: [{}]", thisUser.toString());
-            return "yes";
+            log.info(thisUser.getTelNumber());
+            return "backSystem";
         }else{
-            return "no";
+            return "No";
         }
     }
 
