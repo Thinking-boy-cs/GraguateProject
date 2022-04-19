@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ysw.graduate_project.study_system.dao.ManagerDao">
+
+    <select id="findByTelNumber" parameterType="String" resultType="Manager">
+        select id,telNumber,passWord,mail from user where telNumber=#{telNumber}
+    </select>
+    <select id="findById" parameterType="Integer" resultType="Manager">
+        select id, telNumber,passWord,mail from user where id=#{id}
+    </select>
+</mapper>

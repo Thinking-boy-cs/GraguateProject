@@ -111,20 +111,20 @@
             <a href="#"> 本人信息</a>
         </div>
         <div class="bar">
-            <a href="#"> 通知公告</a>
+            <a href="#"> 查看用户</a>
         </div>
 
         <div class="bar">
-            <a href="#"> 查看资料</a>
+            <a href="#"> 管理用户</a>
         </div>
         <div class="bar">
-            <a href="#"> 上传资料</a>
+            <a href="#"> 可视化</a>
         </div>
         <div class="bar">
-            <a href="#"> 打卡</a>
+            <a href="#"> 发布公告</a>
         </div>
         <div class="bar">
-            <a href="#"> 推荐系统</a>
+            <a href="#"> 警告异常</a>
         </div>
 
         <div class="bar">

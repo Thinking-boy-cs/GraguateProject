@@ -1,6 +1,8 @@
 package com.ysw.graduate_project.study_system.controller;
 
+import com.ysw.graduate_project.study_system.entity.Manager;
 import com.ysw.graduate_project.study_system.entity.User;
+import com.ysw.graduate_project.study_system.service.ManagerService;
 import com.ysw.graduate_project.study_system.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,10 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private ManagerService managerService;
+
 
     @RequestMapping("find")
     public String findAll(Model model){
@@ -75,7 +81,7 @@ public class UserController {
         return userService.findById(id);
     }
 
-    //登录注册
+    //大学生登录
     @RequestMapping("login")
     public String login(User user, HttpServletRequest request){
         log.info("I am Here!!!");
@@ -90,6 +96,26 @@ public class UserController {
             request.getSession().setAttribute("thisUser", thisUser);
             log.info(thisUser.getTelNumber());
             return "backSystem";
+        }else{
+            return "No";
+        }
+    }
+
+    //核心管理员登录
+    @RequestMapping("login2")
+    public String login2(Manager manager, HttpServletRequest request){
+        log.info("I am Here!!!");
+        manager.setId(1);
+        manager.setMail("1");
+        manager.setPassWord("123456");
+        manager.setTelNumber("18390071892");
+
+        int userId = manager.getId();
+        if(manager.getPassWord().equals(managerService.findById(userId).getPassWord())){
+            Manager thisManager = managerService.findByTelNumber(manager.getTelNumber());
+            request.getSession().setAttribute("thisUser", thisManager);
+            log.info(thisManager.getTelNumber());
+            return "backSystem_m";
         }else{
             return "No";
         }

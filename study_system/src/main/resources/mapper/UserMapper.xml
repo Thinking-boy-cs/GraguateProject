@@ -32,4 +32,15 @@
     <select id="findByTelNumber" parameterType="String" resultType="User">
         select id,telNumber,passWord,mail from user where telNumber=#{telNumber}
     </select>
+
+
+
+<!--    核心管理员部分-->
+
+<!--    <select id="findByTelNumber" parameterType="String" resultType="<Manager">-->
+<!--        select id,telNumber,passWord,mail from manager where telNumber=#{telNumber}-->
+<!--    </select>-->
+
+
+
 </mapper>
