@@ -121,7 +121,7 @@
             <a href="#"> 可视化</a>
         </div>
         <div class="bar">
-            <a href="#"> 发布公告</a>
+            <a href="http://localhost:9999/study_system/view/infoFind"> 发布公告</a>
         </div>
         <div class="bar">
             <a href="#"> 警告异常</a>

@@ -111,7 +111,7 @@
             <a href="#"> 本人信息</a>
         </div>
         <div class="bar">
-            <a href="#"> 通知公告</a>
+            <a href="http://localhost:9999/study_system/view/infoFind_u"> 通知公告</a>
         </div>
 
         <div class="bar">

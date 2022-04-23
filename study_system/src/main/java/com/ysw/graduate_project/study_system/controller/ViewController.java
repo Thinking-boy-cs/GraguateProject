@@ -40,4 +40,19 @@ public class ViewController {
 //    public String findSignItemByTelNumber(){
 //        return "findSignItemByTelNumber";
 //    }
+
+    @RequestMapping("infoAdd")
+    public String infoAdd(){
+        return "infoAdd";
+    }
+
+    @RequestMapping("infoFind")
+    public String infoFind(){
+        return "infoList";
+    }
+
+    @RequestMapping("infoFind_u")
+    public String infoFind_u(){
+        return "infoList_u";
+    }
 }
