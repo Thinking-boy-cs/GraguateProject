@@ -115,7 +115,7 @@
         </div>
 
         <div class="bar">
-            <a href="#"> 管理用户</a>
+            <a href="http://localhost:9999/study_system/view/find"> 管理用户</a>
         </div>
         <div class="bar">
             <a href="#"> 可视化</a>

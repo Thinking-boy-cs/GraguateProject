@@ -14,5 +14,11 @@ public class User {
     private String telNumber;
     private String passWord;
     private String mail;
+    private String sex;
+    private Integer age;
+    private String idCard;
+    private String political;
+    private String college;
+    private String degree;
 
 }

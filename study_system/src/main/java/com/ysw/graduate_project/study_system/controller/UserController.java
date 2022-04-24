@@ -68,11 +68,18 @@ public class UserController {
         return "redirect:/user/find";
     }
 
+    @RequestMapping("updateUser_m")
+    public String updateUser_m(User user){
+        userService.updateUser_m(user);
+        return "redirect:/user/find";
+    }
+
+
     @RequestMapping("findById")
     public String findById(Integer id,Model model){
         User user = userService.findById(id);
         model.addAttribute("findUser",user);
-        return "updateUser";
+        return "updateUser_m";
     }
 
     @RequestMapping("findById2")
@@ -92,6 +99,7 @@ public class UserController {
 
         int userId = user.getId();
         if(user.getPassWord().equals(userService.findById(userId).getPassWord())){
+            log.info(userService.findById(userId).getPassWord());
             User thisUser = userService.findByTelNumber(user.getTelNumber());
             request.getSession().setAttribute("thisUser", thisUser);
             log.info(thisUser.getTelNumber());
@@ -108,12 +116,12 @@ public class UserController {
         manager.setId(1);
         manager.setMail("1");
         manager.setPassWord("123456");
-        manager.setTelNumber("18390071892");
+        manager.setTelNumber("15340416216");
 
         int userId = manager.getId();
         if(manager.getPassWord().equals(managerService.findById(userId).getPassWord())){
             Manager thisManager = managerService.findByTelNumber(manager.getTelNumber());
-            request.getSession().setAttribute("thisUser", thisManager);
+            request.getSession().setAttribute("thisManager", thisManager);
             log.info(thisManager.getTelNumber());
             return "backSystem_m";
         }else{

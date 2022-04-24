@@ -12,17 +12,17 @@
 </head>
 <body>
 
-<form action="${pageContext.request.contextPath}/user/updateUser" method="post">
+<form action="${pageContext.request.contextPath}/user/updateUser_m" method="post">
     id: <input type="text" name="id" readonly value="${requestScope.findUser.id}"> <br>
     电话号码: <input type="text" name="telNumber" readonly value="${requestScope.findUser.telNumber}"> <br>
     密码: <input type="text" name="passWord" readonly value="${requestScope.findUser.passWord}"> <br>
     邮箱: <input type="text" name="mail"  value="${requestScope.findUser.mail}"> <br>
     性别: <input type="text" name="sex"  value="${requestScope.findUser.sex}"> <br>
     年龄: <input type="text" name="age"  value="${requestScope.findUser.age}"> <br>
-    学号: <input type="text" name="idCard" readonly value="${requestScope.findUser.idCard}"> <br>
-    政治面貌: <input type="text" name="political" readonly value="${requestScope.findUser.political}"> <br>
-    学院: <input type="text" name="college" readonly value="${requestScope.findUser.college}"> <br>
-    学历: <input type="text" name="degree" readonly value="${requestScope.findUser.degree}"> <br>
+    学号: <input type="text" name="idCard"  value="${requestScope.findUser.idCard}"> <br>
+    政治面貌: <input type="text" name="political"  value="${requestScope.findUser.political}"> <br>
+    学院: <input type="text" name="college"  value="${requestScope.findUser.college}"> <br>
+    学历: <input type="text" name="degree"  value="${requestScope.findUser.degree}"> <br>
     <input type="submit" value="保存">
 </form>
 
@@ -48,6 +48,10 @@
         $("input[name='mail']").val(data.mail);
         $("input[name='sex']").val(data.sex);
         $("input[name='age']").val(data.age);
+        $("input[name='idCard']").val(data.idCard);
+        $("input[name='political']").val(data.political);
+        $("input[name='college']").val(data.college);
+        $("input[name='degree']").val(data.degree);
     });
 
 </script>

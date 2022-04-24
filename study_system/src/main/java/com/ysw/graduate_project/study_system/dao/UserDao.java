@@ -21,6 +21,8 @@ public interface UserDao {
 
     void updateUser(User user);
 
+    void updateUser_m(User user);
+
     User findById(Integer id);
 
     User findByTelNumber(String telNumber);
