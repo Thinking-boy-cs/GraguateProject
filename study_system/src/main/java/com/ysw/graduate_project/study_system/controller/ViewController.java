@@ -41,6 +41,7 @@ public class ViewController {
 //        return "findSignItemByTelNumber";
 //    }
 
+    //info Part
     @RequestMapping("infoAdd")
     public String infoAdd(){
         return "infoAdd";
@@ -55,4 +56,16 @@ public class ViewController {
     public String infoFind_u(){
         return "infoList_u";
     }
+
+
+    //upload Part
+    @RequestMapping("uploadFind")
+    public String uploadFind(){
+        return "uploadList";
+    }
+
+
 }
+
+
+

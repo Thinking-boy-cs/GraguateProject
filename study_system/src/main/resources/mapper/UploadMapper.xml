@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ysw.graduate_project.study_system.dao.UploadDao">
+    <select id="findAll" resultType="Upload">
+       select * from upload
+   </select>
+
+    <insert id="uploadAdd" parameterType="Upload" useGeneratedKeys="true" keyProperty="id">
+        insert into upload values(#{id},#{name},#{time})
+    </insert>
+
+<!--    <delete id="infoDelete" parameterType="Integer">-->
+<!--        delete from infocast where id=#{id}-->
+<!--    </delete>-->
+
+<!--    <select id="infoFindById" parameterType="Integer" resultType="infocast">-->
+<!--        select * from infocast where id=#{id}-->
+<!--    </select>-->
+</mapper>
