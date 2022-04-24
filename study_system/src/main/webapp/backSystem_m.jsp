@@ -128,7 +128,7 @@
         </div>
 
         <div class="bar">
-            <a href="#"> 关于</a>
+            <a href="http://localhost:9999/study_system/about.html"> 关于</a>
 <%--        </div>--%>
 <%--        <div class="bar">--%>
 <%--            <a href="#"> 新增课程</a>--%>
