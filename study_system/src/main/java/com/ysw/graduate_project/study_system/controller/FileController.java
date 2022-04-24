@@ -1,6 +1,7 @@
 package com.ysw.graduate_project.study_system.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -22,7 +23,7 @@ import java.nio.file.Paths;
  * @author Yu shuaiwen
  * @date 2022/04/23 15:17
  */
-@RestController
+@Controller
 @RequestMapping("/file")
 @Slf4j
 public class FileController {
@@ -40,8 +41,15 @@ public class FileController {
         }
         final Path saveFile = Paths.get(saveFilePath+File.separator+filename);
         file.transferTo(saveFile);
-        return filename;
+        //favor();
+        //return filename;
+        return "backSystem";
     }
+
+
+//    public String favor(){
+//        return "backSystem";
+//    }
 
     @GetMapping("/{fileName}")
     public void download(@PathVariable String fileName, HttpServletResponse response) throws IOException{

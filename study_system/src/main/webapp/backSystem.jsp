@@ -118,7 +118,7 @@
             <a href="#"> 查看资料</a>
         </div>
         <div class="bar">
-            <a href="#"> 上传资料</a>
+            <a href="http://localhost:9999/study_system/upload.html"> 上传资料</a>
         </div>
         <div class="bar">
             <a href="#"> 打卡</a>
