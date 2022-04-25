@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("view")
 public class ViewController {
 
+    //用户查询
     @RequestMapping("find")
     public String findAll(){
         return "findAll";

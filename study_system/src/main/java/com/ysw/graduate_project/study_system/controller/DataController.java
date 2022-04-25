@@ -15,6 +15,10 @@ import java.util.List;
  * @date 2022/04/10 21:59
  */
 
+/**
+ * 数据可视化
+ */
+
 @RestController
 @Slf4j
 @RequestMapping("data")
