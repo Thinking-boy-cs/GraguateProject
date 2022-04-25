@@ -35,7 +35,7 @@
 		<h1>
 			注册
 		</h1>
-		<form action="">
+		<form action="/study_system/user/insert" id="registerForm">
 			<table cellpadding="0" cellspacing="0" border="0"
 				   class="form_table">
 <!--				<tr>-->
@@ -48,7 +48,7 @@
 
 				<tr>
 					<td valign="middle" align="right">手机号码：</td>
-					<td valign="middle" align="left"><input type="text" id="mobile" class="inputgri" onblur="checkMobile()"></td>
+					<td valign="middle" align="left"><input type="text" id="telNumber" name="telNumber" class="inputgri" onblur="checkMobile()"></td>
 					<td>
 						<div id="mobilePrompt"></div>
 					</td>
@@ -56,7 +56,7 @@
 
 				<tr>
 					<td valign="middle" align="right">密码：</td>
-					<td valign="middle" align="left"><input type="password" id="pwd" class="inputgri" onblur="checkpwd()"></td>
+					<td valign="middle" align="left"><input type="password" id="passWord" name="passWord" class="inputgri" onblur="checkpwd()"></td>
 					<td>
 						<div id="pwdPrompt">
 							密码由英文字母和数字组成的4-10位字符
@@ -76,7 +76,7 @@
 					<td valign="middle" align="right">
 						电子邮箱：
 					</td>
-					<td valign="middle" align="left"> <input type="text" id="email" class="inputgri" onblur="checkEmail()"></td>
+					<td valign="middle" align="left"> <input type="text" id="mail" name="mail" class="inputgri" onblur="checkEmail()"></td>
 					<td>
 						<div id="emailPrompt"></div>
 					</td>
@@ -84,7 +84,7 @@
 
 				<tr>
 					<td></td>
-					<td class="center"><button>提交</button></td>
+					<td class="center"><button type="button" id="register">提交</button></td>
 					<td></td>
 				</tr>
 			</table>
@@ -99,17 +99,37 @@
 	</div>
 </div>
 </body>
-<script>
-	function $(elementId) {
-		return document.getElementById(elementId).value;
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+
+	$("#register").click(function () {
+
+		if(checkEmail()&&checkMobile()&&checkpwd()&&checkRepwd()){
+			$("#registerForm").submit();
+		}else{
+			window.alert("注册失败，请重试！");
+		}
+
+	})
+
+	function isEmpty(str) {
+		if(str==null||str.trim()==""){
+			return true;
+		}
+		return false;
 	}
+
+
+	// function $(elementId) {
+	// 	return document.getElementById(elementId).value;
+	// }
 
 	function divId(elementId) {
 		return document.getElementById(elementId);
 	}
 
 	function checkUser() {
-		var user = $('user');
+		var user = $('#user').val();
 		var userId = divId('userPrompt')
 		userId.innerHTML = '';
 		var reg = /^[a-z][a-zA-Z0-9]{3,15}$/;
@@ -122,7 +142,7 @@
 	}
 
 	function checkpwd() {
-		var pwd = $('pwd');
+		var pwd = $('#passWord').val();
 		var pwdId = divId('pwdPrompt');
 		pwdId.innerHTMl = ' ';
 		var reg = /^[a-zA-z0-9]{4,10}$/;
@@ -134,8 +154,8 @@
 	}
 
 	function checkRepwd() {
-		var repwd = $('repwd');
-		var pwd = $('pwd');
+		var repwd = $('#repwd').val();
+		var pwd = $('#passWord').val();
 		var Rpwd = divId('repwdPrompt');
 		Rpwd.innerHTMl = '';
 		if (pwd != repwd) {
@@ -149,7 +169,7 @@
 	}
 
 	function checkEmail() {
-		var email = $('email');
+		var email = $('#mail').val();
 		var emailPrompt = divId('emailPrompt');
 		emailPrompt.innerHTML = ' ';
 		var reg = /^\w+@\w+(\.[a-zA-Z]{2,3}){1,2}$/;
@@ -161,7 +181,7 @@
 	}
 
 	function checkMobile() {
-		var mobile = $('mobile');
+		var mobile = $('#telNumber').val();
 		var mobileId = divId('mobilePrompt');
 		var regMobile = /^1\d{10}$/;
 		if (regMobile.test(mobile) == false) {

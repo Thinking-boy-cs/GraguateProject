@@ -51,7 +51,15 @@ public class UserController {
     }
 
     @RequestMapping("insert")
-    public String insertUser(User user){
+    public String insertUser(HttpServletRequest request){
+        User user = new User();
+        String telNumber = request.getParameter("telNumber");
+        String passWord = request.getParameter("passWord");
+        String mail = request.getParameter("mail");
+        user.setTelNumber(telNumber);
+        user.setPassWord(passWord);
+        user.setMail(mail);
+        log.info("insert this user:[{}]",user.getTelNumber());
         userService.insertUser(user);
         return "redirect:/user/find";
     }
