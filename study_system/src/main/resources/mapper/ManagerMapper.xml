@@ -4,9 +4,9 @@
 <mapper namespace="com.ysw.graduate_project.study_system.dao.ManagerDao">
 
     <select id="findByTelNumber" parameterType="String" resultType="Manager">
-        select * from user where telNumber=#{telNumber}
+        select * from manager where telNumber=#{telNumber}
     </select>
     <select id="findById" parameterType="Integer" resultType="Manager">
-        select * from user where id=#{id}
+        select * from manager where id=#{id}
     </select>
 </mapper>

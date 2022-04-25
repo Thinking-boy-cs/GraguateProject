@@ -11,6 +11,9 @@
 </head>
 <body>
     <h1>HaHa</h1>
-    <h>This is my graduate project.</h>
+    <h1>This is my graduate project.</h1>
+
+    <a href="${pageContext.request.contextPath}/login.html">用户登录</a>
+    <a href="${pageContext.request.contextPath}/login2.html">管理员登录</a>
 </body>
 </html>

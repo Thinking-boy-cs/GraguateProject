@@ -13,7 +13,7 @@
 <h1>HaHa</h1>
 <h1>
     <%
-        response.setHeader("Refresh","5;URL=http://localhost:9999/study_system/");
+        response.setHeader("Refresh","3;URL=http://localhost:9999/study_system/");
     %>
     失败，稍后跳转
 </h1>

@@ -22,40 +22,44 @@
 <%--<a href="${pageContext.request.contextPath}/insertUser.jsp">添加</a>--%>
 
 
-<div id="infoDiv" >
-    <div id="infoData" style="display: none">
-        <span>#ID#</span> <span>#NAME#</span><span>#INFO#</span><span>#TIME#</span><span>#TITEL#</span>
-        <br>
-    </div>
-</div>
+
+
+        <h1>${theInfo.id}</h1>
+        <h1>${theInfo.name}</h1>
+        <h1>${theInfo.info}</h1>
+        <h1>${theInfo.time}</h1>
+        <h1>${theInfo.title}</h1>
+
+
+
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="text/javascript">
-    $.ajax({
-        type:'get',
-        url:'${pageContext.request.contextPath}/infoCast/findInfoAll',
-        data:'',
-        dataType:'json',
-        success: function(data) {
-            console.log("成功===",data);
-            if(data.length>0){
-                for(var i = 0,l=data.length;i<l;i++){
-                    $("#infoDiv").append($("#infoData").html()
-                            .replace("#ID#",data[i].id)
-                            .replace("#ID2#",data[i].id)
-                            .replace("#ID3#",data[i].id)
-                            .replace("#NAME#", data[i].name)
-                            .replace("#INFO#", data[i].info)
-                            .replace("#TIME#", data[i].time)
-                            .replace("#TITEL#", data[i].title)
-                    )
-                }
-            }
-        },
-        error: function(data){
-            console.log("请求失败！！！");
-        }
-    })
-</script>
+<%--<script type="text/javascript">--%>
+<%--    $.ajax({--%>
+<%--        type:'get',--%>
+<%--        url:'${pageContext.request.contextPath}/infoCast/findInfoAll',--%>
+<%--        data:'',--%>
+<%--        dataType:'json',--%>
+<%--        success: function(data) {--%>
+<%--            console.log("成功===",data);--%>
+<%--            if(data.length>0){--%>
+<%--                for(var i = 0,l=data.length;i<l;i++){--%>
+<%--                    $("#infoDiv").append($("#infoData").html()--%>
+<%--                            .replace("#ID#",data[i].id)--%>
+<%--                            .replace("#ID2#",data[i].id)--%>
+<%--                            .replace("#ID3#",data[i].id)--%>
+<%--                            .replace("#NAME#", data[i].name)--%>
+<%--                            .replace("#INFO#", data[i].info)--%>
+<%--                            .replace("#TIME#", data[i].time)--%>
+<%--                            .replace("#TITEL#", data[i].title)--%>
+<%--                    )--%>
+<%--                }--%>
+<%--            }--%>
+<%--        },--%>
+<%--        error: function(data){--%>
+<%--            console.log("请求失败！！！");--%>
+<%--        }--%>
+<%--    })--%>
+<%--</script>--%>
 
 </body>
 </html>

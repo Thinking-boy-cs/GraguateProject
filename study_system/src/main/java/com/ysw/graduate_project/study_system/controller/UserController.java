@@ -106,6 +106,11 @@ public class UserController {
 //        user.setTelNumber("18390071892");
         String userTelNumber = request.getParameter("telNumber");
         String userPassWord = request.getParameter("passWord");
+
+        if(userService.findByTelNumber(userTelNumber)==null){
+            return "No";
+        }
+
         log.info("This is the thisUser telNumber:[{}]",userTelNumber);
         log.info("This is the thisUser passWord:[{}]",userPassWord);
 
@@ -123,7 +128,7 @@ public class UserController {
 
     //核心管理员登录
     @RequestMapping("login2")
-    public String login2(Manager manager, HttpServletRequest request){
+    public String login2(HttpServletRequest request){
         log.info("I am Here!!!");
 //        manager.setId(1);
 //        manager.setMail("1");
@@ -131,8 +136,12 @@ public class UserController {
 //        manager.setTelNumber("15340416216");
         String managerTelNumber = request.getParameter("telNumber");
         String managerPassWord = request.getParameter("passWord");
-        log.info("This is the thisUser telNumber:[{}]",managerTelNumber);
-        log.info("This is the thisUser passWord:[{}]",managerPassWord);
+
+        if(managerService.findByTelNumber(managerTelNumber)==null){
+            return "No";
+        }
+        log.info("This is the thisManager telNumber:[{}]",managerTelNumber);
+        log.info("This is the thisManager passWord:[{}]",managerPassWord);
         Manager thisManager = managerService.findByTelNumber(managerTelNumber);
         if(thisManager.getPassWord().equals(managerPassWord)){
             log.info(thisManager.getPassWord());

@@ -68,12 +68,13 @@ public class InfoCastController {
 
     //有点问题：没有跳转到具体的id那一项*****************************************
     @RequestMapping("info_find")
-    public String ff(int id,Model model){
+    public String info_find(int id,Model model){
         //三种方法请求作用域
         //HttpServletRequest request, Model model, ModelAndView modelAndView
         infocast theInfo = infoCastService.infoFindById(id);
         model.addAttribute("theInfo",theInfo);
         log.info(infoCastService.infoFindById(id).getTitle());
+        log.info("This is the info:[{}]",infoCastService.infoFindById(id).getInfo());
         return "infoFindById"; //return "redirect:/findAll
     }
 

@@ -22,6 +22,6 @@ public interface InfoCastDao {
     //3.删除公告
     void infoDelete(int id);
 
-    //4.查看公安共
+    //4.查看公告
     infocast infoFindById(int id);
 }
