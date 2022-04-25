@@ -117,15 +117,18 @@ public class UserController {
     @RequestMapping("login2")
     public String login2(Manager manager, HttpServletRequest request){
         log.info("I am Here!!!");
-        manager.setId(1);
-        manager.setMail("1");
-        manager.setPassWord("123456");
-        manager.setTelNumber("15340416216");
-
-        int userId = manager.getId();
-        if(manager.getPassWord().equals(managerService.findById(userId).getPassWord())){
-            Manager thisManager = managerService.findByTelNumber(manager.getTelNumber());
-            request.getSession().setAttribute("thisManager", thisManager);
+//        manager.setId(1);
+//        manager.setMail("1");
+//        manager.setPassWord("123456");
+//        manager.setTelNumber("15340416216");
+        String managerTelNumber = request.getParameter("telNumber");
+        String managerPassWord = request.getParameter("passWord");
+        log.info("This is the thisUser telNumber:[{}]",managerTelNumber);
+        log.info("This is the thisUser passWord:[{}]",managerPassWord);
+        Manager thisManager = managerService.findByTelNumber(managerTelNumber);
+        if(thisManager.getPassWord().equals(managerPassWord)){
+            log.info(thisManager.getPassWord());
+            request.getSession().setAttribute("thisUser", thisManager);
             log.info(thisManager.getTelNumber());
             return "backSystem_m";
         }else{

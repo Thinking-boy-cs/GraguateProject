@@ -31,7 +31,7 @@
             <h1>
                 管理员登录
             </h1>
-            <form action="/study_system/regist.html" method="post">
+            <form action="/study_system/user/login2" method="post" id="login_mForm">
                 <table cellpadding="0" cellspacing="0" border="0"
                        class="form_table">
                     <tr>
@@ -39,7 +39,7 @@
                             电话号码:
                         </td>
                         <td valign="middle" align="left">
-                            <input type="text" class="inputgri" v-model="user.telNumber"  name="name"/>
+                            <input type="text" class="inputgri"   name="telNumber" id="telNumber"/>
                         </td>
                     </tr>
                     <tr>
@@ -47,12 +47,13 @@
                             密码:
                         </td>
                         <td valign="middle" align="left">
-                            <input type="password" class="inputgri" v-model="user.passWord" name="pwd"/>
+                            <input type="password" class="inputgri"  name="passWord" id="passWord"/>
                         </td>
                     </tr>
+                    <span id="msg" style="font-size: 20px;color: #ff0000"></span>
                 </table>
                 <p>
-                    <input type="button" value="登录" onclick="login()">
+                    <button type="button" id="login2">登录</button>
                     &nbsp;&nbsp;
                     <a href="/study_system/regist.html">注册</a>
                 </p>
@@ -95,18 +96,54 @@
 <!--    });-->
 <!--</script>-->
 
-<script>
-    function login(){
-        var user = /^.{6,}$/;
-        var pass = /^.{6,}$/
-        var userName = document.getElementsByClassName("inputgri")[0];
-        var passWord = document.getElementsByClassName("inputgri")[1];
-        if (user.test(userName.value) && pass.test(passWord.value)){
-            alert("登录成功！")
-            //location.href="http://localhost:9999/study_system/backSystem/backControl";
-            location.href="http://localhost:9999/study_system/user/login2";
-        } else {
-            alert("账号或密码格式错误")
+<!--<script>-->
+<!--    function login(){-->
+<!--        var user = /^.{6,}$/;-->
+<!--        var pass = /^.{6,}$/-->
+<!--        var userName = document.getElementsByClassName("inputgri")[0];-->
+<!--        var passWord = document.getElementsByClassName("inputgri")[1];-->
+<!--        if (user.test(userName.value) && pass.test(passWord.value)){-->
+<!--            alert("登录成功！")-->
+<!--            //location.href="http://localhost:9999/study_system/backSystem/backControl";-->
+<!--            location.href="http://localhost:9999/study_system/user/login2";-->
+<!--        } else {-->
+<!--            alert("账号或密码格式错误")-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+
+
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript" >
+
+
+    $("#login2").click(function () {
+
+        var telNumber = $("#telNumber").val();
+        var passWord = $("#passWord").val();
+
+        if(isEmpty(telNumber)){
+            $("#msg").html("用户手机号不可为空！");
+            return;
         }
+
+
+        if(isEmpty(passWord)){
+            $("#msg").html("用户密码不可为空！");
+            return;
+        }
+
+
+        $("#login_mForm").submit();
+
+
+    })
+
+    function isEmpty(str) {
+        if(str==null||str.trim()==""){
+            return true;
+        }
+        return false;
     }
+
 </script>
