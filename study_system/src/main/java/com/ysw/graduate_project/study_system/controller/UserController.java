@@ -90,17 +90,21 @@ public class UserController {
 
     //大学生登录
     @RequestMapping("login")
-    public String login(User user, HttpServletRequest request){
+    public String login(HttpServletRequest request){
         log.info("I am Here!!!");
-        user.setId(1);
-        user.setMail("1");
-        user.setPassWord("123456");
-        user.setTelNumber("18390071892");
+//        user.setId(1);
+//        user.setMail("1");
+//        user.setPassWord("123456");
+//        user.setTelNumber("18390071892");
+        String userTelNumber = request.getParameter("telNumber");
+        String userPassWord = request.getParameter("passWord");
+        log.info("This is the thisUser telNumber:[{}]",userTelNumber);
+        log.info("This is the thisUser passWord:[{}]",userPassWord);
 
-        int userId = user.getId();
-        if(user.getPassWord().equals(userService.findById(userId).getPassWord())){
-            log.info(userService.findById(userId).getPassWord());
-            User thisUser = userService.findByTelNumber(user.getTelNumber());
+        User thisUser = userService.findByTelNumber(userTelNumber);
+
+        if(thisUser.getPassWord().equals(userPassWord)){
+            log.info(thisUser.getPassWord());
             request.getSession().setAttribute("thisUser", thisUser);
             log.info(thisUser.getTelNumber());
             return "backSystem";
