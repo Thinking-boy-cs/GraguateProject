@@ -32,5 +32,15 @@ public class DataController {
     public List<DataItem> showData(){
         return dataService.showDataItem();
     }
+
+    /**
+     * 统计各个学院的注册情况
+     * @return
+     */
+    @RequestMapping("showCollege")
+    public List<DataItem> showCollege(){
+        return dataService.showCollege();
+    }
+
 }
 

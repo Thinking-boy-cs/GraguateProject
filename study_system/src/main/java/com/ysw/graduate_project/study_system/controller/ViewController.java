@@ -27,6 +27,11 @@ public class ViewController {
         return "updateUser";
     }
 
+
+    /**
+     * 数据可视化
+     * @return
+     */
     @RequestMapping("showDataItem")
     public String showDataItem(){
         return "showData";

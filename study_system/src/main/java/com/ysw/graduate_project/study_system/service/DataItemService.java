@@ -10,4 +10,7 @@ import java.util.List;
  */
 public interface DataItemService {
     List<DataItem> showDataItem();
+
+    //1.统计各个学院的注册情况
+    List<DataItem> showCollege();
 }

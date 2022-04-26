@@ -25,6 +25,11 @@ public class DataItemServiceImpl implements DataItemService {
         return dataItemDao.showDataItem();
     }
 
+    @Override
+    public List<DataItem> showCollege() {
+        return dataItemDao.showCollege();
+    }
+
 
 //    public Map<String,Object> showDataItem(){
 //        //获得数据库数据

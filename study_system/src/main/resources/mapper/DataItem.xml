@@ -3,6 +3,43 @@
 
 <mapper namespace="com.ysw.graduate_project.study_system.dao.DataItemDao">
     <select id="showDataItem" resultType="DataItem">
-       select name,value from dataItem
+       select `name`,`value` from `user`
    </select>
+    <!--统计各个学院的注册情况-->
+    <select id="showCollege"  resultType="DataItem">
+    select `college` as countName, count(*) as countValue from `user` GROUP BY college;
+    </select>
+<!--    &lt;!&ndash;    统计公司男女人数情况&ndash;&gt;-->
+<!--    <select id="sex_userNumber" parameterType="String" resultType="StatisticsCount">-->
+<!--        select sex as countName, count(*) as countNumber-->
+<!--        from staff sf-->
+<!--        join company cc-->
+<!--        on cc.id=#{companyId} and sf.companyId=cc.id-->
+<!--        GROUP BY sex;-->
+<!--    </select>-->
+<!--    &lt;!&ndash;    统计员工的家乡&ndash;&gt;-->
+<!--    <select id="hometown_userNumber" parameterType="String" resultType="StatisticsCount">-->
+<!--        select homeTown as countName, count(*) as countNumber-->
+<!--        from staff sf-->
+<!--        join company cc-->
+<!--        on cc.id=#{companyId} and sf.companyId=cc.id-->
+<!--        GROUP BY homeTown;-->
+<!--    </select>-->
+<!--    &lt;!&ndash;    统计员工的薪资情况&ndash;&gt;-->
+<!--    <select id="salary_userNumber" parameterType="String" resultType="Float">-->
+<!--        select salary-->
+<!--        from staff sf-->
+<!--        join company cc-->
+<!--        on cc.id=#{companyId} and sf.companyId=cc.id-->
+<!--        GROUP BY salary;-->
+<!--    </select>-->
+<!--    &lt;!&ndash;    统计员工的入职离职情况（某天）&ndash;&gt;-->
+<!--    <select id="status_userNumber" parameterType="String" resultType="StatisticsCount">-->
+<!--        select status as countName, count(*) as countNumber-->
+<!--        from staff sf-->
+<!--        join company cc-->
+<!--        on cc.id=#{param1} and (to_days(sf.statusTime) between to_days(#{param2}) and to_days(#{param3})) and sf.companyId=cc.id-->
+<!--        GROUP BY status-->
+<!--    </select>-->
+
 </mapper>

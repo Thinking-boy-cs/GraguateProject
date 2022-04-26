@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 public class DataItem {
 
-    private String name;
-    private Double value;
+    private String countName;
+    private Double countValue;
 
 }
