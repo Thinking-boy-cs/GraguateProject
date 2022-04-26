@@ -13,6 +13,7 @@ public class Manager {
     private Integer id;
     private String telNumber;
     private String passWord;
+    private String name;
     private String mail;
 
 }

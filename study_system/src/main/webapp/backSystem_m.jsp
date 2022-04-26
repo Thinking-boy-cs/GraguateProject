@@ -157,6 +157,9 @@
         <div class="bar">
             <a href="#"> 退出系统</a>
         </div>
+            <div class="bar">
+                <h1>${thisManager.name}</h1>
+            </div>
     </div>
 
 <%--        <div class="box_main">--%>

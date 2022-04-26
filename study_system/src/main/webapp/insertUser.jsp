@@ -24,9 +24,10 @@
 <form id="userForm">
     电话号码：<input type="text" name="telNumber" id="telNumber"/> <br>
     密码：<input type="text" name="passWord" id="passWord"/> <br>
-    邮箱：<input type="text" name="mail" id="mail"/> <br>
-    性别：<input type="text" name="sex" id="sex"/> <br>
-    年龄：<input type="text" name="age" id="age"/> <br>
+    姓名：<input type="text" name="name" id="name"/> <br>
+<%--    邮箱：<input type="text" name="mail" id="mail"/> <br>--%>
+<%--    性别：<input type="text" name="sex" id="sex"/> <br>--%>
+<%--    年龄：<input type="text" name="age" id="age"/> <br>--%>
     学号：<input type="text" name="idCard" id="idCard"/> <br>
     政治面貌：<input type="text" name="political" id="political"/> <br>
     学院：<input type="text" name="college" id="college"/> <br>

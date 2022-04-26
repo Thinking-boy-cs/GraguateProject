@@ -16,6 +16,7 @@
     id: <input type="text" name="id" readonly value="${requestScope.findUser.id}"> <br>
     电话号码: <input type="text" name="telNumber" readonly value="${requestScope.findUser.telNumber}"> <br>
     密码: <input type="text" name="passWord" readonly value="${requestScope.findUser.passWord}"> <br>
+    姓名: <input type="text" name="name"  value="${requestScope.findUser.name}"> <br>
     邮箱: <input type="text" name="mail"  value="${requestScope.findUser.mail}"> <br>
     性别: <input type="text" name="sex"  value="${requestScope.findUser.sex}"> <br>
     年龄: <input type="text" name="age"  value="${requestScope.findUser.age}"> <br>
@@ -45,6 +46,7 @@
         $("input[name='id']").val(data.id);
         $("input[name='telNumber']").val(data.telNumber);
         $("input[name='passWord']").val(data.passWord);
+        $("input[name='name']").val(data.name);
         $("input[name='mail']").val(data.mail);
         $("input[name='sex']").val(data.sex);
         $("input[name='age']").val(data.age);

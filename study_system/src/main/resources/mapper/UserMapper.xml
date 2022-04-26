@@ -15,7 +15,7 @@
     </select>
 
     <insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
-        insert into user values(#{id}, #{telNumber}, #{passWord},#{mail},#{sex},#{age},#{idCard},#{political},#{college},#{degree})
+        insert into user values(#{id}, #{telNumber}, #{passWord},#{name},#{mail},#{sex},#{age},#{idCard},#{political},#{college},#{degree})
     </insert>
 
     <delete id="deleteUser" parameterType="Integer">
@@ -23,11 +23,11 @@
     </delete>
 
     <update id="updateUser" parameterType="User">
-        update user set mail=#{mail},sex=#{sex},age=#{age} where id=#{id}
+        update user set `name`=#{name},mail=#{mail},sex=#{sex},age=#{age} where id=#{id}
     </update>
 
     <update id="updateUser_m" parameterType="User">
-        update user set mail=#{mail},sex=#{sex},age=#{age},idCard=#{idCard},political=#{political},college=#{college},degree=#{degree} where id=#{id}
+        update user set `name`=#{name},mail=#{mail},sex=#{sex},age=#{age},idCard=#{idCard},political=#{political},college=#{college},degree=#{degree} where id=#{id}
     </update>
 
     <select id="findById" parameterType="Integer" resultType="User">

@@ -55,10 +55,18 @@ public class UserController {
         User user = new User();
         String telNumber = request.getParameter("telNumber");
         String passWord = request.getParameter("passWord");
-        String mail = request.getParameter("mail");
+        String name = request.getParameter("name");
+        String idCard = request.getParameter("idCard");
+        String political = request.getParameter("political");
+        String college = request.getParameter("college");
+        String degree = request.getParameter("degree");
         user.setTelNumber(telNumber);
         user.setPassWord(passWord);
-        user.setMail(mail);
+        user.setName(name);
+        user.setIdCard(idCard);
+        user.setPolitical(political);
+        user.setCollege(college);
+        user.setDegree(degree);
         log.info("insert this user:[{}]",user.getTelNumber());
         userService.insertUser(user);
         return "redirect:/user/find";
@@ -145,7 +153,7 @@ public class UserController {
         Manager thisManager = managerService.findByTelNumber(managerTelNumber);
         if(thisManager.getPassWord().equals(managerPassWord)){
             log.info(thisManager.getPassWord());
-            request.getSession().setAttribute("thisUser", thisManager);
+            request.getSession().setAttribute("thisManager", thisManager);
             log.info(thisManager.getTelNumber());
             return "backSystem_m";
         }else{

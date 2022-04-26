@@ -24,7 +24,7 @@
 
 <div id="userDiv" >
     <div id="userData" style="display: none">
-        <span>#ID#</span> <span>#TELNUMBER#</span><span>#MAIL#</span><span>#SEX#</span><span>#AGE#</span>
+        <span>#ID#</span> <span>#TELNUMBER#</span><span>#NAME#</span><span>#MAIL#</span><span>#SEX#</span><span>#AGE#</span>
         <span>#IDCARD#</span><span>#POLITICAL#</span><span>#COLLEGE#</span><span>#DEGREE#</span>
         <a href="${pageContext.request.contextPath}/user/findById?id=#ID2#">修改</a>
         <a href="${pageContext.request.contextPath}/user/delete?id=#ID3#">删除</a>
@@ -49,6 +49,7 @@
                             .replace("#ID3#",data[i].id)
                             .replace("#TELNUMBER#", data[i].telNumber)
                             .replace("#MAIL#", data[i].mail)
+                            .replace("#NAME#", data[i].name)
                             .replace("#SEX#", data[i].sex)
                             .replace("#AGE#", data[i].age)
                             .replace("#IDCARD#", data[i].idCard)
