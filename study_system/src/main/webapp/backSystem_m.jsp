@@ -108,7 +108,7 @@
 <%--            <a href="http://localhost:9999/study_system/view/showDataItem"> 年级列表</a>--%>
 <%--        </div>--%>
         <div class="bar">
-            <a href="#"> 本人信息</a>
+            <a href="http://localhost:9999/study_system/user/thisUser_m"> 本人信息</a>
         </div>
         <div class="bar">
             <a href="#"> 查看用户</a>

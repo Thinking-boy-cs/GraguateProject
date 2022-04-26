@@ -187,4 +187,13 @@ public class UserController {
     }
 
 
+    /**
+     * 管理员查看自己的信息
+     */
+    @RequestMapping("thisUser_m")
+    public String thisManager(){
+
+        return "thisUser_m";
+    }
+
 }
