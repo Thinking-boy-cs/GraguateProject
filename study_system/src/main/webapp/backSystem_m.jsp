@@ -118,7 +118,7 @@
             <a href="http://localhost:9999/study_system/view/find"> 管理用户</a>
         </div>
         <div class="bar">
-            <a href="#"> 可视化</a>
+            <a href="http://localhost:9999/study_system/view/showDataItem"> 可视化</a>
         </div>
         <div class="bar">
             <a href="http://localhost:9999/study_system/view/infoFind"> 发布公告</a>

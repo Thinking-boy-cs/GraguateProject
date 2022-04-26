@@ -13,4 +13,10 @@ public interface DataItemService {
 
     //1.统计各个学院的注册情况
     List<DataItem> showCollege();
+
+    //2.统计男女的注册情况
+    List<DataItem> showSex();
+
+    //3.统计不同学历的注册情况
+    List<DataItem> showDegree();
 }

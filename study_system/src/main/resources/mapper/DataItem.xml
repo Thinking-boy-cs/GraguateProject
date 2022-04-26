@@ -9,6 +9,16 @@
     <select id="showCollege"  resultType="DataItem">
     select `college` as countName, count(*) as countValue from `user` GROUP BY college;
     </select>
+
+    <!--统计各个学院的注册情况-->
+    <select id="showSex"  resultType="DataItem">
+    select `sex` as countName, count(*) as countValue from `user` GROUP BY sex;
+    </select>
+
+    <!--统计各个学历的注册情况-->
+    <select id="showDegree"  resultType="DataItem">
+    select degree as countName, count(*) as countValue from `user` GROUP BY degree;
+    </select>
 <!--    &lt;!&ndash;    统计公司男女人数情况&ndash;&gt;-->
 <!--    <select id="sex_userNumber" parameterType="String" resultType="StatisticsCount">-->
 <!--        select sex as countName, count(*) as countNumber-->

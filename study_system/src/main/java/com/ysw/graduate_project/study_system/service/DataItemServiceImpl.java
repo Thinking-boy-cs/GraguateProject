@@ -30,6 +30,16 @@ public class DataItemServiceImpl implements DataItemService {
         return dataItemDao.showCollege();
     }
 
+    @Override
+    public List<DataItem> showSex() {
+        return dataItemDao.showSex();
+    }
+
+    @Override
+    public List<DataItem> showDegree() {
+        return dataItemDao.showDegree();
+    }
+
 
 //    public Map<String,Object> showDataItem(){
 //        //获得数据库数据

@@ -42,5 +42,24 @@ public class DataController {
         return dataService.showCollege();
     }
 
+
+    /**
+     * 统计男女生使用情况
+     * @return
+     */
+    @RequestMapping("showSex")
+    public List<DataItem> showSex(){
+        return dataService.showSex();
+    }
+
+    /**
+     * 统计不同学历的使用情况
+     * @return
+     */
+    @RequestMapping("showDegree")
+    public List<DataItem> showDegree(){
+        return dataService.showDegree();
+    }
+
 }
 
