@@ -84,6 +84,13 @@ public class UserController {
         return "redirect:/user/find";
     }
 
+    @RequestMapping("updateUser_u")
+    public String updateUser_u(User user,HttpServletRequest request){
+        userService.updateUser(user);
+        request.getSession().setAttribute("thisUser",user);
+        return "redirect:/user/thisUser_u";
+    }
+
     @RequestMapping("updateUser_m")
     public String updateUser_m(User user){
         userService.updateUser_m(user);
@@ -96,6 +103,13 @@ public class UserController {
         User user = userService.findById(id);
         model.addAttribute("findUser",user);
         return "updateUser_m";
+    }
+
+    @RequestMapping("findById_u")
+    public String findById_u(Integer id,Model model){
+        User user = userService.findById(id);
+        model.addAttribute("findUser",user);
+        return "updateUser";
     }
 
     @RequestMapping("findById2")
@@ -162,5 +176,15 @@ public class UserController {
     }
 
     //
+
+    /**
+     * 用户查看自己的信息
+     */
+    @RequestMapping("thisUser_u")
+    public String thisUser_u(){
+
+        return "thisUser_u";
+    }
+
 
 }

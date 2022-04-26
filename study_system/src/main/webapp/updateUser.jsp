@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<form action="${pageContext.request.contextPath}/user/updateUser" method="post">
+<form action="${pageContext.request.contextPath}/user/updateUser_u" method="post">
     id: <input type="text" name="id" readonly value="${requestScope.findUser.id}"> <br>
     电话号码: <input type="text" name="telNumber" readonly value="${requestScope.findUser.telNumber}"> <br>
     密码: <input type="text" name="passWord" readonly value="${requestScope.findUser.passWord}"> <br>
