@@ -17,64 +17,14 @@
 <div id="a_sex" style="width: 600px;height: 600px;"></div>
 <div id="a_college" style="width: 600px;height: 600px;"></div>
 <div id="a_degree" style="width: 600px;height: 600px;"></div>
+<div id="a_sign_months" style="width: 600px;height: 600px;"></div>
+<input type="text" id="listen" >
+
 <script src="/study_system/js/vue.js"></script>
 <script src="/study_system/js/axios.min.js"></script>
 <script src="/study_system/js/echarts.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
-    <%--$.ajax({--%>
-    <%--    type:'get',--%>
-    <%--    url:'${pageContext.request.contextPath}/user/findUserAll',--%>
-    <%--    data:'',--%>
-    <%--    dataType:'json',--%>
-    <%--    success: function(data) {--%>
-    <%--        console.log("成功===",data);--%>
-    <%--        if(data.length>0){--%>
-    <%--            for(var i = 0,l=data.length;i<l;i++){--%>
-    <%--                $("#userDiv").append($("#userData").html()--%>
-    <%--                    .replace("#ID#",data[i].id)--%>
-    <%--                    .replace("#NAME#", data[i].name)--%>
-    <%--                    .replace("#AGE#", data[i].age)--%>
-    <%--                    .replace("#SALARY#", data[i].salary)--%>
-    <%--                    .replace("#ID#", data[i].id)--%>
-    <%--                    .replace("#ID#", data[i].id)--%>
-    <%--                )--%>
-    <%--            }--%>
-    <%--        }--%>
-    <%--    },--%>
-    <%--    error: function(data){--%>
-    <%--        console.log("请求失败！！！");--%>
-    <%--    }--%>
-    <%--})--%>
-
-    //2.Artificial show
-//    var myChart = echarts.init(document.getElementById("main"));
-//    var option = {
-//        title:{
-//            text:'echarts入门示例'
-//        },
-//        tooltip:{
-//
-//        },
-//        legend:{
-//            data:['销量']
-//        },
-//        xAxis:{
-//            data:["裤子","鞋子","衣服","帽子"]
-//        },
-//        yAxis:{
-//
-//        },
-//        series:[
-//            {
-//                name:'销量',
-//                type:'bar',
-//                data:[123,232,342,454]
-//            },
-//        ]
-//    };
-//    myChart.setOption(option);
-
     /**
      * 统计各个学院的注册情况
      */
@@ -352,6 +302,103 @@
             myChart.hideLoading();
         }
     })
+
+
+    /**
+     * 统计某年各个月份的打卡情况
+     */
+    // var year = $("#listen").val();
+    // console.info(year);
+    var myChart_3 = echarts.init(document.getElementById("a_sign_months"));
+    myChart_3.showLoading();    //数据加载完之前先显示一段简单的loading动画
+    document.getElementById('listen').addEventListener("change", function (event) {
+        console.log('监听数据' + this.value);
+        var year = this.value;
+        var names_3=[];    //类别数组（实际用来盛放X轴坐标值）
+        var values_3=[];    //销量数组（实际用来盛放Y坐标值）
+        var items_3 = [];
+        console.info("输入的年份信息："+year);
+
+        $.ajax({
+            type : "post",
+            async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+            url : "${pageContext.request.contextPath}/data/showSignMonths?year="+year,    //请求发送到TestServlet处
+            data : {},
+            dataType : "json",        //返回数据形式为json
+            success : function(data_3) {
+                //请求成功时执行该函数内容，result即为服务器返回的json对象
+                var mylength = data_3.length;
+                if (data_3) {
+                    for(var i=0;i<mylength;i++){
+                        var obj=new Object();
+                        obj.name=data_3[i].countName;
+                        obj.value=data_3[i].countValue;
+                        items_3[i]=obj;
+                        names_3[i]=obj.name;
+                        values_3[i]=obj.value;
+                        // names.push(data[i].countName);
+                        // values.push(data[i].countValue);    //挨个取出类别并填入类别数组
+                        // items.push({countName:data[i].countName,countValue:data[i].countValue});
+                        console.log(names_3[i]+","+values_3[i]);
+                    }
+                    myChart_3.hideLoading();    //隐藏加载动画
+                    myChart_3.setOption({        //加载数据图表
+
+                        title: {
+                            text: '某年打卡情况',
+                            subtext: 'Real-time data',
+                            left: 'center'
+                        },
+
+                        legend: {
+                            orient: 'vertical',
+                            left: 'left',
+                            data:names_3
+                        },
+
+                        xAxis: {
+                            data: names_3
+                        },
+                        yAxis: {
+                            type:"value"
+                        },
+                        tooltip: {
+                            trigger: 'item',
+                            formatter: '{a} <br/>{b} : {c}人'
+                        },
+                        series: [
+                            {
+                                // 根据名字对应到相应的系列
+                                name: "人数",
+                                type: 'line',
+                                radius: '50%',
+                                data: values_3,
+                                smooth: true
+                            }
+                        ],
+
+                        emphasis: {
+                            itemStyle: {
+                                shadowBlur: 20,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    });
+
+                }
+
+            },
+            error : function(errorMsg) {
+                //请求失败时执行该函数
+                alert("图表请求数据失败!");
+                myChart.hideLoading();
+            }
+        })
+
+    })
+
+
 
     //myChart.setOption(option);
 

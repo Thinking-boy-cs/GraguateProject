@@ -24,4 +24,13 @@ public interface DataItemDao {
 
     //3.统计不同学历的注册情况
     List<DataItem> showDegree();
+
+    //4.统计不同年份的打卡情况
+    List<DataItem> showSignYears();
+
+    //5.统计某一年不同月份的打卡情况
+    List<DataItem> showSignMonths(String year);
+
+    //6.统计某一年某一月不同日期的打卡情况
+    List<DataItem> showSignDays(String year,String month);
 }

@@ -2,6 +2,7 @@ package com.ysw.graduate_project.study_system.controller;
 
 import com.ysw.graduate_project.study_system.entity.DataItem;
 import com.ysw.graduate_project.study_system.service.DataItemService;
+import com.ysw.graduate_project.study_system.utils.dateAbstractUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -61,5 +62,19 @@ public class DataController {
         return dataService.showDegree();
     }
 
+    dateAbstractUtil dateAbstractUtil = new dateAbstractUtil();
+
+    @RequestMapping("showSignYears")
+    public List<DataItem> showSignYears(){
+        return dataService.showDegree();
+    }
+
+    @RequestMapping("showSignMonths")
+    public List<DataItem> showSignMonths(int year){
+        year = year-2000;
+        String tmp = String.valueOf(year);
+        log.info("This the year:[{}]",tmp);
+        return dataService.showSignMonths(tmp);
+    }
 }
 
