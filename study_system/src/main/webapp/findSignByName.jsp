@@ -31,9 +31,6 @@
     </div>
 </div>
 <br>
-<form action="/study_system/sign/showSignByName_favor" method="post" id="signForm">
-    <input type="text" name="nameSign" id="nameSign" >
-    <button type="button" id="btn">搜索</button>
 </form>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -68,7 +65,7 @@
 <script type="text/javascript">
     $.ajax({
         type:'get',
-        url:'${pageContext.request.contextPath}/sign/showSign',
+        url:'${pageContext.request.contextPath}/sign/showSignByName',
         data:'',
         dataType:'json',
         success: function(data) {

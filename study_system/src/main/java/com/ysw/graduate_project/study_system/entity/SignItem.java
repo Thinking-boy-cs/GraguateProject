@@ -15,6 +15,7 @@ public class SignItem {
 
     private Integer id;
     private String telNumber;
+    private String name;
     private Double temperature;
     private String location;
     private Date time;

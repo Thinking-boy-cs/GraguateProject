@@ -21,8 +21,11 @@ public interface SignItemDao {
     List<SignItem> findSignByTime(@Param("startTime") Date startTime, @Param("endTime") Date endTime);
 
 
-    //3.搜索某人打卡记录
+    //3.搜索某人打卡记录（按电话）
     List<SignItem> showSignItemByTelNumber(String telNumber);
+
+    //4.搜索某人打卡记录（按姓名）
+    List<SignItem> showSignItemByName(String name);
 
 
 }

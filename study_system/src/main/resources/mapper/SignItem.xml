@@ -3,11 +3,11 @@
 
 <mapper namespace="com.ysw.graduate_project.study_system.dao.SignItemDao">
     <select id="showSignItem" resultType="SignItem">
-       select id,telNumber,temperature,location,`time` from SignItem
+       select * from SignItem
    </select>
 
     <select id="showSignItemByTelNumber" resultType="SignItem">
-        select id,telNumber,temperature,location,`time` from SignItem where telNumber=#{telNumber}
+        select * from SignItem where telNumber=#{telNumber}
     </select>
 
 
@@ -17,6 +17,10 @@
         where `time` between #{startTime} and #{endTime}
     </select>
 
+
+    <select id="showSignItemByName" resultType="SignItem">
+        select * from SignItem where `name`=#{name}
+    </select>
 
 </mapper>
 

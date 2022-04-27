@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import java.net.http.HttpRequest;
 import java.util.Date;
 import java.util.List;
 
@@ -42,9 +45,24 @@ public class SignController {
 
     @RequestMapping("showSignByTelNumber")
     @ResponseBody
-    public List<SignItem> showSignById(String telNumber){
+    public List<SignItem> showSignByTelNumber(String telNumber){
         log.info("This is telNumber:{}",telNumber);
         return signItemService.showSignItemByTelNumber(telNumber);
+    }
+
+    @RequestMapping("showSignByName")
+    @ResponseBody
+    public List<SignItem> showSignByName(HttpServletRequest request){
+        String nameSign = (String) request.getSession().getAttribute("nameSign");
+        log.info("This is name:{}",nameSign);
+        return signItemService.showSignItemByName(nameSign);
+    }
+
+    @RequestMapping("showSignByName_favor")
+    public String showSignByName_favor(HttpServletRequest request){
+        String nameSign = request.getParameter("nameSign");
+        request.getSession().setAttribute("nameSign",nameSign);
+        return "findSignByName";
     }
 
     @RequestMapping("showSignByTime")
