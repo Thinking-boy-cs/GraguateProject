@@ -24,4 +24,9 @@ public interface SignItemService {
     //4.搜索某人打卡记录（按姓名）
     List<SignItem> showSignItemByName(String name);
 
+    //5.打卡
+    void checkSign(SignItem signItem);
+
+    //6.查看自己的打卡记录
+    List<SignItem> showSelf(String telNumber);
 }

@@ -22,5 +22,13 @@
         select * from SignItem where `name`=#{name}
     </select>
 
+    <insert id="checkSign" parameterType="SignItem" useGeneratedKeys="true" keyProperty="id">
+        insert into signitem values(#{id}, #{telNumber},#{name},#{temperature},#{location},#{time})
+    </insert>
+
+    <select id="showSelf" parameterType="String" resultType="SignItem">
+        select * from SignItem where `telNumber`=#{telNumber}
+    </select>
+
 </mapper>
 

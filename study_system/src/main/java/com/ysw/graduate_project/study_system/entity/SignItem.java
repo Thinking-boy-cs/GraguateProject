@@ -2,7 +2,7 @@ package com.ysw.graduate_project.study_system.entity;
 
 import lombok.Data;
 
-import java.sql.Date;
+import java.util.Date;
 
 
 /**
@@ -16,7 +16,7 @@ public class SignItem {
     private Integer id;
     private String telNumber;
     private String name;
-    private Double temperature;
+    private String temperature;
     private String location;
     private Date time;
 

@@ -5,6 +5,7 @@ import com.ysw.graduate_project.study_system.entity.SignItem;
 import com.ysw.graduate_project.study_system.entity.User;
 import com.ysw.graduate_project.study_system.service.DataItemService;
 import com.ysw.graduate_project.study_system.service.SignItemService;
+import com.ysw.graduate_project.study_system.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,6 +36,9 @@ public class SignController {
 
     @Autowired
     private SignItemService signItemService;
+
+    @Autowired
+    private UserService userService;
 
 
     @RequestMapping("showSign")
@@ -70,6 +74,31 @@ public class SignController {
     public List<SignItem> showSignById(Date startTime, Date endTime){
         return signItemService.findSignByTime(startTime,endTime);
     }
+
+    @RequestMapping("checkSign")
+    public String checkSign(HttpServletRequest request){
+        String temperature_sign = request.getParameter("temperature_sign");
+        String location_sign = request.getParameter("location_sign");
+        User thisUser = (User) request.getSession().getAttribute("thisUser");
+        log.info("打卡记录：体温--{}",temperature_sign);
+        log.info("打卡记录：地点--{}",location_sign);
+        SignItem signItem = new SignItem();
+        signItem.setLocation(location_sign);
+        signItem.setTemperature(temperature_sign);
+        signItem.setTelNumber(thisUser.getTelNumber());
+        signItem.setName(thisUser.getName());
+        signItem.setTime(new Date());
+        signItemService.checkSign(signItem);
+        return "signCalendar";
+    }
+
+    @RequestMapping("showSelf")
+    @ResponseBody
+    public List<SignItem> showSelf(String telNumber){
+        return signItemService.showSelf(telNumber);
+    }
+
+
 //
 //    @RequestMapping("findSignByTelNumber")
 //    public String findSignByTelNumber(String telNumber,Model model){

@@ -41,4 +41,15 @@ public class SignItemServiceImpl implements SignItemService{
     public List<SignItem> showSignItemByName(String name) {
         return signItemDao.showSignItemByName(name);
     }
+
+    @Override
+    public void checkSign(SignItem signItem) {
+        signItemDao.checkSign(signItem);
+    }
+
+    @Override
+    public List<SignItem> showSelf(String telNumber) {
+        return signItemDao.showSelf(telNumber);
+    }
+
 }

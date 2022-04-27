@@ -62,6 +62,16 @@ public class ViewController {
 //        return "findSignItemByTelNumber";
 //    }
 
+    @RequestMapping("checkSign")
+    public String checkSign(){
+        return "checkSign";
+    }
+
+    @RequestMapping("signCalendar")
+    public String signCalendar(){
+        return "signCalendar";
+    }
+
     //info Part
     @RequestMapping("infoAdd")
     public String infoAdd(){
