@@ -21,15 +21,26 @@
     </select>
 
 <!--    统计打卡情况（年月周日）-->
-
-<!--    月-->
+    <!--年-->
+    <select id="showSignYears"  resultType="DataItem">
+    select date_format(`time`,'%y') as countName, count(*) as countValue
+    from signitem
+    GROUP BY date_format(`time`,'%y');
+    </select>
+    <!--月-->
     <select id="showSignMonths"  parameterType="String" resultType="DataItem">
     select date_format(`time`,'%m') as countName, count(*) as countValue
     from signitem
     where date_format(`time`,'%y') = #{year}
     GROUP BY date_format(`time`,'%m');
     </select>
-
+    <!--日-->
+ <select id="showSignDays"  parameterType="String" resultType="DataItem">
+    select date_format(`time`,'%d') as countName, count(*) as countValue
+    from signitem
+    where date_format(`time`,'%y') = #{year} and date_format(`time`,'%m') = #{month}
+    GROUP BY date_format(`time`,'%d');
+    </select>
     <!--    &lt;!&ndash;    统计公司男女人数情况&ndash;&gt;-->
 <!--    <select id="sex_userNumber" parameterType="String" resultType="StatisticsCount">-->
 <!--        select sex as countName, count(*) as countNumber-->

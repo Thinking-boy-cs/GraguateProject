@@ -17,8 +17,10 @@
 <div id="a_sex" style="width: 600px;height: 600px;"></div>
 <div id="a_college" style="width: 600px;height: 600px;"></div>
 <div id="a_degree" style="width: 600px;height: 600px;"></div>
-<div id="a_sign_months" style="width: 600px;height: 600px;"></div>
-<input type="text" id="listen" >
+<div id="a_sign_months" style="width: 600px;height: 600px;"></div>年份：<input type="text" id="listen" ><br>
+<div id="a_sign_years" style="width: 600px;height: 600px;"></div>
+<div id="a_sign_days" style="width: 600px;height: 600px;"></div>年份：<input type="text" id="listen_1" ><br>月份：<input type="text" id="listen_2" ><br>
+
 
 <script src="/study_system/js/vue.js"></script>
 <script src="/study_system/js/axios.min.js"></script>
@@ -398,6 +400,207 @@
 
     })
 
+
+    /**
+     * 统计所有年份的打卡情况
+     */
+    var myChart_4 = echarts.init(document.getElementById("a_sign_years"));
+    myChart_4.showLoading();    //数据加载完之前先显示一段简单的loading动画
+
+    var names_4=[];    //类别数组（实际用来盛放X轴坐标值）
+    var values_4=[];    //销量数组（实际用来盛放Y坐标值）
+    var items_4 = [];
+
+    $.ajax({
+        type : "post",
+        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        url : "${pageContext.request.contextPath}/data/showSignYears",    //请求发送到TestServlet处
+        data : {},
+        dataType : "json",        //返回数据形式为json
+        success : function(data_4) {
+            //请求成功时执行该函数内容，result即为服务器返回的json对象
+            var mylength = data_4.length;
+            if (data_4) {
+                for(var i=0;i<mylength;i++){
+                    var obj=new Object();
+                    obj.name=data_4[i].countName;
+                    obj.value=data_4[i].countValue;
+                    items_4[i]=obj;
+                    names_4[i]=obj.name;
+                    values_4[i]=obj.value;
+                    // names.push(data[i].countName);
+                    // values.push(data[i].countValue);    //挨个取出类别并填入类别数组
+                    // items.push({countName:data[i].countName,countValue:data[i].countValue});
+                    // console.log(items[i].countName+","+items[i].countValue);
+                }
+                myChart_4.hideLoading();    //隐藏加载动画
+                myChart_4.setOption({        //加载数据图表
+
+                    title: {
+                        text: '各年打卡情况',
+                        subtext: 'Real-time data',
+                        left: 'center'
+                    },
+
+                    legend: {
+                        orient: 'vertical',
+                        left: 'left',
+                        data:names_4
+                    },
+
+                    xAxis: {
+                        data: names_4
+                    },
+                    yAxis: {
+                        type:"value"
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: '{a} <br/>20{b}年 : {c}人'
+                    },
+                    series: [
+                        {
+                            // 根据名字对应到相应的系列
+                            name: "人数",
+                            type: 'line',
+                            radius: '50%',
+                            itemStyle : {
+                                normal : {
+                                    color:'rgba(226,174,56,0.84)',
+                                    lineStyle:{
+                                        color:'#c46d21'
+                                    }
+                                }
+                            },
+                            data: values_4,
+                            smooth: true
+                        }
+                    ],
+
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 20,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                });
+
+            }
+
+        },
+        error : function(errorMsg) {
+            //请求失败时执行该函数
+            alert("图表请求数据失败!");
+            myChart.hideLoading();
+        }
+    })
+
+
+    /**
+     * 统计某年某个月的打卡情况
+     */
+    var myChart_5 = echarts.init(document.getElementById("a_sign_days"));
+    myChart_5.showLoading();    //数据加载完之前先显示一段简单的loading动画
+    document.getElementById('listen_1').addEventListener("change", function (event1) {
+        console.log('监听数据' + this.value);
+        var year_s = this.value;
+        document.getElementById('listen_2').addEventListener("change", function (event2) {
+        console.log('监听数据' + this.value);
+        var month_s = this.value;
+        var names_5=[];    //类别数组（实际用来盛放X轴坐标值）
+        var values_5=[];    //销量数组（实际用来盛放Y坐标值）
+        var items_5 = [];
+        console.info("输入的年份信息："+year_s);
+        console.info("输入的月份信息："+month_s);
+
+        $.ajax({
+            type : "post",
+            async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+            url : "${pageContext.request.contextPath}/data/showSignDays?year="+year_s+"&month="+month_s,    //请求发送到TestServlet处
+            data : {},
+            dataType : "json",        //返回数据形式为json
+            success : function(data_5) {
+                //请求成功时执行该函数内容，result即为服务器返回的json对象
+                var mylength = data_5.length;
+                if (data_5) {
+                    for(var i=0;i<mylength;i++){
+                        var obj=new Object();
+                        obj.name=data_5[i].countName;
+                        obj.value=data_5[i].countValue;
+                        items_5[i]=obj;
+                        names_5[i]=obj.name;
+                        values_5[i]=obj.value;
+                        // names.push(data[i].countName);
+                        // values.push(data[i].countValue);    //挨个取出类别并填入类别数组
+                        // items.push({countName:data[i].countName,countValue:data[i].countValue});
+                        console.log(names_5[i]+","+values_5[i]);
+                    }
+                    myChart_5.hideLoading();    //隐藏加载动画
+                    myChart_5.setOption({        //加载数据图表
+
+                        title: {
+                            text: '某年打卡情况',
+                            subtext: 'Real-time data',
+                            left: 'center'
+                        },
+
+                        legend: {
+                            orient: 'vertical',
+                            left: 'left',
+                            data:names_5
+                        },
+
+                        xAxis: {
+                            data: names_5
+                        },
+                        yAxis: {
+                            type:"value"
+                        },
+                        tooltip: {
+                            trigger: 'item',
+                            formatter: '{a} <br/>{b} : {c}人'
+                        },
+                        series: [
+                            {
+                                // 根据名字对应到相应的系列
+                                name: "人数",
+                                type: 'line',
+                                radius: '50%',
+                                itemStyle : {
+                                    normal : {
+                                        color:'rgba(157,42,163,0.84)',
+                                        lineStyle:{
+                                            color:'#6f27a3'
+                                        }
+                                    }
+                                },
+                                data: values_5,
+                                smooth: true
+                            }
+                        ],
+
+                        emphasis: {
+                            itemStyle: {
+                                shadowBlur: 20,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    });
+
+                }
+
+            },
+            error : function(errorMsg) {
+                //请求失败时执行该函数
+                alert("图表请求数据失败!");
+                myChart.hideLoading();
+            }
+        })
+
+    })
+    })
 
 
     //myChart.setOption(option);

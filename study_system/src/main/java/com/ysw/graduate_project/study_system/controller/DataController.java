@@ -66,7 +66,7 @@ public class DataController {
 
     @RequestMapping("showSignYears")
     public List<DataItem> showSignYears(){
-        return dataService.showDegree();
+        return dataService.showSignYears();
     }
 
     @RequestMapping("showSignMonths")
@@ -75,6 +75,16 @@ public class DataController {
         String tmp = String.valueOf(year);
         log.info("This the year:[{}]",tmp);
         return dataService.showSignMonths(tmp);
+    }
+
+    @RequestMapping("showSignDays")
+    public List<DataItem> showSignDays(int year,int month){
+        year = year-2000;
+        String tmp1 = String.valueOf(year);
+        String tmp2 = String.valueOf(month);
+        log.info("This the year:[{}]",tmp1);
+        log.info("This the month:[{}]",tmp2);
+        return dataService.showSignDays(tmp1,"0"+tmp2);
     }
 }
 
