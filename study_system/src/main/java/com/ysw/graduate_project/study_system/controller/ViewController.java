@@ -96,6 +96,15 @@ public class ViewController {
     }
 
 
+    /**
+     * 推荐系统
+     * @return
+     */
+    @RequestMapping("recommendSystem")
+    public String recommendSystem(){
+        return "recommend";
+    }
+
 }
 
 

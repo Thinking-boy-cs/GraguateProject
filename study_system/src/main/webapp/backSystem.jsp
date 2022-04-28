@@ -124,7 +124,7 @@
             <a href="http://localhost:9999/study_system/view/signCalendar"> 打卡</a>
         </div>
         <div class="bar">
-            <a href="#"> 推荐系统</a>
+            <a href="http://localhost:9999/study_system/view/recommendSystem"> 推荐系统</a>
         </div>
 
         <div class="bar">
