@@ -10,6 +10,8 @@ import java.util.List;
  */
 public interface RecommendService {
 
+    void recommendUpdate(String name);
+
     //1.基于统计的推荐
     List<Upload> recommendCount(String telNumber);
 

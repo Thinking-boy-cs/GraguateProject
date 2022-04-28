@@ -23,6 +23,11 @@ public class RecommendServiceImpl implements RecommendService{
     private RecommendDao recommendDao;
 
     @Override
+    public void recommendUpdate(String name) {
+        recommendDao.recommendUpdate(name);
+    }
+
+    @Override
     public List<Upload> recommendCount(String telNumber) {
         return recommendDao.recommendCount(telNumber);
     }

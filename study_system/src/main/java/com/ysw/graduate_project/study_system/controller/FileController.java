@@ -4,6 +4,7 @@ import com.ysw.graduate_project.study_system.entity.Upload;
 import com.ysw.graduate_project.study_system.entity.User;
 import com.ysw.graduate_project.study_system.entity.infocast;
 import com.ysw.graduate_project.study_system.service.InfoCastService;
+import com.ysw.graduate_project.study_system.service.RecommendService;
 import com.ysw.graduate_project.study_system.service.uploadService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +50,9 @@ public class FileController {
     @Autowired
     private uploadService uploadService;
 
+    @Autowired
+    private RecommendService recommendService;
+
 
     //上传文件
     @PostMapping("/upload")
@@ -93,7 +97,8 @@ public class FileController {
         response.setContentType("application/octet-stream");
         response.addHeader("Content-Disposition","attachment;filename=" + URLEncoder.encode(fileName,"UTF-8"));
 
-        uploadService.uploadUpdate(fileName);
+        //uploadService.uploadUpdate(fileName);
+        recommendService.recommendUpdate(fileName);
 
         final WritableByteChannel writableByteChannel = Channels.newChannel(response.getOutputStream());
         final FileChannel fileChannel = new FileInputStream(Paths.get(saveFilePath + File.separator +fileName).toFile()).getChannel();

@@ -13,6 +13,8 @@ import java.util.List;
 @Mapper
 public interface RecommendDao {
 
+    void recommendUpdate(String name);
+
     //1.基于统计的推荐
     List<Upload> recommendCount(String telNumber);
 
