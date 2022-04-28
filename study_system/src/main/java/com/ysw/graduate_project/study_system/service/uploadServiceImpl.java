@@ -28,4 +28,14 @@ public class uploadServiceImpl implements uploadService{
     public void uploadAdd(Upload upload) {
         uploadDao.uploadAdd(upload);
     }
+
+    @Override
+    public Upload findUploadByName(String name) {
+        return uploadDao.findUploadByName(name);
+    }
+
+    @Override
+    public void uploadUpdate(String name) {
+        uploadDao.uploadUpdate(name);
+    }
 }

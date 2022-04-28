@@ -12,19 +12,11 @@
 </head>
 <body>
 
-<%--&lt;%&ndash;精确作用域查找&ndash;%&gt;--%>
-<%--<c:forEach items="${requestScope.userList}" var="user">--%>
-<%--    ID: ${user.id} Name: ${user.name} Age: ${user.age} Salary: ${user.salary}--%>
-<%--    <a href="${pageContext.request.contextPath}/user/findById?id=${user.id}">修改</a>--%>
-<%--    <a href="${pageContext.request.contextPath}/user/delete?id=${user.id}">删除</a>--%>
-<%--    <br>--%>
-<%--</c:forEach>--%>
-<%--<a href="${pageContext.request.contextPath}/insertUser.jsp">添加</a>--%>
 
 
 <div id="infoDiv" >
     <div id="infoData" style="display: none">
-        <span>#ID#</span> <span>#NAME#</span><span>#TIME#</span>
+        <span>#ID#</span> <span>#NAME#</span><span>#USERNAME#</span><span>#TYPE#</span><span>#TIME#</span>
         <a href="${pageContext.request.contextPath}/file/#NAME2#">下载</a>
         <br>
     </div>
@@ -47,6 +39,8 @@
                             .replace("#NAME#", data[i].name)
                             .replace("#NAME2#", data[i].name)
                             .replace("#TIME#", data[i].time)
+                            .replace("#USERNAME#", data[i].userName)
+                            .replace("#TYPE#", data[i].type)
                     )
                 }
             }

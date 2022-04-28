@@ -13,6 +13,9 @@ public class Upload {
 
     int id;
     String name;
+    String userName;
+    String type;
     Date time;
+    int count;
 
 }

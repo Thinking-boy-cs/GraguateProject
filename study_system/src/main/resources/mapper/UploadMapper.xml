@@ -7,8 +7,16 @@
    </select>
 
     <insert id="uploadAdd" parameterType="Upload" useGeneratedKeys="true" keyProperty="id">
-        insert into upload values(#{id},#{name},#{time})
+        insert into upload values(#{id},#{name},#{userName},#{type},#{time},#{count})
     </insert>
+
+    <update id="uploadUpdate" parameterType="String">
+        update upload set `count`=`count`+1 where `name`=#{name}
+    </update>
+
+    <select id="findUploadByName" parameterType="String" resultType="Upload">
+        select * from upload where `name`=#{name}
+    </select>
 
 <!--    <delete id="infoDelete" parameterType="Integer">-->
 <!--        delete from infocast where id=#{id}-->

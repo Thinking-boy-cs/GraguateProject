@@ -1,6 +1,7 @@
 package com.ysw.graduate_project.study_system.controller;
 
 import com.ysw.graduate_project.study_system.entity.Upload;
+import com.ysw.graduate_project.study_system.entity.User;
 import com.ysw.graduate_project.study_system.entity.infocast;
 import com.ysw.graduate_project.study_system.service.InfoCastService;
 import com.ysw.graduate_project.study_system.service.uploadService;
@@ -51,9 +52,12 @@ public class FileController {
 
     //上传文件
     @PostMapping("/upload")
-    public String upload(MultipartFile file) throws IOException{
+    public String upload(MultipartFile file,HttpServletRequest request) throws IOException{
 
         final String filename = file.getOriginalFilename();
+        String type = request.getParameter("type");
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String userName = user.getName();
 
         if(!Files.exists(Paths.get(saveFilePath))){
             Files.createDirectory(Paths.get(saveFilePath));
@@ -66,16 +70,19 @@ public class FileController {
 
 
         //写入数据库
-        favor(new Upload(),filename);
+        favor(new Upload(),filename,userName,type);
 
         return "backSystem";
     }
 
     //写入数据库
-    public void favor(Upload upload,String filename){
+    public void favor(Upload upload,String filename,String userName,String type){
         //写入数据库
         upload.setName(filename);
         upload.setTime(new Date());
+        upload.setUserName(userName);
+        upload.setType(type);
+        upload.setCount(0);
         uploadService.uploadAdd(upload);
     }
 
@@ -85,6 +92,8 @@ public class FileController {
     public void download(@PathVariable String fileName, HttpServletResponse response) throws IOException{
         response.setContentType("application/octet-stream");
         response.addHeader("Content-Disposition","attachment;filename=" + URLEncoder.encode(fileName,"UTF-8"));
+
+        uploadService.uploadUpdate(fileName);
 
         final WritableByteChannel writableByteChannel = Channels.newChannel(response.getOutputStream());
         final FileChannel fileChannel = new FileInputStream(Paths.get(saveFilePath + File.separator +fileName).toFile()).getChannel();
