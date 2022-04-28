@@ -30,8 +30,8 @@ public class uploadServiceImpl implements uploadService{
     }
 
     @Override
-    public Upload findUploadByName(String name) {
-        return uploadDao.findUploadByName(name);
+    public Upload findUploadByTelNumber(String telNumber) {
+        return uploadDao.findUploadByTelNumber(telNumber);
     }
 
     @Override

@@ -57,7 +57,7 @@ public class FileController {
         final String filename = file.getOriginalFilename();
         String type = request.getParameter("type");
         User user = (User) request.getSession().getAttribute("thisUser");
-        String userName = user.getName();
+        String telNumber = user.getTelNumber();
 
         if(!Files.exists(Paths.get(saveFilePath))){
             Files.createDirectory(Paths.get(saveFilePath));
@@ -70,17 +70,17 @@ public class FileController {
 
 
         //写入数据库
-        favor(new Upload(),filename,userName,type);
+        favor(new Upload(),filename,telNumber,type);
 
         return "backSystem";
     }
 
     //写入数据库
-    public void favor(Upload upload,String filename,String userName,String type){
+    public void favor(Upload upload,String filename,String telNumber,String type){
         //写入数据库
         upload.setName(filename);
         upload.setTime(new Date());
-        upload.setUserName(userName);
+        upload.setTelNumber(telNumber);
         upload.setType(type);
         upload.setCount(0);
         uploadService.uploadAdd(upload);

@@ -14,7 +14,7 @@ public interface uploadService {
 
     void uploadAdd(Upload upload);
 
-    Upload findUploadByName(String name);
+    Upload findUploadByTelNumber(String telNumber);
 
     void uploadUpdate(String name);
 

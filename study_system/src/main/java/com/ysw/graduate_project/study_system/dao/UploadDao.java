@@ -17,7 +17,7 @@ public interface UploadDao {
 
     void uploadAdd(Upload upload);
 
-    Upload findUploadByName(String name);
+    Upload findUploadByTelNumber(String telNumber);
 
     void uploadUpdate(String name);
 
