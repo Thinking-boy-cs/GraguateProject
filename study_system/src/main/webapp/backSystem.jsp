@@ -21,7 +21,6 @@
         width: 1248px;
         height: 103px;
         background-color: #FFFFFF;
-        margin-top: 1px;
         border-bottom: 2px solid #1962F1;
     }
 
@@ -29,33 +28,55 @@
         width: 230.25px;
         background-color: #FFFFFF;
         margin-top: 2px;
-        margin-left: 2px;
     }
 
     .bar {
-        width: 202.25px;
+        /*width: 235.25px;*/
+        width: 235.25px;
         height: 65px;
         margin: 0 auto;
         background-color: #5b54d0;
 
     }
 
+    .icon_bg{
+        width: 100px;
+        height: 40px;
+        border-radius: 20%;
+        background-color: #5b54d0;
+    }
+
+    .icon_text{
+        width: 80px;
+        height: 40px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+
     .box_main {
         width: 997.75px;
-        height: 620px;
+        height: 625px;
 
         margin-top: -520px;
         margin-left: 220px;
     }
 
-    .box_bar, .box_main {
+    .box_bar{
+        width: 235.25px;
+        height: 553px;
+        display: inline-block;
+        vertical-align: top;
+
+    }
+
+    .box_main {
         display: inline-block;
         vertical-align: top;
     }
 
     .box {
-        width: 1248px;
-        height: 698px;
+        width: 1238px;
+        height: 658px;
         background-color: #FFFFFF;
         margin: 0 auto;
     }
@@ -93,14 +114,17 @@
     }
 
 </style>
-<body>
-
-
+<body style="background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%);background-repeat:no-repeat;background-size: 100% 100% ;
+    background-attachment: fixed;">
 <div class="box">
     <div class="box_top">
         <img src="../pic/topBar.png">
     </div>
     <div class="box_bar">
+        <div class="bar">
+            欢迎用户：${thisUser.name}
+        </div>
         <div class="bar">
             <a href="#"> 首页</a>
         </div>
@@ -156,9 +180,6 @@
 <%--        </div>--%>
         <div class="bar">
             <a href="#"> 退出系统</a>
-        </div>
-        <div class="bar">
-            <h1>${thisUser.name}</h1>
         </div>
 
     </div>

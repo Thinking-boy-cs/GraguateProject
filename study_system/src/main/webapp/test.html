@@ -1,172 +1,119 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-    <title>regist</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>layout 管理系统大布局 - Layui</title>
+    <link rel="stylesheet" href="./js/layui/css/layui.css">
 </head>
 <body>
-<div id="wrap">
-    <div id="top_content">
-        <div id="header">
-            <div id="rightheader">
-                <p>
-                    2020/11/13
-                    <br />
-                </p>
-            </div>
-            <div id="topheader">
-                <h1 id="title">
-                    <a href="#">main</a>
-                </h1>
-            </div>
-            <div id="navigation">
-            </div>
-        </div>
-        <div id="content">
-            <p id="whereami">
-            </p>
-            <h1>
-                注册
-            </h1>
-            <form action="login.html" method="post">
-                <table cellpadding="0" cellspacing="0" border="0"
-                       class="form_table">
-                    <tr>
-                        <td valign="middle" align="right">
-                            电话号:
-                        </td>
-                        <td valign="middle" align="left">
-                            <input type="text" class="inputgri" v-model="user.id"  />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="middle" align="right">
-                            邮箱:
-                        </td>
-                        <td valign="middle" align="left">
-                            <input type="text" class="inputgri" v-model="user.username"  />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="middle" align="right">
-                            密码:
-                        </td>
-                        <td valign="middle" align="left">
-                            <input type="password" class="inputgri" v-model="user.password" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="middle" align="right">
-                            性别:
-                        </td>
-                        <td valign="middle" align="left">
-                            男
-                            <input type="radio" class="inputgri"  v-model="user.sex" value="男" checked="checked"/>
-                            女
-                            <input type="radio" class="inputgri" v-model="user.sex"  value="女"/>
-                        </td>
-                    </tr>
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo layui-hide-xs layui-bg-black">layout demo</div>
+        <!-- 头部区域（可配合layui 已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <!-- 移动端显示 -->
+            <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
+                <i class="layui-icon layui-icon-spread-left"></i>
+            </li>
 
-                    <tr>
-                        <td valign="middle" align="right">
-                            验证码:
-                        </td>
-                        <td valign="middle" align="left">
-                            <input type="text" v-model="code" class="inputgri" />
-                        </td>
-                        <td>
-                            <img id="num" :src="url" />
-                            <a href="javascript:;" @click="getImg">换一张</a>
-                        </td>
-                    </tr>
-                </table>
-                <p>
-                    <input type="button" @click="register" class="button" value="Submit &raquo;" />
-                </p>
-            </form>
+            <li class="layui-nav-item layui-hide-xs"><a href="">nav 1</a></li>
+            <li class="layui-nav-item layui-hide-xs"><a href="">nav 2</a></li>
+            <li class="layui-nav-item layui-hide-xs"><a href="">nav 3</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">nav groups</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">menu 11</a></dd>
+                    <dd><a href="">menu 22</a></dd>
+                    <dd><a href="">menu 33</a></dd>
+                </dl>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item layui-hide layui-show-md-inline-block">
+                <a href="javascript:;">
+                    <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg" class="layui-nav-img">
+                    tester
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">Your Profile</a></dd>
+                    <dd><a href="">Settings</a></dd>
+                    <dd><a href="">Sign out</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
+                <a href="javascript:;">
+                    <i class="layui-icon layui-icon-more-vertical"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">menu group 1</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">menu 1</a></dd>
+                        <dd><a href="javascript:;">menu 2</a></dd>
+                        <dd><a href="javascript:;">menu 3</a></dd>
+                        <dd><a href="">the links</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">menu group 2</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">list 1</a></dd>
+                        <dd><a href="javascript:;">list 2</a></dd>
+                        <dd><a href="">超链接</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="javascript:;">click menu item</a></li>
+                <li class="layui-nav-item"><a href="">the links</a></li>
+            </ul>
         </div>
     </div>
-    <div id="footer">
-        <div id="footer_bg">
 
-        </div>
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">内容主体区域。记得修改 layui.css 和 js 的路径</div>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        底部固定区域
     </div>
 </div>
+<script src="./js/layui/layui.js"></script>
+<script>
+    //JS
+    layui.use(['element', 'layer', 'util'], function(){
+        var element = layui.element
+            ,layer = layui.layer
+            ,util = layui.util
+            ,$ = layui.$;
+
+        //头部事件
+        util.event('lay-header-event', {
+            //左侧菜单事件
+            menuLeft: function(othis){
+                layer.msg('展开左侧菜单的操作', {icon: 0});
+            }
+            ,menuRight: function(){
+                layer.open({
+                    type: 1
+                    ,content: '<div style="padding: 15px;">处理右侧面板的操作</div>'
+                    ,area: ['260px', '100%']
+                    ,offset: 'rt' //右上角
+                    ,anim: 5
+                    ,shadeClose: true
+                });
+            }
+        });
+
+    });
+</script>
 </body>
 </html>
-
-<script>
-    function $(elementId) {
-        return document.getElementById(elementId).value;
-    }
-
-    function divId(elementId) {
-        return document.getElementById(elementId);
-    }
-
-    function checkUser() {
-        var user = $('user');
-        var userId = divId('userPrompt')
-        userId.innerHTML = '';
-        var reg = /^[a-z][a-zA-Z0-9]{3,15}$/;
-        if (reg.test(user) == false) {
-            userId.innerHTML = '用户名不正确';
-            return false;
-        }
-        userId.innerHTML = '用户名可用';
-        return true;
-    }
-
-    function checkpwd() {
-        var pwd = $('pwd');
-        var pwdId = divId('pwdPrompt');
-        pwdId.innerHTMl = ' ';
-        var reg = /^[a-zA-z0-9]{4,10}$/;
-        if (reg.test(pwd) == false) {
-            pwdId.innerHTML = '密码不能含有非法字符，长度在4-10之间'
-            return false;
-        }
-        return true;
-    }
-
-    function checkRepwd() {
-        var repwd = $('repwd');
-        var pwd = $('pwd');
-        var Rpwd = divId('repwdPrompt');
-        Rpwd.innerHTMl = '';
-        if (pwd != repwd) {
-            Rpwd.innerHTML = '两次输入的密码不一致';
-            //console.log('密码不一致')
-            return false;
-        }
-        Rpwd.innerHTML = '';
-        // console.log('密码一致')
-        return true;
-    }
-
-    function checkEmail() {
-        var email = $('email');
-        var emailPrompt = divId('emailPrompt');
-        emailPrompt.innerHTML = ' ';
-        var reg = /^\w+@\w+(\.[a-zA-Z]{2,3}){1,2}$/;
-        if (reg.test(email) == false) {
-            emailPrompt.innerHTML = 'Email格式不正确，例如web@sohu.com';
-            return false;
-        }
-        return true
-    }
-
-    function checkMobile() {
-        var mobile = $('mobile');
-        var mobileId = divId('mobilePrompt');
-        var regMobile = /^1\d{10}$/;
-        if (regMobile.test(mobile) == false) {
-            mobileId.innerHTML = '手机号码不正确，请重新输入';
-            return false;
-        }
-        mobileId.innerHTML = ' ';
-        return true;
-    };
-</script>
-
