@@ -9,7 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./js/layui/css/layui.css"  media="all">
     <title>Default Page</title>
-
+    <style>
+        .layui-anim{animation-duration: 1.2s; -webkit-animation-duration: 1.2s;}
+    </style>
 </head>
 <body style="background-color: #0093E9;
 background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%);background-repeat:no-repeat;background-size: 100% 100% ;

@@ -9,7 +9,7 @@
 <body>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo layui-hide-xs layui-bg-black">layout demo</div>
+        <div class="layui-logo layui-hide-xs layui-bg-gray">Mr.Yu's System</div>
         <!-- 头部区域（可配合layui 已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
             <!-- 移动端显示 -->
@@ -17,11 +17,10 @@
                 <i class="layui-icon layui-icon-spread-left"></i>
             </li>
 
-            <li class="layui-nav-item layui-hide-xs"><a href="">nav 1</a></li>
-            <li class="layui-nav-item layui-hide-xs"><a href="">nav 2</a></li>
-            <li class="layui-nav-item layui-hide-xs"><a href="">nav 3</a></li>
+            <li class="layui-nav-item layui-hide-xs"><a href="">社区</a></li>
+            <li class="layui-nav-item layui-hide-xs"><a href="">文档</a></li>
             <li class="layui-nav-item">
-                <a href="javascript:;">nav groups</a>
+                <a href="javascript:;">产品版本</a>
                 <dl class="layui-nav-child">
                     <dd><a href="">menu 11</a></dd>
                     <dd><a href="">menu 22</a></dd>
@@ -36,16 +35,15 @@
                     tester
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">Your Profile</a></dd>
-                    <dd><a href="">Settings</a></dd>
-                    <dd><a href="">Sign out</a></dd>
+                    <dd><a href="">个人信息</a></dd>
+                    <dd><a href="">退出</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-                <a href="javascript:;">
-                    <i class="layui-icon layui-icon-more-vertical"></i>
-                </a>
-            </li>
+<!--            <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>-->
+<!--                <a href="javascript:;">-->
+<!--                    <i class="layui-icon layui-icon-more-vertical"></i>-->
+<!--                </a>-->
+<!--            </li>-->
         </ul>
     </div>
 
@@ -54,24 +52,22 @@
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;">menu group 1</a>
+                    <a class="layui-bg-blue" href="javascript:;">基础功能</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">menu 1</a></dd>
-                        <dd><a href="javascript:;">menu 2</a></dd>
-                        <dd><a href="javascript:;">menu 3</a></dd>
-                        <dd><a href="">the links</a></dd>
+                        <dd><a href="javascript:;">通知公告</a></dd>
+                        <dd><a href="javascript:;">查看资料</a></dd>
+                        <dd><a href="javascript:;">上传资料</a></dd>
+                        <dd><a href="javascript:;">打卡日历</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">menu group 2</a>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="layui-bg-blue" href="javascript:;">核心功能</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">list 1</a></dd>
-                        <dd><a href="javascript:;">list 2</a></dd>
-                        <dd><a href="">超链接</a></dd>
+                        <dd><a href="javascript:;">推荐系统</a></dd>
+                        <dd><a href="javascript:;">个人画像</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="javascript:;">click menu item</a></li>
-                <li class="layui-nav-item"><a href="">the links</a></li>
+                <li class="layui-nav-item layui-bg-blue"><a href="">关于我们</a></li>
             </ul>
         </div>
     </div>
