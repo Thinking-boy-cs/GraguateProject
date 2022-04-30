@@ -196,4 +196,12 @@ public class UserController {
         return "thisUser_m";
     }
 
+    /**
+     * 退出账号
+     */
+    @RequestMapping("exitUser")
+    public String exitUser(HttpServletRequest request){
+        request.getSession().removeAttribute("thisUser");
+        return "page";
+    }
 }

@@ -233,7 +233,7 @@
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="http://localhost:9999/study_system/user/thisUser_u">个人信息</a></dd>
-                    <dd><a href="">退出</a></dd>
+                    <dd><a href="http://localhost:9999/study_system/user/exitUser">退出</a></dd>
                 </dl>
             </li>
             <!--            <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>-->
