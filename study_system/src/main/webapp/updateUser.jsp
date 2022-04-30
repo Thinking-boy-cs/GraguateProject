@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>用户列表页面</title>
 </head>
-<body background="../pic/update_u_bg.png" style="background-repeat:no-repeat;background-size: 100% 100% ;
+<body background="../pic/update_u_bg.jpg" style="background-repeat:no-repeat;background-size: 100% 100% ;
     background-attachment: fixed;">
 <center>
 <div style="background: #fdcefa;height: 650px; width: 700px;border-radius:25px;margin-top: 30px;">
