@@ -197,11 +197,20 @@ public class UserController {
     }
 
     /**
-     * 退出账号
+     * 退出用户账号
      */
     @RequestMapping("exitUser")
     public String exitUser(HttpServletRequest request){
         request.getSession().removeAttribute("thisUser");
+        return "page";
+    }
+
+    /**
+     * 退出用户账号
+     */
+    @RequestMapping("exitManager")
+    public String exitManager(HttpServletRequest request){
+        request.getSession().removeAttribute("thisManager");
         return "page";
     }
 }
