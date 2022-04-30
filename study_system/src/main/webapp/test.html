@@ -67,7 +67,7 @@
                         <dd><a href="javascript:;">个人画像</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item layui-bg-blue"><a href="">关于我们</a></li>
+                <li class="layui-nav-item layui-bg-blue"><a href="http://localhost:9999/study_system/about.html">关于我们</a></li>
             </ul>
         </div>
     </div>
@@ -75,6 +75,15 @@
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">内容主体区域。记得修改 layui.css 和 js 的路径</div>
+        <div class="layui-carousel" id="lunbo">
+            <div carousel-item>
+                <div><img src="./pic/1.jpg"/></div>
+                <div><img src="./pic/2.jpg"/></div>
+                <div><img src="./pic/3.jpg"/></div>
+                <div><img src="./pic/4.jpg"/></div>
+                <div><img src="./pic/5.jpg"/></div>
+            </div>
+        </div>
     </div>
 
     <div class="layui-footer">
@@ -109,6 +118,18 @@
             }
         });
 
+    });
+
+    layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#lunbo'
+            ,width: '100%' //设置容器宽度
+            ,height:'90%'
+            ,arrow: 'always' //始终显示箭头
+            //,anim: 'updown' //切换动画方式
+        });
     });
 </script>
 </body>
