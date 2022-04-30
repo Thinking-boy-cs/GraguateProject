@@ -219,9 +219,9 @@
             <li class="layui-nav-item ">
                 <a href="javascript:;">产品版本</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">menu 11</a></dd>
-                    <dd><a href="">menu 22</a></dd>
-                    <dd><a href="">menu 33</a></dd>
+                    <dd><a href="">Version_1.0</a></dd>
+                    <dd><a href="">Version_2.0</a></dd>
+                    <dd><a href="">Version_3.0</a></dd>
                 </dl>
             </li>
         </ul>
@@ -285,7 +285,11 @@
 
     <div class="layui-footer">
         <!-- 底部固定区域 -->
-        底部固定区域
+        <center>
+            <font color='gray' size='2'>
+                版权所有&copy西南大学 | 地址：重庆市荣昌区学院路160号 | 邮编：402460 | 反馈意见：huafugongcheng@163.com
+            </font>
+        </center>
     </div>
 </div>
 </body>
