@@ -10,56 +10,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>用户列表页面</title>
 </head>
-<body>
+<body style="background: #f0f0f0">
+<center>
+<div style="background: #ffffff;height: 1000px; width: 700px;">
+        发布人：<h1>${theInfo.name}</h1>
+        标题：<h1>${theInfo.title}</h1>
+        发布时间：<h1>${theInfo.time}</h1>
+        内容：<h3>${theInfo.info}</h3>
 
-<%--&lt;%&ndash;精确作用域查找&ndash;%&gt;--%>
-<%--<c:forEach items="${requestScope.userList}" var="user">--%>
-<%--    ID: ${user.id} Name: ${user.name} Age: ${user.age} Salary: ${user.salary}--%>
-<%--    <a href="${pageContext.request.contextPath}/user/findById?id=${user.id}">修改</a>--%>
-<%--    <a href="${pageContext.request.contextPath}/user/delete?id=${user.id}">删除</a>--%>
-<%--    <br>--%>
-<%--</c:forEach>--%>
-<%--<a href="${pageContext.request.contextPath}/insertUser.jsp">添加</a>--%>
-
-
-
-
-        <h1>${theInfo.id}</h1>
-        <h1>${theInfo.name}</h1>
-        <h1>${theInfo.info}</h1>
-        <h1>${theInfo.time}</h1>
-        <h1>${theInfo.title}</h1>
-
+</div>
+</center>
 
 
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<%--<script type="text/javascript">--%>
-<%--    $.ajax({--%>
-<%--        type:'get',--%>
-<%--        url:'${pageContext.request.contextPath}/infoCast/findInfoAll',--%>
-<%--        data:'',--%>
-<%--        dataType:'json',--%>
-<%--        success: function(data) {--%>
-<%--            console.log("成功===",data);--%>
-<%--            if(data.length>0){--%>
-<%--                for(var i = 0,l=data.length;i<l;i++){--%>
-<%--                    $("#infoDiv").append($("#infoData").html()--%>
-<%--                            .replace("#ID#",data[i].id)--%>
-<%--                            .replace("#ID2#",data[i].id)--%>
-<%--                            .replace("#ID3#",data[i].id)--%>
-<%--                            .replace("#NAME#", data[i].name)--%>
-<%--                            .replace("#INFO#", data[i].info)--%>
-<%--                            .replace("#TIME#", data[i].time)--%>
-<%--                            .replace("#TITEL#", data[i].title)--%>
-<%--                    )--%>
-<%--                }--%>
-<%--            }--%>
-<%--        },--%>
-<%--        error: function(data){--%>
-<%--            console.log("请求失败！！！");--%>
-<%--        }--%>
-<%--    })--%>
-<%--</script>--%>
 
 </body>
 </html>
