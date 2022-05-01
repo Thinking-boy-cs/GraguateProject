@@ -53,6 +53,68 @@
             /*设置边框*/
             border: 2px solid black;
         }
+
+        /*******************************/
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            height: 2000px;
+            font-family: sans-serif;
+        }
+
+        .header{
+            position: relative;
+            height: 100vh;
+            background: url("../pic/1.jpg") no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        header .logo-header{
+            position: absolute;
+            top:29%;
+            left: 0;
+            right: 0;
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-top: -50px;
+        }
+
+        header .fore-bird{
+            position: absolute;
+            top: 469px;
+            left: 55%;
+            width: 960px;
+            height: 733px;
+            margin-left: -480px;
+            background-image: url("../pic/2.jpg");
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            z-index: 1;
+        }
+
+
+        header .back-bird{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 960px;
+            height: 298px;
+            margin-left: -480px;
+            background-image: url("../pic/3.jpg");
+            background-repeat: no-repeat;
+            background-position: top left;
+        }
+
+        .content{
+            max-width: 1140px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body style="background-color: #0093E9;
@@ -68,9 +130,15 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%)
 <%--</c:forEach>--%>
 <%--<a href="${pageContext.request.contextPath}/insertUser.jsp">添加</a>--%>
 
-<div>
-    <h1>资料空间</h1><a href="${pageContext.request.contextPath}/upload.html">添加</a>
-</div>
+<header class="header">
+    <!--    <div class="back-bird"></div>-->
+    <img src="download.png" alt="" class="logo-header">
+    <!--    <div class="fore-bird"></div>-->
+</header>
+
+<section>
+    <div class="container">
+        <br><br><br><br>
 <div id="infoDiv" >
     <div id="infoData" style="display: none">
         <table>
@@ -100,9 +168,12 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%)
         </table>
     </div>
 </div>
+    </div>
+</section>
 
 
-        <br>
+
+<br>
 
 
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -132,6 +203,26 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%)
             console.log("请求失败！！！");
         }
     })
+
+
+    var logo = document.querySelector('.logo-header'),
+        blurredBird = document.querySelector('.back-bird'),
+        foreBird = document.querySelector('.fore-bird');
+
+    window.addEventListener('scroll',function () {
+        var scrolled  = window.scrollY;
+        logo.style.transform = "translate(0px,"+scrolled/2+"%)";
+        blurredBird.style.transform = "translate(0px,"+scrolled/5+"%)";
+        foreBird.style.transform = "translate(0px,-"+scrolled/80+"%)";
+    });
+
+    var forEach = function (array,callback) {
+        for (var i = 0; i < array.length;i++){
+            callback.call(null,i,array[i]);
+        }
+    }
+
+
 </script>
 
 </body>

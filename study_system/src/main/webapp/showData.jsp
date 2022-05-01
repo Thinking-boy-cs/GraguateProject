@@ -9,13 +9,83 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>用户列表页面</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            height: 2000px;
+            font-family: sans-serif;
+        }
+
+        .header{
+            position: relative;
+            height: 100vh;
+            background: url("../pic/1.jpg") no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        header .logo-header{
+            position: absolute;
+            top:29%;
+            left: 0;
+            right: 0;
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-top: -50px;
+        }
+
+        header .fore-bird{
+            position: absolute;
+            top: 469px;
+            left: 55%;
+            width: 960px;
+            height: 733px;
+            margin-left: -480px;
+            background-image: url("../pic/2.jpg");
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            z-index: 1;
+        }
+
+
+        header .back-bird{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 960px;
+            height: 298px;
+            margin-left: -480px;
+            background-image: url("../pic/3.jpg");
+            background-repeat: no-repeat;
+            background-position: top left;
+        }
+
+        .content{
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body style="background-color: #80D0C7;
 background-image: linear-gradient(160deg, #80D0C7 43%, #eb13d1 93%);
 background-repeat:no-repeat;background-size: 100% 100% ;
     background-attachment: fixed;">
 
+<header class="header">
+    <!--    <div class="back-bird"></div>-->
+    <img src="download.png" alt="" class="logo-header">
+    <!--    <div class="fore-bird"></div>-->
+</header>
 
+<section>
+    <div class="container">
+        <br><br><br><br>
 <center>
 <div id="a_sex" style="width: 600px;height: 600px;"></div>
 <div id="a_college" style="width: 600px;height: 600px;"></div>
@@ -604,6 +674,25 @@ background-repeat:no-repeat;background-size: 100% 100% ;
 
     })
     })
+
+
+
+    var logo = document.querySelector('.logo-header'),
+        blurredBird = document.querySelector('.back-bird'),
+        foreBird = document.querySelector('.fore-bird');
+
+    window.addEventListener('scroll',function () {
+        var scrolled  = window.scrollY;
+        logo.style.transform = "translate(0px,"+scrolled/2+"%)";
+        blurredBird.style.transform = "translate(0px,"+scrolled/5+"%)";
+        foreBird.style.transform = "translate(0px,-"+scrolled/80+"%)";
+    });
+
+    var forEach = function (array,callback) {
+        for (var i = 0; i < array.length;i++){
+            callback.call(null,i,array[i]);
+        }
+    }
 
 
     //myChart.setOption(option);
