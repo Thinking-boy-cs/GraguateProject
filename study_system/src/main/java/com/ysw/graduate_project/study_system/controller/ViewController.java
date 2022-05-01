@@ -102,7 +102,12 @@ public class ViewController {
      */
     @RequestMapping("recommendSystem")
     public String recommendSystem(){
-        return "recommend";
+        return "recommendSystem";
+    }
+
+    @RequestMapping("recommend_t")
+    public String recommend_t(){
+        return "recommend_t";
     }
 
 }
