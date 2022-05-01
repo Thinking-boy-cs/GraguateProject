@@ -14,7 +14,8 @@
     </style>
 </head>
 <body style="background-color: #0093E9;
-background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%);background-repeat:no-repeat;background-size: 100% 100% ;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 43%, #eb13d1 88%);
+background-repeat:no-repeat;background-size: 100% 100% ;
     background-attachment: fixed;">
 <div style="margin:300px 500px 15px 500px;">
     <div class="layui-anim layui-anim-up" style="margin:50px;">
@@ -26,7 +27,7 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%)
         <a href="${pageContext.request.contextPath}/login.html">用户登录</a>
     </button>
 
-    <button type="button" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal">
+    <button type="button" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal" style="background: #eb13d1">
         <a href="${pageContext.request.contextPath}/login2.html">管理员登录</a>
     </button>
 </div>
