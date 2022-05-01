@@ -5,72 +5,198 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login_User</title>
-    <link rel="stylesheet" href="./css/recommend_css.css"  media="all">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            height: 2000px;
+            font-family: sans-serif;
+        }
+
+        .header{
+            position: relative;
+            height: 100vh;
+            background: url("./pic/1.jpg") no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        header .logo-header{
+            position: absolute;
+            top:29%;
+            left: 0;
+            right: 0;
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-top: -50px;
+        }
+
+        header .fore-bird{
+            position: absolute;
+            top: 469px;
+            left: 55%;
+            width: 960px;
+            height: 733px;
+            margin-left: -480px;
+            background-image: url("./pic/2.jpg");
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            z-index: 1;
+        }
+
+
+        header .back-bird{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 960px;
+            height: 298px;
+            margin-left: -480px;
+            background-image: url("./pic/3.jpg");
+            background-repeat: no-repeat;
+            background-position: top left;
+        }
+
+        .content{
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+        #login-box{
+            position: relative;
+            display: none;
+            width: 400px;
+            height: 500px;
+            background: #0000FF;
+        }
+        #login-btn{
+            position: relative;
+            width: 400px;
+            height: 80px;
+
+        }
+        #login-box_1{
+            position: relative;
+            display: none;
+            width: 400px;
+            height: 500px;
+            background: #e82a7e;
+        }
+        #login-btn_1{
+            position: relative;
+            width: 400px;
+            height: 80px;
+
+        }
+        #div_text_author{
+            position: absolute;
+            width: 400px;
+            height: 500px;
+            background: #00FF00;
+            margin-top: 80px;
+            margin-left: 360px;
+        }
+        #div_text_touch{
+            position: absolute;
+            width: 400px;
+            height: 500px;
+            background: #f34949;
+            margin-top: 80px;
+            margin-left: 760px;
+        }
+    </style>
 
 </head>
-<body>
-<!--1-->
-<div class="box">
-    <div class="imgBx">
-        <img src="./pic/1.jpg">
-    </div>
-    <div class="content">
-        <h2>基于统计的推荐算法<br><span><a href="http://localhost:9999/study_system/view/recommend_t"><h1>♠</h1></a></span></h2>
-    </div>
+<body style="background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 43%, #eb13d1 88%);
+background-repeat:no-repeat;background-size: 100% 100% ;
+    background-attachment: fixed;">
+<header class="header">
+    <!--    <div class="back-bird"></div>-->
+    <img alt="" class="logo-header">
+    <!--    <div class="fore-bird"></div>-->
+</header>
+
+<section>
+    <div class="container">
+<br><br><br>
+<div id="div_text_author">
+        <img src="./pic/6.png">
 </div>
-<!--2-->
-<div class="box">
-    <div class="imgBx">
-        <img src="./pic/2.jpg">
-    </div>
-    <div class="content">
-        <h2>基于时间的推荐算法<br><span><a href="http://localhost:9999/study_system/view/recommend_s"><h1>♥</h1></a></span></h2>
-    </div>
+<div id="div_text_touch">
+        <img src="./pic/7.png">
 </div>
-<!--3-->
-<div class="box">
-    <div class="imgBx">
-        <img src="./pic/3.jpg">
+<center>
+<table style="border: 1px solid #0000FF;"cellspacing="0" cellpadding="0">
+    <tr style="border: 1px solid #0000FF">
+        <th style="border: 1px solid #0000FF;width: 400px;height: 80px"><div id="login-btn" style="font-family: sans-serif;font-size:30px;text-align: center; line-height: 80px;/*文字水平居中*/margin:auto;/*div水平居中*/">开发人员</div></th>
+        <th style="border: 1px solid #0000FF;width: 400px;height: 80px"><div id="login-btn_1" style="font-family: sans-serif;font-size:30px;text-align: center; line-height: 80px;/*文字水平居中*/margin:auto;/*div水平居中*/">联系方式</div></th>
+    </tr>
+    <tr>
+        <th style="border: 1px solid #0000FF;width: 400px;height: 500px"><div id="login-box">hahahahahaahhahaaha</div></th>
+        <th style="border: 1px solid #0000FF;width: 400px;height: 500px"><div id="login-box_1">gagagagagagagagga</div></th>
+    </tr>
+
+</table>
+</center>
     </div>
-    <div class="content">
-        <h2>基于协同过滤的推荐算法<br><span><a href="http://localhost:9999/study_system/view/recommend_x"><h1>♣</h1></a></span></h2>
-<!--        <h2>John Doe<br><span>Creative Designer</span></h2>-->
-    </div>
-</div>
-<!--4-->
-<div class="box">
-    <div class="imgBx">
-        <img src="./pic/4.jpg">
-    </div>
-    <div class="content">
-        <h2>基于知识的推荐算法<br><span><a href="http://localhost:9999/study_system/view/recommend_z"><h1>♦</h1></a></span></h2>
-    </div>
-</div>
+</section>
+
+<!--<table>-->
+<!--    <tr><th><h1>1.1</h1></th><th><h1>1.2</h1></th></tr>-->
+<!--    <tr><th><h1>2.1</h1></th><th><h1>2.2</h1></th></tr>-->
+<!--</table>-->
 
 
+    <script>
+        (function () {
+            var btn = document.getElementById('login-btn');
+            var box = document.getElementById('login-box');
 
-</body>
-</html>
-<script src="/study_system/js/vue.js"></script>
-<script src="/study_system/js/axios.min.js"></script>
-<script src="./js/jquery-3.5.1.js"></script>
-<script type="text/javascript" src="js/jquery-3.5.1.js">
+            btn.onmouseover = function () {
+                box.style.display = 'block';
+            }
 
-    var logo = document.querySelector('.logo-header'),
-    blurredBird = document.querySelector('.back-bird'),
-    foreBird = document.querySelector('.fore-bird');
+            btn.onmouseout = function () {
+                box.style.display = 'none';
+            }
+        })();
+
+        (function () {
+            var btn_1 = document.getElementById('login-btn_1');
+            var box_1 = document.getElementById('login-box_1');
+
+            btn_1.onmouseover = function () {
+                box_1.style.display = 'block';
+            }
+
+            btn_1.onmouseout = function () {
+                box_1.style.display = 'none';
+            }
+        })();
+
+
+        var logo = document.querySelector('.logo-header'),
+            blurredBird = document.querySelector('.back-bird'),
+            foreBird = document.querySelector('.fore-bird');
 
         window.addEventListener('scroll',function () {
             var scrolled  = window.scrollY;
             logo.style.transform = "translate(0px,"+scrolled/2+"%)";
-        blurredBird.style.transform = "translate(0px,"+scrolled/5+"%)";
-        foreBird.style.transform = "translate(0px,-"+scrolled/80+"%)";
-    });
+            blurredBird.style.transform = "translate(0px,"+scrolled/5+"%)";
+            foreBird.style.transform = "translate(0px,-"+scrolled/80+"%)";
+        });
 
-    var forEach = function (array,callback) {
-        for (var i = 0; i < array.length;i++){
-            callback.call(null,i,array[i]);
+        var forEach = function (array,callback) {
+            for (var i = 0; i < array.length;i++){
+                callback.call(null,i,array[i]);
+            }
         }
-    }
+    </script>
 
-</script>
+</body>
+</html>
