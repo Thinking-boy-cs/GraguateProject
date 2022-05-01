@@ -8,7 +8,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Default Page</title>
-    <link type="text/css" rel="stylesheet" href="../js/layui/css/layui.css">
+    <link type="text/css" rel="stylesheet" href="../js/layui/css/layui2.css">
 </head>
 <script src="js/jquery-3.3.1.js"></script>
 <body>
@@ -57,7 +57,7 @@
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="layui-bg-blue" href="javascript:;">基础功能</a>
+                    <a  style="background: #e34ec8" href="javascript:;">基础功能</a>
                     <dl class="layui-nav-child">
                         <dd><a href="http://localhost:9999/study_system/view/infoFind">管理公告</a></dd>
                         <dd><a href="http://localhost:9999/study_system/view/find">管理用户</a></dd>
@@ -65,12 +65,12 @@
                     </dl>
                 </li>
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="layui-bg-blue" href="javascript:;">核心功能</a>
+                    <a style="background: #e34ec8" href="javascript:;">核心功能</a>
                     <dl class="layui-nav-child">
                         <dd><a href="http://localhost:9999/study_system/view/showDataItem">数据可视化</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item layui-bg-blue"><a href="http://localhost:9999/study_system/about.html">关于我们</a></li>
+                <li class="layui-nav-item " style="background: #e34ec8"><a href="http://localhost:9999/study_system/about.html">关于我们</a></li>
             </ul>
         </div>
     </div>
