@@ -53,24 +53,84 @@
             /*设置边框*/
             border: 2px solid black;
         }
+
+        /********************/
+                               *{
+                                   margin: 0;
+                                   padding: 0;
+                               }
+
+                              body{
+                                  height: 2000px;
+                                  font-family: sans-serif;
+                              }
+
+                              .header{
+                                  position: relative;
+                                  height: 100vh;
+                                  background: url("../pic/1.jpg") no-repeat center center;
+                                  background-size: cover;
+                                  background-attachment: fixed;
+                                  overflow: hidden;
+                              }
+
+                              header .logo-header{
+                                  position: absolute;
+                                  top:29%;
+                                  left: 0;
+                                  right: 0;
+                                  display: block;
+                                  width: 100%;
+                                  height: auto;
+                                  margin-top: -50px;
+                              }
+
+                              header .fore-bird{
+                                  position: absolute;
+                                  top: 469px;
+                                  left: 55%;
+                                  width: 960px;
+                                  height: 733px;
+                                  margin-left: -480px;
+                                  background-image: url("../pic/2.jpg");
+                                  background-repeat: no-repeat;
+                                  background-position: right bottom;
+                                  z-index: 1;
+                              }
+
+
+                              header .back-bird{
+                                  position: absolute;
+                                  top: 0;
+                                  left: 50%;
+                                  width: 960px;
+                                  height: 298px;
+                                  margin-left: -480px;
+                                  background-image: url("../pic/3.jpg");
+                                  background-repeat: no-repeat;
+                                  background-position: top left;
+                              }
+
+                              .content{
+                                  max-width: 1140px;
+                                  margin: 0 auto;
+                              }
     </style>
 </head>
 <body style="background-color: #8EC5FC;
 background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 50%, #f344ed 100%);background-repeat:no-repeat;background-size: 100% 100% ;
     background-attachment: fixed;">
 
-<%--&lt;%&ndash;精确作用域查找&ndash;%&gt;--%>
-<%--<c:forEach items="${requestScope.userList}" var="user">--%>
-<%--    ID: ${user.id} Name: ${user.name} Age: ${user.age} Salary: ${user.salary}--%>
-<%--    <a href="${pageContext.request.contextPath}/user/findById?id=${user.id}">修改</a>--%>
-<%--    <a href="${pageContext.request.contextPath}/user/delete?id=${user.id}">删除</a>--%>
-<%--    <br>--%>
-<%--</c:forEach>--%>
-<%--<a href="${pageContext.request.contextPath}/insertUser.jsp">添加</a>--%>
 
-<div>
-    <h1>通知公告</h1><a href="${pageContext.request.contextPath}/view/infoAdd">添加</a>
-</div>
+<header class="header">
+    <!--    <div class="back-bird"></div>-->
+    <img alt="" class="logo-header">
+    <!--    <div class="fore-bird"></div>-->
+</header>
+
+<section>
+    <div class="container">
+        <br><br><br><br>
 <div id="infoDiv" >
     <div id="infoData" style="display: none">
 <table>
@@ -98,6 +158,8 @@ background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 50%, #f344ed 100%);
 </table>
 </div>
 </div>
+    </div>
+</section>
 
 
 <%--        <span>#ID#</span> <span>#INFO#</span>--%>
@@ -132,6 +194,25 @@ background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 50%, #f344ed 100%);
             console.log("请求失败！！！");
         }
     })
+
+
+    var logo = document.querySelector('.logo-header'),
+        blurredBird = document.querySelector('.back-bird'),
+        foreBird = document.querySelector('.fore-bird');
+
+    window.addEventListener('scroll',function () {
+        var scrolled  = window.scrollY;
+        logo.style.transform = "translate(0px,"+scrolled/2+"%)";
+        blurredBird.style.transform = "translate(0px,"+scrolled/5+"%)";
+        foreBird.style.transform = "translate(0px,-"+scrolled/80+"%)";
+    });
+
+    var forEach = function (array,callback) {
+        for (var i = 0; i < array.length;i++){
+            callback.call(null,i,array[i]);
+        }
+    }
+
 </script>
 
 </body>

@@ -10,17 +10,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>用户列表页面</title>
 </head>
-<body>
+<body style="background-color: #80D0C7;
+background-image: linear-gradient(160deg, #80D0C7 43%, #eb13d1 93%);
+background-repeat:no-repeat;background-size: 100% 100% ;
+    background-attachment: fixed;">
 
 
-
+<center>
 <div id="a_sex" style="width: 600px;height: 600px;"></div>
 <div id="a_college" style="width: 600px;height: 600px;"></div>
 <div id="a_degree" style="width: 600px;height: 600px;"></div>
 <div id="a_sign_months" style="width: 600px;height: 600px;"></div>年份：<input type="text" id="listen" ><br>
 <div id="a_sign_years" style="width: 600px;height: 600px;"></div>
 <div id="a_sign_days" style="width: 600px;height: 600px;"></div>年份：<input type="text" id="listen_1" ><br>月份：<input type="text" id="listen_2" ><br>
-
+</center>
 
 <script src="/study_system/js/vue.js"></script>
 <script src="/study_system/js/axios.min.js"></script>
