@@ -1,14 +1,166 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login_User</title>
+    <link rel="stylesheet" href="./js/layui/css/layui.css"  media="all">
+    <style>
+        body{
+            /* 设置背景渐变 */
+            background-image: linear-gradient(to left,
+            #9c88ff,#3cadeb);
+            display: flex;
+            justify-content: center;
+        }
+        .a{
+            position:relative;
+            top: 100px;
+            width: 1100px;
+            height: 550px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.8);
+            display: flex;
+        }
+        .b{
+            width: 800px;
+            height: 550px;
+            background-image: url("./pic/login_m_bg.jpg");
+            /* 让图片适应大小 */
+            background-size: cover;
+        }
+        .c{
+            width: 300px;
+            height: 550px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .d{
+            width: 250px;
+            height: 500px;
+        }
+        .d h1{
+            font: 900 30px '';
+        }
+        .e{
+            width: 230px;
+            margin: 20px 0;
+            outline: none;
+            border: 0;
+            padding: 10px;
+            border-bottom: 3px solid rgb(80,80,170);
+            font: 900 16px '';
+        }
+        .f{
+            float: right;
+            margin: 10px 0;
+        }
+        /*.g{*/
+        /*    position: absolute;*/
+        /*    margin: 20px;*/
+        /*    bottom: 40px;*/
+        /*    display: block;*/
+        /*    width: 200px;*/
+        /*    height: 60px;*/
+        /*    font: 900 30px '';*/
+        /*    text-decoration: none;*/
+        /*    line-height: 50px;*/
+        /*    border-radius: 30px;*/
+        /*    background-image: linear-gradient(to left,*/
+        /*    #9c88ff,#3cadeb);*/
+        /*    text-align: center;*/
+        /*}*/
+    </style>
 </head>
 <body>
-<center>
-    <font color='gray' size='2'>
-        版权所有&copy北京大学 |地址：北京市海淀区颐和园路5号 |邮编：100871 |反馈意见：its@pku.edu.cn
-    </font>
-</center>
+<div class="a">
+    <div class="b"></div>
+    <div class="c">
+        <div class="d">
+            <h1><a href="#">用户登录</a></h1>
+            <br><br>
+            <form action="/study_system/user/login" method="post" id="loginForm">
+            <input type="text" class="e" placeholder="电话号码" id="telNumber" name="telNumber">
+            <br><br>
+            <input type="password" class="e" placeholder="密码" id="passWord" name="passWord">
+            <center>
+            <button type="button" id="login" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal" style="width: 120px"><a href="#">登录</a></button>
+            <br><br>
+            <button type="button" id="register" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal" style="width: 120px"><a href="/study_system/regist.html">注册</a></button>
+            </center>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>
+<script src="/study_system/js/vue.js"></script>
+<script src="/study_system/js/axios.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript" >
+
+
+    $("#login").click(function () {
+
+        var telNumber = $("#telNumber").val();
+        var passWord = $("#passWord").val();
+
+        if(isEmpty(telNumber)){
+            $("#msg").html("用户手机号不可为空！");
+            return;
+        }
+
+
+        if(isEmpty(passWord)){
+            $("#msg").html("用户密码不可为空！");
+            return;
+        }
+
+
+        $("#loginForm").submit();
+
+
+    })
+
+    function isEmpty(str) {
+        if(str==null||str.trim()==""){
+            return true;
+        }
+        return false;
+    }
+
+    //当前时间
+    var t = null;
+
+    function time() {
+        dt = new Date();
+        var y = dt.getFullYear();
+        var M = dt.getMonth() + 1;
+        var d = dt.getDate();
+        var h = dt.getHours();
+        var m = dt.getMinutes();
+        var s = dt.getSeconds();
+        M=checkTime(M);
+        d=checkTime(d);
+        h=checkTime(h);
+        m=checkTime(m);
+        s=checkTime(s);
+        document.getElementById("timeShow").innerHTML = "当前时间：" + y + "-" + M + "-" + d + " " + h + ":" + m + ":" + s;
+        t = setTimeout(time, 1000);
+    }
+
+    window.onload = function () {
+        time()
+    }
+
+    function checkTime(i){
+        if(i<10){
+            i="0"+i;
+        }
+        return i;
+    }
+
+
+</script>
