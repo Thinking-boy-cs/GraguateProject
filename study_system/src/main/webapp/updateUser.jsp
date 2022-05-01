@@ -10,10 +10,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>用户列表页面</title>
 </head>
-<body background="../pic/update_u_bg.jpg" style="background-repeat:no-repeat;background-size: 100% 100% ;
+<body style="background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%);background-repeat:no-repeat;background-size: 100% 100% ;
     background-attachment: fixed;">
 <center>
-<div style="background: #fdcefa;height: 650px; width: 700px;border-radius:25px;margin-top: 30px;">
+<div style="background: #b8d5fd;height: 650px; width: 700px;border-radius:25px;margin-top: 30px;">
 <form action="${pageContext.request.contextPath}/user/updateUser_u" method="post">
     <br><br>
     标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;识: &nbsp;&nbsp;<input type="text" name="id" readonly value="${requestScope.findUser.id}"> <br><br>
@@ -27,7 +28,7 @@
     政治面貌: &nbsp;&nbsp;<input type="text" name="political" readonly value="${requestScope.findUser.political}" style="height: 25px"> <br><br>
     学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;院: &nbsp;&nbsp;<input type="text" name="college" readonly value="${requestScope.findUser.college}" style="height: 25px"> <br><br>
     学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历: &nbsp;&nbsp;<input type="text" name="degree" readonly value="${requestScope.findUser.degree}" style="height: 25px"> <br><br>
-    <input type="submit" value="保存" style="background: #fdcefa;border-radius:25px;height: 30px;width: 60px">
+    <input type="submit" value="保存" style="background: #b8d5fd;border-radius:25px;height: 30px;width: 60px">
 </form>
 </div>
 </center>

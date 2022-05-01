@@ -55,8 +55,8 @@
         }
     </style>
 </head>
-<body style="background-color: #8EC5FC;
-background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 50%, #f344ed 100%);background-repeat:no-repeat;background-size: 100% 100% ;
+<body style="background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%);background-repeat:no-repeat;background-size: 100% 100% ;
     background-attachment: fixed;">
 
 <%--&lt;%&ndash;精确作用域查找&ndash;%&gt;--%>
