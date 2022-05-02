@@ -4,97 +4,118 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
+<!--	<link rel="stylesheet" type="text/css" href="css/style.css" />-->
+	<link rel="stylesheet" href="./js/layui/css/layui.css"  media="all">
+	<style>
+		body{
+			/* 设置背景渐变 */
+			background-image: linear-gradient(to left,
+			#9c88ff,#3cadeb);
+			display: flex;
+			justify-content: center;
+		}
+		.a{
+			position:relative;
+			top: 100px;
+			width: 1100px;
+			height: 550px;
+			box-shadow: 0 5px 15px rgba(0,0,0,.8);
+			display: flex;
+		}
+		.b{
+			width: 800px;
+			height: 550px;
+			background-image: url("./pic/login_m_bg.jpg");
+			/* 让图片适应大小 */
+			background-size: cover;
+		}
+		.c{
+			width: 300px;
+			height: 550px;
+			background-color: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.d{
+			width: 250px;
+			height: 500px;
+		}
+		.d h1{
+			font: 900 30px '';
+		}
+		.e{
+			width: 230px;
+			margin: 20px 0;
+			outline: none;
+			border: 0;
+			padding: 10px;
+			border-bottom: 3px solid rgb(80,80,170);
+			font: 900 16px '';
+		}
+		.f{
+			float: right;
+			margin: 10px 0;
+		}
+		/*.g{*/
+		/*    position: absolute;*/
+		/*    margin: 20px;*/
+		/*    bottom: 40px;*/
+		/*    display: block;*/
+		/*    width: 200px;*/
+		/*    height: 60px;*/
+		/*    font: 900 30px '';*/
+		/*    text-decoration: none;*/
+		/*    line-height: 50px;*/
+		/*    border-radius: 30px;*/
+		/*    background-image: linear-gradient(to left,*/
+		/*    #9c88ff,#3cadeb);*/
+		/*    text-align: center;*/
+		/*}*/
+	</style>
 </head>
 
+
+
 <body>
-<div id="wrap">
-	<div id="top_content">
-		<div id="header">
-			<div id="rightheader">
-				<p>
-					2022/4/16
-					<br />
-				</p>
-			</div>
-			<div id="topheader">
-				<h1 id="title">
-					<a href="#">大学生学习服务自主平台</a>
-				</h1>
-			</div>
-			<div id="navigation">
-			</div>
-		</div>
-
-<!--	<tr>-->
-<!--		<td class="hr1">新用户注册</td>-->
-<!--	</tr>-->
-	<div id="content">
-		<p id="whereami">
-		</p>
-		<h1>
-			注册
-		</h1>
-		<form action="/study_system/user/insert" id="registerForm">
-			<table cellpadding="0" cellspacing="0" border="0"
-				   class="form_table">
-<!--				<tr>-->
-<!--					<td valign="middle" align="right">电话号：</td>-->
-<!--					<td valign="middle" align="left"><input type="text" id="user" class="inputgri" onblur="checkUser()"></td>-->
-<!--					<td>-->
-<!--						<div id="userPrompt">用户名由英文字母和数字组成的4-16位字符，以字母开头</div>-->
-<!--					</td>-->
-<!--				</tr>-->
-
+<div class="a">
+	<div class="b"></div>
+	<div class="c">
+		<div class="d">
+			<h1><a href="#">用户注册</a></h1>
+			<form action="/study_system/user/register" method="post" id="registerForm">
 				<tr>
-					<td valign="middle" align="right">手机号码：</td>
-					<td valign="middle" align="left"><input type="text" id="telNumber" name="telNumber" class="inputgri" onblur="checkMobile()"></td>
-					<td>
-						<div id="mobilePrompt"></div>
-					</td>
+					<th><input type="text" class="e" placeholder="电话号码" id="telNumber" name="telNumber" onblur="checkMobile()"></th>
+					<th><div id="mobilePrompt"></div></th>
 				</tr>
 
 				<tr>
-					<td valign="middle" align="right">密码：</td>
-					<td valign="middle" align="left"><input type="password" id="passWord" name="passWord" class="inputgri" onblur="checkpwd()"></td>
-					<td>
-						<div id="pwdPrompt">
-							密码由英文字母和数字组成的4-10位字符
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td valign="middle" align="right">
-						确认密码：
-					</td>
-					<td valign="middle" align="left"><input type="password" id="repwd" class="inputgri" onblur="checkRepwd()"></td>
-					<td>
-						<div id="repwdPrompt"></div>
-					</td>
-				</tr>
-				<tr>
-					<td valign="middle" align="right">
-						电子邮箱：
-					</td>
-					<td valign="middle" align="left"> <input type="text" id="mail" name="mail" class="inputgri" onblur="checkEmail()"></td>
-					<td>
-						<div id="emailPrompt"></div>
-					</td>
+					<th><input type="password" class="e" placeholder="密码" id="passWord" name="passWord" onblur="checkpwd()"></th>
+					<th><div id="pwdPrompt">
+						密码由英文字母和数字组成的4-10位字符
+					</div></th>
 				</tr>
 
 				<tr>
-					<td></td>
-					<td class="center"><button type="button" id="register">提交</button></td>
-					<td></td>
+					<th><input type="password" class="e" placeholder="确认密码" id="repwd" class="inputgri" onblur="checkRepwd()"></th>
+					<th><div id="repwdPrompt"></div></th>
 				</tr>
-			</table>
-		</td>
-	</form>
-	</div>
-	</div>
-	<div id="footer">
-		<div id="footer_bg">
 
+				<tr>
+					<th><input type="text" class="e" placeholder="电子邮箱" id="mail" name="mail" class="inputgri" onblur="checkEmail()"></th>
+					<th><td>
+					<div id="emailPrompt"></div>
+				</td></th>
+				</tr>
+
+				<tr>
+					<th><button type="button" id="register" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal" style="width: 120px;margin-left: 60px"><a href="#">提交</a></button></th>
+					<th></th>
+				</tr>
+
+				<br><br>
+
+			</form>
 		</div>
 	</div>
 </div>
@@ -174,7 +195,7 @@
 		emailPrompt.innerHTML = ' ';
 		var reg = /^\w+@\w+(\.[a-zA-Z]{2,3}){1,2}$/;
 		if (reg.test(email) == false) {
-			emailPrompt.innerHTML = 'Email格式不正确，例如web@sohu.com';
+			emailPrompt.innerHTML = 'Email格式不正确，例如YSW@swu.sm.cn';
 			return false;
 		}
 		return true

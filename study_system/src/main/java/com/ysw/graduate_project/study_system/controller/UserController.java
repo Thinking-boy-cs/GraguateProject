@@ -72,6 +72,22 @@ public class UserController {
         return "redirect:/user/find";
     }
 
+    @RequestMapping("register")
+    public String registertUser(HttpServletRequest request){
+        User user = new User();
+        String telNumber = request.getParameter("telNumber");
+        String passWord = request.getParameter("passWord");
+        String mail = request.getParameter("mail");
+
+        user.setTelNumber(telNumber);
+        user.setPassWord(passWord);
+        user.setMail(mail);
+        log.info("insert this user:[{}]",user.getTelNumber());
+        userService.insertUser(user);
+        request.getSession().setAttribute("thisUser", user);
+        return "backSystem";
+    }
+
     @RequestMapping("delete")
     public String deleteUser(int id){
         userService.delete(id);
