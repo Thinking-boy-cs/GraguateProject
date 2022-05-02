@@ -170,7 +170,7 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%)
 <script type="text/javascript">
     $.ajax({
         type:'get',
-        url:'${pageContext.request.contextPath}/recommend/findCertainResource_t',
+        url:'${pageContext.request.contextPath}/recommend/findCertainResource_c',
         data:'',
         dataType:'json',
         success: function(data_1) {

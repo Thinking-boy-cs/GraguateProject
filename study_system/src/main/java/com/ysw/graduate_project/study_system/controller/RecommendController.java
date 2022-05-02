@@ -27,12 +27,41 @@ public class RecommendController {
     @Autowired
     private RecommendService recommendService;
 
-    @RequestMapping("findCertainResource")
+    @RequestMapping("findCertainResource_t")
     @ResponseBody
-    public List<Upload> findCertainResource(HttpServletRequest request){
+    public List<Upload> findCertainResource_t(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.recommendType(telNumber);
+    }
+
+
+    @RequestMapping("findCertainResource_c")
+    @ResponseBody
+    public List<Upload> findCertainResource_c(HttpServletRequest request){
         User user = (User) request.getSession().getAttribute("thisUser");
         String telNumber = user.getTelNumber();
         return recommendService.recommendCount(telNumber);
+    }
+
+
+    @RequestMapping("findCertainResource_x")
+    @ResponseBody
+    public List<Upload> findCertainResource_x(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String sex = user.getSex();
+        String degree = user.getDegree();
+        String college = user.getCollege();
+        return recommendService.recommendXieTong(sex,degree,college);
+    }
+
+
+    @RequestMapping("findCertainResource_z")
+    @ResponseBody
+    public List<Upload> findCertainResource_z(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.recommendZhiShi(telNumber);
     }
 
 }

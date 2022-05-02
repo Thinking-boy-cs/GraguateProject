@@ -20,7 +20,7 @@
         <img src="../pic/1.jpg">
     </div>
     <div class="content">
-        <h2>基于统计的推荐算法<br><span><a href="http://localhost:9999/study_system/view/recommend_t"><h1>♠</h1></a></span></h2>
+        <h2>基于类别的推荐算法<br><span><a href="http://localhost:9999/study_system/view/recommend_t"><h1>♠</h1></a></span></h2>
     </div>
 </div>
 <!--2-->
@@ -29,7 +29,7 @@
         <img src="../pic/2.jpg">
     </div>
     <div class="content">
-        <h2>基于时间的推荐算法<br><span><a href="http://localhost:9999/study_system/view/recommend_s"><h1>♥</h1></a></span></h2>
+        <h2>基于次数的推荐算法<br><span><a href="http://localhost:9999/study_system/view/recommend_c"><h1>♥</h1></a></span></h2>
     </div>
 </div>
 <!--3-->

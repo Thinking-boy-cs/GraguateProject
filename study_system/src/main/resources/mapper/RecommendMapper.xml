@@ -7,7 +7,7 @@
         update recommend set `count`=`count`+1 where `name`=#{name}
     </update>
 
-    <select id="recommendCount" parameterType="String" resultType="Upload">
+    <select id="recommendType" parameterType="String" resultType="Upload">
         SELECT *
         FROM recommend
         WHERE type in (select type from (select type
@@ -16,6 +16,20 @@
         GROUP BY type
         order by count(type) DESC limit 0,3)tt)
    </select>
+
+    <select id="recommendCount" parameterType="String" resultType="Upload">
+        select *
+        from recommend
+        where telNumber=#{telNumber}
+        order by count desc limit 0,3
+    </select>
+
+    <select id="recommendXieTong" parameterType="String" resultType="Upload">
+        select recommend.*
+        from recommend,`user`
+        where recommend.telNumber = `user`.telNumber and `user`.sex=#{sex} and `user`.degree=#{degree} and `user`.college=#{college}
+        order by count desc LIMIT 0,3
+    </select>
 
 <!--    <insert id="uploadAdd" parameterType="Upload" useGeneratedKeys="true" keyProperty="id">-->
 <!--        insert into upload values(#{id},#{name},#{telNumber},#{type},#{time},#{count})-->

@@ -119,6 +119,21 @@ public class ViewController {
         return "recommend_t";
     }
 
+    @RequestMapping("recommend_c")
+    public String recommend_c(){
+        return "recommend_c";
+    }
+
+    @RequestMapping("recommend_x")
+    public String recommend_x(){
+        return "recommend_x";
+    }
+
+    @RequestMapping("recommend_z")
+    public String recommend_z(){
+        return "recommend_z";
+    }
+
 
     /**
      * 文档

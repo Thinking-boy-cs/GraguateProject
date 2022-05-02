@@ -28,7 +28,22 @@ public class RecommendServiceImpl implements RecommendService{
     }
 
     @Override
+    public List<Upload> recommendType(String telNumber) {
+        return recommendDao.recommendType(telNumber);
+    }
+
+    @Override
     public List<Upload> recommendCount(String telNumber) {
         return recommendDao.recommendCount(telNumber);
+    }
+
+    @Override
+    public List<Upload> recommendXieTong(String sex,String degree,String college) {
+        return recommendDao.recommendXieTong(sex,degree,college);
+    }
+
+    @Override
+    public List<Upload> recommendZhiShi(String telNumber) {
+        return recommendDao.recommendZhiShi(telNumber);
     }
 }
