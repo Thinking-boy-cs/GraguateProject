@@ -13,6 +13,7 @@ public class Upload {
 
     int id;
     String name;
+    String author;
     String telNumber;
     String type;
     Date time;

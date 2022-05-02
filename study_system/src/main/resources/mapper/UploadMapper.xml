@@ -7,7 +7,7 @@
    </select>
 
     <insert id="uploadAdd" parameterType="Upload" useGeneratedKeys="true" keyProperty="id">
-        insert into upload values(#{id},#{name},#{telNumber},#{type},#{time},#{count})
+        insert into upload values(#{id},#{name},#{author},#{telNumber},#{type},#{time},#{count})
     </insert>
 
     <update id="uploadUpdate" parameterType="String">

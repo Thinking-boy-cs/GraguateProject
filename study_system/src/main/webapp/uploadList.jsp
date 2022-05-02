@@ -157,7 +157,7 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%)
 
             <tr>
                 <td style="width: 800px;"><span>#NAME#</span></td>
-                <td style="width: 800px"><span>#USERNAME#</span></td>
+                <td style="width: 800px"><span>#AUTHOR#</span></td>
                 <td style="width: 300px"><span>#TYPE#</span></td>
                 <td style="width: 300px"><span>#TIME#</span></td>
                 <td style="width: 300px"><a href="${pageContext.request.contextPath}/file/#NAME2#">下载</a></td>
@@ -193,7 +193,7 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%)
                             .replace("#NAME#", data[i].name)
                             .replace("#NAME2#", data[i].name)
                             .replace("#TIME#", data[i].time)
-                            .replace("#USERNAME#", data[i].userName)
+                            .replace("#AUTHOR#", data[i].author)
                             .replace("#TYPE#", data[i].type)
                     )
                 }

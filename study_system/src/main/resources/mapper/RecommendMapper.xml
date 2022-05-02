@@ -4,7 +4,7 @@
 <mapper namespace="com.ysw.graduate_project.study_system.dao.RecommendDao">
 
     <insert id="recommendAdd" parameterType="Upload" useGeneratedKeys="true" keyProperty="id">
-        insert into recommend values(#{id},#{name},#{telNumber},#{type},#{time},#{count})
+        insert into recommend values(#{id},#{name},#{author},#{telNumber},#{type},#{time},#{count})
     </insert>
 
     <update id="recommendUpdate" parameterType="String">
@@ -34,9 +34,6 @@
         where recommend.telNumber = `user`.telNumber and `user`.sex=#{sex} and `user`.degree=#{degree} and `user`.college=#{college}
         order by count desc LIMIT 0,3
     </select>
-
-
-
 
 
     <select id="totalCount"  parameterType="String" resultType="Integer">
