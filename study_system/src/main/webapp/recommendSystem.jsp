@@ -17,7 +17,7 @@
 <!--1-->
 <div class="box">
     <div class="imgBx">
-        <img src="../pic/1.jpg">
+        <img src="../pic/recommend_window_t.jpg">
     </div>
     <div class="content">
         <h2>基于类别的推荐算法<br><span><a href="http://localhost:9999/study_system/view/recommend_t"><h1>♠</h1></a></span></h2>
@@ -26,7 +26,7 @@
 <!--2-->
 <div class="box">
     <div class="imgBx">
-        <img src="../pic/2.jpg">
+        <img src="../pic/recommend_window_c.jpg">
     </div>
     <div class="content">
         <h2>基于次数的推荐算法<br><span><a href="http://localhost:9999/study_system/view/recommend_c"><h1>♥</h1></a></span></h2>
@@ -35,7 +35,7 @@
 <!--3-->
 <div class="box">
     <div class="imgBx">
-        <img src="../pic/3.jpg">
+        <img src="../pic/recommend_window_x.jpg">
     </div>
     <div class="content">
         <h2>基于协同过滤的推荐算法<br><span><a href="http://localhost:9999/study_system/view/recommend_x"><h1>♣</h1></a></span></h2>
@@ -45,7 +45,7 @@
 <!--4-->
 <div class="box">
     <div class="imgBx">
-        <img src="../pic/4.jpg">
+        <img src="../pic/recommend_window_z.jpg">
     </div>
     <div class="content">
         <h2>基于知识的推荐算法<br><span><a href="http://localhost:9999/study_system/view/recommend_z"><h1>♦</h1></a></span></h2>
