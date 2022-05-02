@@ -119,6 +119,16 @@ public class ViewController {
         return "recommend_t";
     }
 
+
+    /**
+     * 文档
+     * @return
+     */
+    @RequestMapping("doc")
+    public String doc(){
+        return "doc";
+    }
+
 }
 
 
