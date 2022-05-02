@@ -10,6 +10,8 @@ import java.util.List;
  */
 public interface RecommendService {
 
+    void recommendAdd(Upload upload);
+
     void recommendUpdate(String name);
 
     //1.基于类别的推荐
@@ -23,5 +25,10 @@ public interface RecommendService {
 
     //4.基于知识的推荐
     List<Upload> recommendZhiShi(String telNumber);
+
+
+    Integer totalCount(String telNumber);
+
+
 
 }

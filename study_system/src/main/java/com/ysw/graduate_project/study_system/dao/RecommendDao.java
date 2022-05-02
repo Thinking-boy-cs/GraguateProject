@@ -13,6 +13,8 @@ import java.util.List;
 @Mapper
 public interface RecommendDao {
 
+    void recommendAdd(Upload upload);
+
     void recommendUpdate(String name);
 
     //1.基于类别的推荐
@@ -26,5 +28,12 @@ public interface RecommendDao {
 
     //4.基于知识的推荐
     List<Upload> recommendZhiShi(String telNumber);
+
+
+    /**
+     * 精准画像部分
+     */
+    Integer totalCount(String telNumber);
+
 
 }

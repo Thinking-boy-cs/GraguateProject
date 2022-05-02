@@ -144,6 +144,15 @@ public class ViewController {
         return "doc";
     }
 
+    /**
+     * 精准画像
+     * @return
+     */
+    @RequestMapping("selfPic")
+    public String selfPic(){
+        return "selfPic";
+    }
+
 }
 
 

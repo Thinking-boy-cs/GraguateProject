@@ -88,6 +88,7 @@ public class FileController {
         upload.setType(type);
         upload.setCount(0);
         uploadService.uploadAdd(upload);
+        recommendService.recommendAdd(upload);
     }
 
 

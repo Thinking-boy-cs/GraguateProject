@@ -23,6 +23,11 @@ public class RecommendServiceImpl implements RecommendService{
     private RecommendDao recommendDao;
 
     @Override
+    public void recommendAdd(Upload upload) {
+        recommendDao.recommendAdd(upload);
+    }
+
+    @Override
     public void recommendUpdate(String name) {
         recommendDao.recommendUpdate(name);
     }
@@ -46,4 +51,10 @@ public class RecommendServiceImpl implements RecommendService{
     public List<Upload> recommendZhiShi(String telNumber) {
         return recommendDao.recommendZhiShi(telNumber);
     }
+
+    @Override
+    public Integer totalCount(String telNumber) {
+        return recommendDao.totalCount(telNumber);
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.ysw.graduate_project.study_system.controller;
 
+import com.ysw.graduate_project.study_system.entity.DataItem;
 import com.ysw.graduate_project.study_system.entity.Upload;
 import com.ysw.graduate_project.study_system.entity.User;
 import com.ysw.graduate_project.study_system.service.InfoCastService;
@@ -63,5 +64,19 @@ public class RecommendController {
         String telNumber = user.getTelNumber();
         return recommendService.recommendZhiShi(telNumber);
     }
+
+
+    /**
+     * 精准画像部分
+     */
+    @RequestMapping("totalCount")
+    public Integer totalCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.totalCount(telNumber);
+    }
+
+
+
 
 }

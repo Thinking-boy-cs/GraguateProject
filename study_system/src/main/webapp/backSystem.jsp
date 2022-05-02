@@ -262,7 +262,7 @@
                     <a class="layui-bg-blue" href="javascript:;">核心功能</a>
                     <dl class="layui-nav-child">
                         <dd><a href="http://localhost:9999/study_system/view/recommendSystem">推荐系统</a></dd>
-                        <dd><a href="javascript:;">个人画像</a></dd>
+                        <dd><a href="http://localhost:9999/study_system/view/selfPic">个人画像</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item layui-bg-blue"><a href="http://localhost:9999/study_system/about.html">关于我们</a></li>
