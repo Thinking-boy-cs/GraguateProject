@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en" >
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html; UTF-8" pageEncoding="utf-8" isELIgnored="false" %>
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>日历便签设计</title>
-    <link  rel='stylesheet' href="./css/calendar_css.css">
-
-
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Default Page</title>
+    <link  rel='stylesheet' href="../css/calendar_css.css">
 </head>
 <body>
-
 <div class="calendar">
     <p id="monthName"></p>
     <p id="dayName"></p>
@@ -37,12 +39,10 @@
     let monthName = date.toLocaleString(lang,{month:'long'});
     let year = date.getFullYear();
 
-
     document.getElementById('monthName').innerHTML = monthName;
     document.getElementById('dayName').innerHTML = dayName;
     document.getElementById('dayNumber').innerHTML = dayNumber;
     document.getElementById('year').innerHTML = year;
-
 </script>
 
 </body>

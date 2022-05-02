@@ -254,7 +254,8 @@
                         <dd><a href="http://localhost:9999/study_system/view/infoFind_u">通知公告</a></dd>
                         <dd><a href="http://localhost:9999/study_system/file/list">查看资料</a></dd>
                         <dd><a href="http://localhost:9999/study_system/upload.html">上传资料</a></dd>
-                        <dd><a href="http://localhost:9999/study_system/view/signCalendar">打卡日历</a></dd>
+                        <dd><a href="http://localhost:9999/study_system/view/signCalendar">学习打卡</a></dd>
+                        <dd><a href="http://localhost:9999/study_system/view/showCalendar">励志日历</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item layui-nav-itemed">

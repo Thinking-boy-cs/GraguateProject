@@ -97,6 +97,15 @@ public class ViewController {
 
 
     /**
+     * 日历
+     * @return
+     */
+    @RequestMapping("showCalendar")
+    public String showCalendar(){
+        return "showCalendar";
+    }
+
+    /**
      * 推荐系统
      * @return
      */

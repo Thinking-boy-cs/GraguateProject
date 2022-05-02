@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("../pic/1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.calendar{
+    position: relative;
+    width: 200px;
+    background: #fff;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#0004);
+}
+
+.calendar_2{
+    position: relative;
+    width: 350px;
+    background: #fff;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#0004);
+}
+
+.calendar #monthName{
+    position: relative;
+    padding: 5px 10px;
+    background: #5e7fe8;
+    color:#fff;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.calendar #monthName_2{
+    position: relative;
+    padding: 5px 10px;
+    background: #5e7fe8;
+    color:#fff;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.calendar #dayName{
+    margin-top: 20px;
+    color:#999;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.calendar #dayNumber{
+    margin-top: 20px;
+    color:#333;
+    font-size: 80px;
+    line-height: 1em;
+    font-weight: 700;
+}
+
+.calendar #year{
+    margin-bottom: 20px;
+    color:#999;
+    font-size: 20px;
+    font-weight: 500;
+}
