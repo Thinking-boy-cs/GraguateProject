@@ -1,5 +1,6 @@
 package com.ysw.graduate_project.study_system.controller;
 
+import com.ysw.graduate_project.study_system.entity.Manager;
 import com.ysw.graduate_project.study_system.entity.User;
 import com.ysw.graduate_project.study_system.entity.infocast;
 import com.ysw.graduate_project.study_system.service.InfoCastService;
@@ -49,8 +50,9 @@ public class InfoCastController {
 
     @RequestMapping("add")
     public String infoAdd(infocast infocast, HttpServletRequest  request){
-        //有点问题：要设置当前用户的用户名
-        String name = "Yu";
+
+        Manager manager = (Manager) request.getSession().getAttribute("thisManager");
+        String name = manager.getName();
         infocast.setName(name);
         infoCastService.infoAdd(infocast);
 //        User thisUser = (User) request.getSession().getAttribute("thisUser");

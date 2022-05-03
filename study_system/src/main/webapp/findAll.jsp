@@ -8,6 +8,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../js/layui/css/layui.css">
     <title>用户列表页面</title>
     <style type="text/css">
 
@@ -126,10 +127,19 @@ background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 50%, #f344ed 100%);
     <img alt="" class="logo-header">
     <!--    <div class="fore-bird"></div>-->
 </header>
-
+<br><br>
 <section>
     <div class="container">
-        <br><br><br><br>
+        <center>
+            <button type="button" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal"  style="background: #eb13d1">
+                <a href="${pageContext.request.contextPath}/view/insert">添加用户</a>
+            </button>
+
+            <button type="button" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal" style="background: #eb13d1">
+                <a href="${pageContext.request.contextPath}/backSystem/backSystem_m">返回系统</a>
+            </button>
+        </center>
+        <br><br>
 <div id="userDiv" >
     <div id="userData" style="display: none">
 

@@ -128,9 +128,25 @@ background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 50%, #f344ed 100%);
     <!--    <div class="fore-bird"></div>-->
 </header>
 
+
+
 <section>
     <div class="container">
-        <br><br><br><br>
+        <center>
+<br><br>
+
+                        <button type="button" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal" style="background: #eb13d1">
+                            <a href="${pageContext.request.contextPath}/view/infoAdd">添加公告</a>
+                        </button>
+
+                        <button type="button" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal" style="background: #eb13d1">
+                            <a href="${pageContext.request.contextPath}/backSystem/backSystem_m">返回系统</a>
+                        </button>
+
+
+
+        </center>
+        <br><br>
 <div id="infoDiv" >
     <div id="infoData" style="display: none">
 <table>
