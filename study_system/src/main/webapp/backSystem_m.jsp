@@ -14,7 +14,7 @@
 <body>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo layui-hide-xs layui-bg-gray">Mr.Yu's System</div>
+        <div class="layui-logo layui-hide-xs layui-bg-gray">YuLin Study System</div>
         <!-- 头部区域（可配合layui 已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
             <!-- 移动端显示 -->

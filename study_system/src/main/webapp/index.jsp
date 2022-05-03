@@ -19,7 +19,7 @@ background-repeat:no-repeat;background-size: 100% 100% ;
     background-attachment: fixed;">
 <div style="margin:300px 500px 15px 500px;">
     <div class="layui-anim layui-anim-up" style="margin:50px;">
-        <h1>Mr.Y's Study System</h1>
+        <h1>YuLin Study System</h1>
     </div>
 
 <%--    <h3 style="margin:30px;">This is my graduate project.</h3>--%>
