@@ -76,6 +76,19 @@ public class RecommendController {
         return recommendService.totalCount(telNumber);
     }
 
+    @RequestMapping("manCount")
+    public Integer manCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.manCount(telNumber);
+    }
+
+    @RequestMapping("womanCount")
+    public Integer womanCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.womanCount(telNumber);
+    }
 
 
 

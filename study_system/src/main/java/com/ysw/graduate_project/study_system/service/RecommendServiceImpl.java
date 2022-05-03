@@ -57,4 +57,14 @@ public class RecommendServiceImpl implements RecommendService{
         return recommendDao.totalCount(telNumber);
     }
 
+    @Override
+    public Integer manCount(String telNumber) {
+        return recommendDao.manCount(telNumber);
+    }
+
+    @Override
+    public Integer womanCount(String telNumber) {
+        return recommendDao.womanCount(telNumber);
+    }
+
 }

@@ -35,5 +35,7 @@ public interface RecommendDao {
      */
     Integer totalCount(String telNumber);
 
+    Integer manCount(String telNumber);
+    Integer womanCount(String telNumber);
 
 }

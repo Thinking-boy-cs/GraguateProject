@@ -91,7 +91,7 @@
         dataType : "json",        //返回数据形式为json
         success : function(totalCount) {
             //请求成功时执行该函数内容，result即为服务器返回的json对象
-            console.log("This count is :"+totalCount);
+            console.log("This totalCount is :"+totalCount);
 
         },
         error : function(errorMsg) {
@@ -100,23 +100,41 @@
         }
     })
 
-    <%--//男生数量--%>
-    <%--$.ajax({--%>
-    <%--    type : "post",--%>
-    <%--    async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）--%>
-    <%--    url : "${pageContext.request.contextPath}/recommend/manCount",    //请求发送到TestServlet处--%>
-    <%--    manCount : {},--%>
-    <%--    dataType : "json",        //返回数据形式为json--%>
-    <%--    success : function(manCount) {--%>
-    <%--        //请求成功时执行该函数内容，result即为服务器返回的json对象--%>
-    <%--        console.log("This count is :"+manCount);--%>
+    //男生数量
+    $.ajax({
+        type : "post",
+        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        url : "${pageContext.request.contextPath}/recommend/manCount",    //请求发送到TestServlet处
+        manCount : {},
+        dataType : "json",        //返回数据形式为json
+        success : function(manCount) {
+            //请求成功时执行该函数内容，result即为服务器返回的json对象
+            console.log("This manCount is :"+manCount);
 
-    <%--    },--%>
-    <%--    error : function(errorMsg) {--%>
-    <%--        //请求失败时执行该函数--%>
-    <%--        alert("图表请求数据失败!");--%>
-    <%--    }--%>
-    <%--})--%>
+        },
+        error : function(errorMsg) {
+            //请求失败时执行该函数
+            alert("图表请求数据失败!");
+        }
+    })
+
+    //女生数量
+    $.ajax({
+        type : "post",
+        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        url : "${pageContext.request.contextPath}/recommend/womanCount",    //请求发送到TestServlet处
+        womanCount : {},
+        dataType : "json",        //返回数据形式为json
+        success : function(womanCount) {
+            //请求成功时执行该函数内容，result即为服务器返回的json对象
+            console.log("This womanCount is :"+womanCount);
+
+        },
+        error : function(errorMsg) {
+            //请求失败时执行该函数
+            alert("图表请求数据失败!");
+        }
+    })
 
 
     var logo = document.querySelector('.logo-header'),

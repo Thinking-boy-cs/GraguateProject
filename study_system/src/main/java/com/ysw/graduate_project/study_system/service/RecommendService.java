@@ -30,5 +30,12 @@ public interface RecommendService {
     Integer totalCount(String telNumber);
 
 
+    Integer manCount(String telNumber);
+    Integer womanCount(String telNumber);
+
+//    Integer DangYuanCount(String telNumber);
+//    Integer collegeCount(String telNumber);
+
+
 
 }

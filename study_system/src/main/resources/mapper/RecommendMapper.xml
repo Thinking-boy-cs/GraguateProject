@@ -42,6 +42,18 @@
         WHERE telNumber=#{telNumber}
     </select>
 
+    <select id="manCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from recommend,`user`
+        WHERE recommend.telNumber=#{telNumber} and  recommend.author=`user`.`name` and `user`.sex="男"
+    </select>
+
+    <select id="womanCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from recommend,`user`
+        WHERE recommend.telNumber=#{telNumber} and  recommend.author=`user`.`name` and `user`.sex="女"
+    </select>
+
 
 <!--    <insert id="uploadAdd" parameterType="Upload" useGeneratedKeys="true" keyProperty="id">-->
 <!--        insert into upload values(#{id},#{name},#{telNumber},#{type},#{time},#{count})-->
