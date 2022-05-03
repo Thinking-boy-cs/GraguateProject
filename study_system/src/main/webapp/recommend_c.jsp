@@ -66,7 +66,7 @@
         .header{
             position: relative;
             height: 100vh;
-            background: url("../pic/1.jpg") no-repeat center center;
+            background: url("../pic/recommend_window_c.jpg") no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
             overflow: hidden;
