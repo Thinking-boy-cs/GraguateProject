@@ -90,6 +90,120 @@ public class RecommendController {
         return recommendService.womanCount(telNumber);
     }
 
+    @RequestMapping("partyCount")
+    public Integer partyCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.partyCount(telNumber);
+    }
+
+    @RequestMapping("groupCount")
+    public Integer groupCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.groupCount(telNumber);
+    }
+
+    @RequestMapping("peopleCount")
+    public Integer peopleCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.peopleCount(telNumber);
+    }
+
+    @RequestMapping("uploadCount")
+    public Integer uploadCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.uploadCount(telNumber);
+    }
+
+
+    @RequestMapping("undergraduateCount")
+    public Integer undergraduateCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.undergraduateCount(telNumber);
+    }
+
+    @RequestMapping("postgraduateCount")
+    public Integer postgraduateCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.postgraduateCount(telNumber);
+    }
+
+    @RequestMapping("doctorCount")
+    public Integer doctorCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.doctorCount(telNumber);
+    }
+
+
+    @RequestMapping("scCollegeCount")
+    public Integer scCollegeCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.scCollegeCount(telNumber);
+    }
+
+    @RequestMapping("dkCollegeCount")
+    public Integer dkCollegeCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.dkCollegeCount(telNumber);
+    }
+
+    @RequestMapping("smCollegeCount")
+    public Integer smCollegeCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.smCollegeCount(telNumber);
+    }
+
+    @RequestMapping("dyCollegeCount")
+    public Integer dyCollegeCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.dyCollegeCount(telNumber);
+    }
+
+    @RequestMapping("artCount")
+    public Integer artCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.artCount(telNumber);
+    }
+
+    @RequestMapping("textCount")
+    public Integer textCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.textCount(telNumber);
+    }
+
+    @RequestMapping("techCount")
+    public Integer techCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.techCount(telNumber);
+    }
+
+    @RequestMapping("hisCount")
+    public Integer hisCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.hisCount(telNumber);
+    }
+
+    @RequestMapping("happyCount")
+    public Integer happyCount(HttpServletRequest request){
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
+        return recommendService.happyCount(telNumber);
+    }
+
 
 
 }

@@ -67,4 +67,84 @@ public class RecommendServiceImpl implements RecommendService{
         return recommendDao.womanCount(telNumber);
     }
 
+    @Override
+    public Integer partyCount(String telNumber) {
+        return recommendDao.partyCount(telNumber);
+    }
+
+    @Override
+    public Integer groupCount(String telNumber) {
+        return recommendDao.groupCount(telNumber);
+    }
+
+    @Override
+    public Integer peopleCount(String telNumber) {
+        return recommendDao.peopleCount(telNumber);
+    }
+
+    @Override
+    public Integer uploadCount(String telNumber) {
+        return recommendDao.uploadCount(telNumber);
+    }
+
+    @Override
+    public Integer undergraduateCount(String telNumber) {
+        return recommendDao.undergraduateCount(telNumber);
+    }
+
+    @Override
+    public Integer postgraduateCount(String telNumber) {
+        return recommendDao.postgraduateCount(telNumber);
+    }
+
+    @Override
+    public Integer doctorCount(String telNumber) {
+        return recommendDao.doctorCount(telNumber);
+    }
+
+    @Override
+    public Integer scCollegeCount(String telNumber) {
+        return recommendDao.scCollegeCount(telNumber);
+    }
+
+    @Override
+    public Integer dkCollegeCount(String telNumber) {
+        return recommendDao.dkCollegeCount(telNumber);
+    }
+
+    @Override
+    public Integer smCollegeCount(String telNumber) {
+        return recommendDao.smCollegeCount(telNumber);
+    }
+
+    @Override
+    public Integer dyCollegeCount(String telNumber) {
+        return recommendDao.dyCollegeCount(telNumber);
+    }
+
+    @Override
+    public Integer artCount(String telNumber) {
+        return recommendDao.artCount(telNumber);
+    }
+
+    @Override
+    public Integer textCount(String telNumber) {
+        return recommendDao.textCount(telNumber);
+    }
+
+    @Override
+    public Integer techCount(String telNumber) {
+        return recommendDao.techCount(telNumber);
+    }
+
+    @Override
+    public Integer hisCount(String telNumber) {
+        return recommendDao.hisCount(telNumber);
+    }
+
+    @Override
+    public Integer happyCount(String telNumber) {
+        return recommendDao.happyCount(telNumber);
+    }
+
 }

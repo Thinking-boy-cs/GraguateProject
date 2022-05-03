@@ -33,8 +33,30 @@ public interface RecommendService {
     Integer manCount(String telNumber);
     Integer womanCount(String telNumber);
 
-//    Integer DangYuanCount(String telNumber);
-//    Integer collegeCount(String telNumber);
+    Integer partyCount(String telNumber);
+    Integer groupCount(String telNumber);
+    Integer peopleCount(String telNumber);
+
+
+    Integer uploadCount(String telNumber);
+
+
+    Integer undergraduateCount(String telNumber);
+    Integer postgraduateCount(String telNumber);
+    Integer doctorCount(String telNumber);
+
+
+    Integer scCollegeCount(String telNumber);
+    Integer dkCollegeCount(String telNumber);
+    Integer smCollegeCount(String telNumber);
+    Integer dyCollegeCount(String telNumber);
+
+    Integer artCount(String telNumber);
+    Integer textCount(String telNumber);
+    Integer techCount(String telNumber);
+    Integer hisCount(String telNumber);
+    Integer happyCount(String telNumber);
+
 
 
 

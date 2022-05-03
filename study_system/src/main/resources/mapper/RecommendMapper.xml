@@ -54,6 +54,103 @@
         WHERE recommend.telNumber=#{telNumber} and  recommend.author=`user`.`name` and `user`.sex="女"
     </select>
 
+    <select id="partyCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from recommend,`user`
+        WHERE recommend.telNumber=#{telNumber} and  recommend.author=`user`.`name` and `user`.political like '%党员'
+    </select>
+
+    <select id="groupCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from recommend,`user`
+        WHERE recommend.telNumber=#{telNumber} and  recommend.author=`user`.`name` and `user`.political="共青团员"
+    </select>
+
+    <select id="peopleCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from recommend,`user`
+        WHERE recommend.telNumber=#{telNumber} and  recommend.author=`user`.`name` and `user`.political="群众"
+    </select>
+
+
+    <select id="uploadCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from upload
+        WHERE telNumber=#{telNumber}
+    </select>
+
+    <select id="undergraduateCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from recommend,`user`
+        WHERE recommend.telNumber=#{telNumber} and  recommend.author=`user`.`name` and `user`.degree="本科"
+    </select>
+
+    <select id="postgraduateCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from recommend,`user`
+        WHERE recommend.telNumber=#{telNumber} and  recommend.author=`user`.`name` and `user`.degree="硕士"
+    </select>
+
+    <select id="doctorCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from recommend,`user`
+        WHERE recommend.telNumber=#{telNumber} and  recommend.author=`user`.`name` and `user`.degree="博士"
+    </select>
+
+    <select id="scCollegeCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from recommend,`user`
+        WHERE recommend.telNumber=#{telNumber} and  recommend.author=`user`.`name` and `user`.college="水产学院"
+    </select>
+
+    <select id="dkCollegeCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from recommend,`user`
+        WHERE recommend.telNumber=#{telNumber} and  recommend.author=`user`.`name` and `user`.college="动物科学学院"
+    </select>
+
+    <select id="smCollegeCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from recommend,`user`
+        WHERE recommend.telNumber=#{telNumber} and  recommend.author=`user`.`name` and `user`.college="商贸学院"
+    </select>
+
+    <select id="dyCollegeCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from recommend,`user`
+        WHERE recommend.telNumber=#{telNumber} and  recommend.author=`user`.`name` and `user`.college="动物医学学院"
+    </select>
+
+    <select id="artCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from recommend
+        WHERE recommend.telNumber=#{telNumber} and  recommend.type="艺术"
+    </select>
+
+    <select id="textCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from recommend
+        WHERE recommend.telNumber=#{telNumber} and  recommend.type="文学"
+    </select>
+
+    <select id="techCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from recommend
+        WHERE recommend.telNumber=#{telNumber} and  recommend.type="科技"
+    </select>
+
+    <select id="hisCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from recommend
+        WHERE recommend.telNumber=#{telNumber} and  recommend.type="历史"
+    </select>
+
+    <select id="happyCount"  parameterType="String" resultType="Integer">
+        select  count(*)
+        from recommend
+        WHERE recommend.telNumber=#{telNumber} and  recommend.type="旅游"
+    </select>
+
 
 <!--    <insert id="uploadAdd" parameterType="Upload" useGeneratedKeys="true" keyProperty="id">-->
 <!--        insert into upload values(#{id},#{name},#{telNumber},#{type},#{time},#{count})-->
