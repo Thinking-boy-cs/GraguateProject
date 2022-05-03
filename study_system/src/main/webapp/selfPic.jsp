@@ -72,9 +72,34 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%);background-repeat:no-repeat;background-size: 100% 100% ;
+    background-attachment: fixed;">
 
-<div id="selfPic" style="width: 600px;height: 600px;"></div>
+
+<center>
+    <div style="height: 100px;width: 500px"></div>
+<table>
+
+    <tr>
+        <th>
+            <div id="analysis_degree" style="width: 600px;height: 600px;"></div>
+        </th>
+        <th>
+            <div id="analysis_college" style="width: 600px;height: 600px;"></div>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <div id="analysis_political" style="width: 600px;height: 600px;"></div>
+        </th>
+        <th>
+            <div id="analysis_type" style="width: 600px;height: 600px;"></div>
+        </th>
+    </tr>
+</table>
+</center>
+
 
 </body>
 <script src="/study_system/js/vue.js"></script>
@@ -82,35 +107,35 @@
 <script src="/study_system/js/echarts.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
-var totalCount_p;
+var totalCount_p=10;
 
-var manCount_p;
-var womanCount_p;
+var manCount_p=10;
+var womanCount_p=10;
 
-var partyCount_p;
-var groupCount_p;
-var peopleCount_p;
+var partyCount_p=10;
+var groupCount_p=10;
+var peopleCount_p=10;
 
-var uploadCount_p;
+var uploadCount_p=10;
 
-var undergraduateCount_p;
-var postgraduateCount_p;
-var doctorCount_p;
+var undergraduateCount_p=10;
+var postgraduateCount_p=10;
+var doctorCount_p=10;
 
-var scCollegeCount_p;
-var dkCollegeCount_p;
-var smCollegeCount_p;
-var dyCollegeCount_p;
+var scCollegeCount_p=10;
+var dkCollegeCount_p=10;
+var smCollegeCount_p=10;
+var dyCollegeCount_p=10;
 
-var artCount_p;
-var textCount_p;
-var techCount_p;
-var hisCount_p;
-var happyCount_p;
+var artCount_p=10;
+var textCount_p=10;
+var techCount_p=10;
+var hisCount_p=10;
+var happyCount_p=10;
     //总数
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/totalCount",    //请求发送到TestServlet处
         totalCount : {},
         dataType : "json",        //返回数据形式为json
@@ -129,7 +154,7 @@ var happyCount_p;
     //男生数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/manCount",    //请求发送到TestServlet处
         manCount : {},
         dataType : "json",        //返回数据形式为json
@@ -137,6 +162,7 @@ var happyCount_p;
             //请求成功时执行该函数内容，result即为服务器返回的json对象
             console.log("This manCount is :"+manCount);
             manCount_p=manCount;
+            console.log("This is the manCount_p",manCount_p);
 
         },
         error : function(errorMsg) {
@@ -148,7 +174,7 @@ var happyCount_p;
     //女生数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/womanCount",    //请求发送到TestServlet处
         womanCount : {},
         dataType : "json",        //返回数据形式为json
@@ -167,7 +193,7 @@ var happyCount_p;
     //党员数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/partyCount",    //请求发送到TestServlet处
         partyCount : {},
         dataType : "json",        //返回数据形式为json
@@ -175,6 +201,7 @@ var happyCount_p;
             //请求成功时执行该函数内容，result即为服务器返回的json对象
             console.log("This partyCount is :"+partyCount);
             partyCount_p=partyCount;
+            console.log("This is the partyCount_p",partyCount_p);
 
         },
         error : function(errorMsg) {
@@ -186,7 +213,7 @@ var happyCount_p;
     //团员数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/groupCount",    //请求发送到TestServlet处
         groupCount : {},
         dataType : "json",        //返回数据形式为json
@@ -205,7 +232,7 @@ var happyCount_p;
     //群众数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/peopleCount",    //请求发送到TestServlet处
         peopleCount : {},
         dataType : "json",        //返回数据形式为json
@@ -224,7 +251,7 @@ var happyCount_p;
     //上传数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/uploadCount",    //请求发送到TestServlet处
         uploadCount : {},
         dataType : "json",        //返回数据形式为json
@@ -243,7 +270,7 @@ var happyCount_p;
     //本科数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/undergraduateCount",    //请求发送到TestServlet处
         undergraduateCount : {},
         dataType : "json",        //返回数据形式为json
@@ -262,7 +289,7 @@ var happyCount_p;
     //硕士数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/postgraduateCount",    //请求发送到TestServlet处
         postgraduateCount : {},
         dataType : "json",        //返回数据形式为json
@@ -281,7 +308,7 @@ var happyCount_p;
     //博士数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/doctorCount",    //请求发送到TestServlet处
         doctorCount : {},
         dataType : "json",        //返回数据形式为json
@@ -300,7 +327,7 @@ var happyCount_p;
     //水产数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/scCollegeCount",    //请求发送到TestServlet处
         scCollegeCount : {},
         dataType : "json",        //返回数据形式为json
@@ -319,7 +346,7 @@ var happyCount_p;
     //动科数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/dkCollegeCount",    //请求发送到TestServlet处
         dkCollegeCount : {},
         dataType : "json",        //返回数据形式为json
@@ -338,7 +365,7 @@ var happyCount_p;
     //商贸数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/smCollegeCount",    //请求发送到TestServlet处
         smCollegeCount : {},
         dataType : "json",        //返回数据形式为json
@@ -357,7 +384,7 @@ var happyCount_p;
     //动医数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/dyCollegeCount",    //请求发送到TestServlet处
         dyCollegeCount : {},
         dataType : "json",        //返回数据形式为json
@@ -376,7 +403,7 @@ var happyCount_p;
     //艺术数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/artCount",    //请求发送到TestServlet处
         artCount : {},
         dataType : "json",        //返回数据形式为json
@@ -396,7 +423,7 @@ var happyCount_p;
     //文学数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/textCount",    //请求发送到TestServlet处
         textCount : {},
         dataType : "json",        //返回数据形式为json
@@ -415,7 +442,7 @@ var happyCount_p;
     //科技数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/techCount",    //请求发送到TestServlet处
         techCount : {},
         dataType : "json",        //返回数据形式为json
@@ -435,7 +462,7 @@ var happyCount_p;
     //历史数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/hisCount",    //请求发送到TestServlet处
         hisCount : {},
         dataType : "json",        //返回数据形式为json
@@ -454,7 +481,7 @@ var happyCount_p;
     //旅行数量
     $.ajax({
         type : "post",
-        async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        async : false,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
         url : "${pageContext.request.contextPath}/recommend/happyCount",    //请求发送到TestServlet处
         happyCount : {},
         dataType : "json",        //返回数据形式为json
@@ -471,25 +498,22 @@ var happyCount_p;
     })
 
 
-    var myChart = echarts.init(document.getElementById("selfPic"));
-    myChart.showLoading();    //数据加载完之前先显示一段简单的loading动画
-    myChart.hideLoading();    //隐藏加载动画
-    myChart.setOption({        //加载数据图表
+    var myChart_degree = echarts.init(document.getElementById("analysis_degree"));
+    myChart_degree.showLoading();    //数据加载完之前先显示一段简单的loading动画
+    myChart_degree.hideLoading();    //隐藏加载动画
+    myChart_degree.setOption({        //加载数据图表
             title: {
-                text: 'Self Analysis Picture'
+                text: 'Self Analysis Degree'
             },
             legend: {
-                data: ['Allocated Budget']
+                data: ['Degree']
             },
             radar: {
                 // shape: 'circle',
                 indicator: [
-                    { name: 'Sales'},
-                    { name: 'Administration', max: totalCount_p },
-                    { name: 'Information Technology', max: totalCount_p },
-                    { name: 'Customer Support', max: totalCount_p },
-                    { name: 'Development', max: totalCount_p },
-                    { name: 'Marketing', max: totalCount_p }
+                    { name: '本科', max: totalCount_p,color:"#000" },
+                    { name: '硕士', max: totalCount_p ,color:"#000"},
+                    { name: '博士', max: totalCount_p,color:"#000" },
                 ]
             },
             series: [
@@ -498,8 +522,8 @@ var happyCount_p;
                     type: 'radar',
                     data: [
                         {
-                            value: [totalCount_p, 24, 33, 18, 23, 52],
-                            name: 'Allocated Budget'
+                            value: [undergraduateCount_p, postgraduateCount_p, doctorCount_p],
+                            name: 'Degree'
                         },
                     ]
                 }
@@ -507,22 +531,144 @@ var happyCount_p;
     });
 
 
-    var logo = document.querySelector('.logo-header'),
-        blurredBird = document.querySelector('.back-bird'),
-        foreBird = document.querySelector('.fore-bird');
-
-    window.addEventListener('scroll',function () {
-        var scrolled  = window.scrollY;
-        logo.style.transform = "translate(0px,"+scrolled/2+"%)";
-        blurredBird.style.transform = "translate(0px,"+scrolled/5+"%)";
-        foreBird.style.transform = "translate(0px,-"+scrolled/80+"%)";
+    var myChart_political = echarts.init(document.getElementById("analysis_political"));
+    console.log("analysis party_p is ",partyCount_p);
+    myChart_political.showLoading();    //数据加载完之前先显示一段简单的loading动画
+    myChart_political.hideLoading();    //隐藏加载动画
+    myChart_political.setOption({        //加载数据图表
+        title: {
+            text: 'Self Analysis Political'
+        },
+        legend: {
+            data: ['Political']
+        },
+        radar: {
+            // shape: 'circle',
+            indicator: [
+                { name: '党员', max: totalCount_p ,color:"#000"},
+                { name: '共青团员', max: totalCount_p,color:"#000" },
+                { name: '群众', max: totalCount_p,color:"#000" }
+            ]
+        },
+        series: [
+            {
+                name: 'Budget vs spending',
+                type: 'radar',
+                data: [
+                    {
+                        value: [partyCount_p,groupCount_p,peopleCount_p],
+                        name: 'Political',
+                        itemStyle: {
+                            normal: {
+                                borderWidth: 2,
+                                color: '#FFA662'
+                            }
+                        },
+                    },
+                ]
+            }
+        ]
     });
 
-    var forEach = function (array,callback) {
-        for (var i = 0; i < array.length;i++){
-            callback.call(null,i,array[i]);
-        }
-    }
+
+
+    var myChart_type = echarts.init(document.getElementById("analysis_type"));
+    myChart_type.showLoading();    //数据加载完之前先显示一段简单的loading动画
+    myChart_type.hideLoading();    //隐藏加载动画
+    myChart_type.setOption({        //加载数据图表
+        title: {
+            text: 'Self Analysis Type'
+        },
+        legend: {
+            data: ['Type']
+        },
+        radar: {
+            // shape: 'circle',
+            indicator: [
+                { name: '艺术', max: totalCount_p ,color:"#000"},
+                { name: '文学', max: totalCount_p,color:"#000" },
+                { name: '科技', max: totalCount_p ,color:"#000"},
+                { name: '历史', max: totalCount_p ,color:"#000"},
+                { name: '旅游', max: totalCount_p ,color:"#000"}
+            ]
+        },
+        series: [
+            {
+                name: 'Budget vs spending',
+                type: 'radar',
+                data: [
+                    {
+                        value: [ artCount_p, textCount_p, techCount_p, hisCount_p, happyCount_p],
+                        name: 'Type',
+                        itemStyle: {
+                            normal: {
+                                borderWidth: 2,
+                                color: '#b678f3'
+                            }
+                        },
+                    },
+                ]
+            }
+        ]
+    });
+
+
+    var myChart_college = echarts.init(document.getElementById("analysis_college"));
+    myChart_college.showLoading();    //数据加载完之前先显示一段简单的loading动画
+    myChart_college.hideLoading();    //隐藏加载动画
+    myChart_college.setOption({        //加载数据图表
+        title: {
+            text: 'Self Analysis College'
+        },
+        legend: {
+            data: ['College']
+        },
+        radar: {
+            // shape: 'circle',
+            indicator: [
+                { name: '水产学院', max: totalCount_p ,color:"#000"},
+                { name: '动物科学学院', max: totalCount_p ,color:"#000"},
+                { name: '动物医学学院', max: totalCount_p ,color:"#000"},
+                { name: '商贸学院', max: totalCount_p ,color:"#000"}
+            ]
+        },
+        series: [
+            {
+                name: 'Budget vs spending',
+                type: 'radar',
+                data: [
+                    {
+                        value: [ scCollegeCount_p,dkCollegeCount_p, dyCollegeCount_p, smCollegeCount_p],
+                        name: 'College',
+                        itemStyle: {
+                            normal: {
+                                borderWidth: 2,
+                                color: '#ea6dbf'
+                            }
+                        },
+                    },
+                ]
+            }
+        ]
+    });
+
+
+    // var logo = document.querySelector('.logo-header'),
+    //     blurredBird = document.querySelector('.back-bird'),
+    //     foreBird = document.querySelector('.fore-bird');
+    //
+    // window.addEventListener('scroll',function () {
+    //     var scrolled  = window.scrollY;
+    //     logo.style.transform = "translate(0px,"+scrolled/2+"%)";
+    //     blurredBird.style.transform = "translate(0px,"+scrolled/5+"%)";
+    //     foreBird.style.transform = "translate(0px,-"+scrolled/80+"%)";
+    // });
+    //
+    // var forEach = function (array,callback) {
+    //     for (var i = 0; i < array.length;i++){
+    //         callback.call(null,i,array[i]);
+    //     }
+    // }
 
 
     //myChart.setOption(option);
