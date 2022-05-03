@@ -10,7 +10,9 @@
     <title>Default Page</title>
     <link  rel='stylesheet' href="../css/calendar_css.css">
 </head>
-<body>
+<body style="background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%);background-repeat:no-repeat;background-size: 100% 100% ;
+    background-attachment: fixed;">
 <div class="calendar">
     <p id="monthName"></p>
     <p id="dayName"></p>
@@ -19,13 +21,11 @@
 </div>
 
 <div class="calendar_2">
-    <p id="monthName_2"><h1>每日一句</h1></p>
-    <p>There are many apple trees in a garden. They’re good friends. One day an old tree is ill. There
-        are many pests in the tree. Leaves of the tree turn yellow. The old tree feels very sad and unwell.
-        Another tree sends for a doctor for him. At first, they send for a pigeon, but she has no idea about it.
-        Then they send for an oriole, and she can’t treat the old tree well. Then they send for a woodpecker.
-        She is a good doctor. She pecks a hole in the tree and eats lots of pests. At last the old tree becomes
-        better and better. Leaves turn green and green.
+    <p id="monthName_2"><h1></h1></p>
+    <p> <h1 style="background-color: #2D93CA">观书有感</h1><br>
+        宋 · 朱熹<br>
+    半亩方塘一鉴开，天光云影共徘徊。<br><br>
+    问渠那得清如许？为有源头活水来。<br><br>
     </p>
 </div>
 
