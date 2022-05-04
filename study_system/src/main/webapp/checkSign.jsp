@@ -9,14 +9,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Default Page</title>
 </head>
-<body>
-
+<body style="background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%);background-repeat:no-repeat;background-size: 100% 100% ;
+    background-attachment: fixed;">
+<br><br><br><br><br><br>
+<center>
+    <div style="background: #b8d5fd;height: 350px; width: 700px;border-radius:25px;margin-top: 30px;">
 <form action="/study_system/sign/checkSign" method="post" id="checkSignForm">
-    体温：<input type="text" name="temperature_sign" id="temperature_sign" >
-    地点：<input type="text" name="location_sign" id="location_sign" >
-    <button type="button" id="btn">点击打卡</button>
-</form>
+    <br><br><br><br>
+    体温：<input type="text" name="temperature_sign" id="temperature_sign" ><br><br>
+    地点：<input type="text" name="location_sign" id="location_sign" ><br><br>
+    <button type="button" id="btn" style="background: #b8d5fd;border-radius:25px;height: 30px;width: 100px">点击打卡</button>
 
+</form>
+    </div>
+</center>
 
 </body>
 </html>
