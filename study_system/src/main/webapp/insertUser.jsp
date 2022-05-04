@@ -20,21 +20,27 @@
 <%--</form>--%>
 
 <br>
-
+<body style="background-color: #8EC5FC;
+      background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 50%, #f344ed 100%);background-repeat:no-repeat;background-size: 100% 100% ;
+    background-attachment: fixed;">
+<center>
+    <div style="background: #f568ec;height: 550px; width: 700px;border-radius:25px;margin-top: 30px;">
 <form id="userForm">
-    电话号码：<input type="text" name="telNumber" id="telNumber"/> <br>
-    密码：<input type="text" name="passWord" id="passWord"/> <br>
-    姓名：<input type="text" name="name" id="name"/> <br>
+    <br><br><br>
+    电话号码：&nbsp;&nbsp;<input type="text" name="telNumber" id="telNumber" style="height: 25px"/> <br><br>
+    密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：&nbsp;&nbsp;<input type="text" name="passWord" id="passWord" style="height: 25px"/> <br><br>
+    姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：&nbsp;&nbsp;<input type="text" name="name" id="name" style="height: 25px"/> <br><br>
 <%--    邮箱：<input type="text" name="mail" id="mail"/> <br>--%>
 <%--    性别：<input type="text" name="sex" id="sex"/> <br>--%>
 <%--    年龄：<input type="text" name="age" id="age"/> <br>--%>
-    学号：<input type="text" name="idCard" id="idCard"/> <br>
-    政治面貌：<input type="text" name="political" id="political"/> <br>
-    学院：<input type="text" name="college" id="college"/> <br>
-    学位：<input type="text" name="degree" id="degree"/> <br>
-    <input type="button" value="确认" id="btn">
+    学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：&nbsp;&nbsp;<input type="text" name="idCard" id="idCard" style="height: 25px"/> <br><br>
+    政治面貌：&nbsp;&nbsp;<input type="text" name="political" id="political" style="height: 25px"/> <br><br>
+    学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;院：&nbsp;&nbsp;<input type="text" name="college" id="college" style="height: 25px"/> <br><br>
+    学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位：&nbsp;&nbsp;<input type="text" name="degree" id="degree" style="height: 25px"/> <br><br>
+    <input type="button" value="确认" id="btn" style="background: #f349f0;border-radius:25px;height: 30px;width: 60px">
 </form>
-
+    </div>
+</center>
 <%--引入公共页面，js--%>
 
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

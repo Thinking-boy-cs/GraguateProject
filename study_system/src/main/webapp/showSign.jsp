@@ -8,6 +8,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../js/layui/css/layui.css">
     <title>用户列表页面</title>
     <style>
 
@@ -134,8 +135,8 @@ background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 50%, #f344ed 100%);
         <br><br><br><br>
         <center>
             <form action="/study_system/sign/showSignByName_favor" method="post" id="signForm">
-                <input type="text" name="nameSign" id="nameSign" >
-                <button type="button" id="btn">搜索</button>
+                <input type="text" name="nameSign" id="nameSign" style="height: 25px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button" id="btn" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal" style="background: #eb13d1">搜索</button>
             </form>
         </center>
         <br><br>

@@ -10,23 +10,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>用户列表页面</title>
 </head>
-<body>
-
+<body style="background-color: #8EC5FC;
+      background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 50%, #f344ed 100%);background-repeat:no-repeat;background-size: 100% 100% ;
+    background-attachment: fixed;">
+<center>
+    <div style="background: #f568ec;height: 650px; width: 700px;border-radius:25px;margin-top: 30px;">
 <form action="${pageContext.request.contextPath}/user/updateUser_m" method="post">
-    id: <input type="text" name="id" readonly value="${requestScope.findUser.id}"> <br>
-    电话号码: <input type="text" name="telNumber" readonly value="${requestScope.findUser.telNumber}"> <br>
-    密码: <input type="text" name="passWord" readonly value="${requestScope.findUser.passWord}"> <br>
-    姓名: <input type="text" name="name"  value="${requestScope.findUser.name}"> <br>
-    邮箱: <input type="text" name="mail"  value="${requestScope.findUser.mail}"> <br>
-    性别: <input type="text" name="sex"  value="${requestScope.findUser.sex}"> <br>
-    年龄: <input type="text" name="age"  value="${requestScope.findUser.age}"> <br>
-    学号: <input type="text" name="idCard"  value="${requestScope.findUser.idCard}"> <br>
-    政治面貌: <input type="text" name="political"  value="${requestScope.findUser.political}"> <br>
-    学院: <input type="text" name="college"  value="${requestScope.findUser.college}"> <br>
-    学历: <input type="text" name="degree"  value="${requestScope.findUser.degree}"> <br>
-    <input type="submit" value="保存">
+    <br><br>
+    标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;识: &nbsp;&nbsp;<input type="text" name="id" readonly value="${requestScope.findUser.id}"> <br><br>
+    电话号码: &nbsp;&nbsp;<input type="text" name="telNumber" readonly value="${requestScope.findUser.telNumber}" style="height: 25px"> <br><br>
+    密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码: &nbsp;&nbsp;<input type="text" name="passWord" readonly value="${requestScope.findUser.passWord}" style="height: 25px"> <br><br>
+    姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名: &nbsp;&nbsp;<input type="text" name="name"  value="${requestScope.findUser.name}" style="height: 25px"> <br><br>
+    邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱: &nbsp;&nbsp;<input type="text" name="mail"  value="${requestScope.findUser.mail}" style="height: 25px"> <br><br>
+    性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别: &nbsp;&nbsp;<input type="text" name="sex"  value="${requestScope.findUser.sex}" style="height: 25px"> <br><br>
+    年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄: &nbsp;&nbsp;<input type="text" name="age"  value="${requestScope.findUser.age}" style="height: 25px"> <br><br>
+    学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号: &nbsp;&nbsp;<input type="text" name="idCard"  value="${requestScope.findUser.idCard}" style="height: 25px"> <br><br>
+    政治面貌: &nbsp;&nbsp;<input type="text" name="political"  value="${requestScope.findUser.political}" style="height: 25px"> <br><br>
+    学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;院: &nbsp;&nbsp;<input type="text" name="college"  value="${requestScope.findUser.college}" style="height: 25px"> <br><br>
+    学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历: &nbsp;&nbsp;<input type="text" name="degree"  value="${requestScope.findUser.degree}" style="height: 25px"> <br><br>
+    <input type="submit" value="保存" style="background: #f349f0;border-radius:25px;height: 30px;width: 60px">
 </form>
-
+    </div>
+</center>
 
 </body>
 </html>
