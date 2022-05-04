@@ -86,12 +86,12 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%)
             <div id="analysis_degree" style="width: 600px;height: 600px;"></div>
         </th>
         <th>
-            <div id="analysis_college" style="width: 600px;height: 600px;"></div>
+            <div id="analysis_political" style="width: 600px;height: 600px;"></div>
         </th>
     </tr>
     <tr>
         <th>
-            <div id="analysis_political" style="width: 600px;height: 600px;"></div>
+            <div id="analysis_college" style="width: 600px;height: 600px;"></div>
         </th>
         <th>
             <div id="analysis_type" style="width: 600px;height: 600px;"></div>
