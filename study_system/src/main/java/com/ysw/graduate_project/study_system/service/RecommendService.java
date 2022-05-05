@@ -24,7 +24,7 @@ public interface RecommendService {
     List<Upload> recommendXieTong(String sex,String degree,String college);
 
     //4.基于知识的推荐
-    List<Upload> recommendZhiShi(String telNumber);
+    List<Upload> recommendZhiShi(String sex,String political,String college,String degree,String type);
 
 
     Integer totalCount(String telNumber);

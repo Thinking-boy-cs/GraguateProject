@@ -35,6 +35,15 @@
         order by count desc LIMIT 0,3
     </select>
 
+    <select id="recommendZhiShi" parameterType="String" resultType="Upload">
+        select recommend.*
+        from recommend,`user`
+        where recommend.telNumber = `user`.telNumber and `user`.sex=#{sex}
+        and (`user`.political=#{political} or `user`.political like '%党员')
+        and `user`.college=#{college} and `user`.degree=#{degree} and recommend.type=#{type}
+        order by count desc LIMIT 0,3
+    </select>
+
 
     <select id="totalCount"  parameterType="String" resultType="Integer">
         select  count(*)

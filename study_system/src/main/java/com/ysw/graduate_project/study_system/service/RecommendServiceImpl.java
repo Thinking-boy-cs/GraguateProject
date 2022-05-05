@@ -48,8 +48,8 @@ public class RecommendServiceImpl implements RecommendService{
     }
 
     @Override
-    public List<Upload> recommendZhiShi(String telNumber) {
-        return recommendDao.recommendZhiShi(telNumber);
+    public List<Upload> recommendZhiShi(String sex, String political, String college, String degree, String type) {
+        return recommendDao.recommendZhiShi(sex,political,college,degree,type);
     }
 
     @Override
