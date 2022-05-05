@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ysw.graduate_project.study_system.dao.CommunityDao">
+
+    <select id="findAll" resultType="Question">
+       select * from question
+   </select>
+
+    <insert id="questionAdd" parameterType="Question" useGeneratedKeys="true" keyProperty="id">
+        insert into question values(#{id}, #{telNumber},#{name},#{questionInfo},#{time})
+    </insert>
+
+    <delete id="questionDelete" parameterType="Integer">
+        delete from question where id=#{id}
+    </delete>
+
+    <select id="questionFindById" parameterType="Integer" resultType="Question">
+        select * from question where id=#{id}
+    </select>
+
+</mapper>

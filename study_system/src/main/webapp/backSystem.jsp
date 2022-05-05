@@ -214,7 +214,7 @@
                 <i class="layui-icon layui-icon-spread-left"></i>
             </li>
 
-            <li class="layui-nav-item layui-hide-xs"><a href="">社区</a></li>
+            <li class="layui-nav-item layui-hide-xs"><a href="http://localhost:9999/study_system/view/community">社区</a></li>
             <li class="layui-nav-item layui-hide-xs"><a href="http://localhost:9999/study_system/view/doc">文档</a></li>
             <li class="layui-nav-item ">
                 <a href="javascript:;">产品版本</a>

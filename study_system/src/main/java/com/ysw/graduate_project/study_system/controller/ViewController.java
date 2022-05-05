@@ -153,6 +153,16 @@ public class ViewController {
         return "selfPic";
     }
 
+
+    /**
+     * 社区
+     * @return
+     */
+    @RequestMapping("community")
+    public String community(){
+        return "community";
+    }
+
 }
 
 
