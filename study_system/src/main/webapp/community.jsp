@@ -135,6 +135,9 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%)
     <button type="button" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal">
         <a href="${pageContext.request.contextPath}/view/questionAdd">发布问题</a>
     </button>
+    <button type="button" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal">
+        <a href="${pageContext.request.contextPath}/backSystem/backSystem_u">返回系统</a>
+    </button>
 
 </div>
 </center>

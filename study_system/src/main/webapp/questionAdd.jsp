@@ -13,15 +13,15 @@
 <body style="background-color: #0093E9;
 background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%);background-repeat:no-repeat;background-size: 100% 100% ;
     background-attachment: fixed;">
-
+<br><br><br><br>
 <center>
-    <div style="background: #f568ec;height: 850px; width: 700px;border-radius:25px;margin-top: 30px;">
+    <div style="background: #b8d5fd;height: 300px; width: 500px;border-radius:25px;margin-top: 30px;">
 
-<br><br><br>
+<br><br><br><br>
 
 <form id="communityForm">
     问题：<input type="text" name="questionInfo" id="questionInfo"/> <br><br>
-    <input type="button" value="提问" id="btn" style="background: #f349f0;border-radius:25px;height: 30px;width: 60px">
+    <input type="button" value="提问" id="btn" style="background:#5f8cff;border-radius:25px; width: 100px;height: 40px">
 </form>
     </div>
 </center>

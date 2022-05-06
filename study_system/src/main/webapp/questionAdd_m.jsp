@@ -13,11 +13,11 @@
 <body style="background-color: #8EC5FC;
       background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 50%, #f344ed 100%);background-repeat:no-repeat;background-size: 100% 100% ;
     background-attachment: fixed;">
-
+<br><br><br><br>
 <center>
-    <div style="background: #f568ec;height: 850px; width: 700px;border-radius:25px;margin-top: 30px;">
+    <div style="background: #f568ec;height: 300px; width: 500px;border-radius:25px;margin-top: 30px;">
 
-<br><br><br>
+<br><br><br><br>
 
 <form id="communityForm">
     问题：<input type="text" name="questionInfo" id="questionInfo"/> <br><br>

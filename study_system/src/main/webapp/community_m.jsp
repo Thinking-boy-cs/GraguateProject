@@ -128,8 +128,11 @@
     </div><br><br>
 
 <%--    <h3 style="margin:30px;">This is my graduate project.</h3>--%>
-    <button type="button" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal">
+    <button type="button" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal" style="background: #ff6dfd;width: 120px">
         <a href="${pageContext.request.contextPath}/view/questionAdd_m">发布问题</a>
+    </button>
+    <button type="button" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal" style="background: #ff6dfd;width: 120px">
+        <a href="${pageContext.request.contextPath}/backSystem/backSystem_m">返回系统</a>
     </button>
 
 </div>
