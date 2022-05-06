@@ -158,7 +158,7 @@
                 <td style="width: 100px;"><span>#NAME#</span></td>
                 <td style="width: 100px"><span>#QUESTIONINFO#</span></td>
                 <td style="width: 300px"><span>#TIME#</span></td>
-                <td style="width: 50px"><a href="${pageContext.request.contextPath}/community/findById?id=#ID3#">查看评论</a></td>
+                <td style="width: 50px"><a href="${pageContext.request.contextPath}/community/questionFindById?id=#ID3#">查看评论</a></td>
             </tr>
 
             </tbody>

@@ -8,6 +8,7 @@ import com.ysw.graduate_project.study_system.service.CommunityService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -74,5 +75,14 @@ public class CommunityController {
         question.setTime(new Date());
         communityService.questionAdd(question);
         return "redirect:/community/findAll";
+    }
+
+    @RequestMapping("questionFindById")
+    public String questionFind(int id, Model model){
+        Question theQuestion = communityService.questionFindById(id);
+        model.addAttribute("theQuestion",theQuestion);
+        log.info(communityService.questionFindById(id).getName());
+        log.info("This is the info:[{}]",communityService.questionFindById(id).getQuestionInfo());
+        return "questionFindById"; //return "redirect:/findAll
     }
 }

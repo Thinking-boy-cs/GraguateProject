@@ -68,7 +68,7 @@ public class InfoCastController {
     }
 
 
-    //有点问题：没有跳转到具体的id那一项*****************************************
+
     @RequestMapping("info_find")
     public String info_find(int id,Model model){
         //三种方法请求作用域
