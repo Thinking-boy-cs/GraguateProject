@@ -1,9 +1,6 @@
 package com.ysw.graduate_project.study_system.controller;
 
-import com.ysw.graduate_project.study_system.entity.Manager;
-import com.ysw.graduate_project.study_system.entity.Question;
-import com.ysw.graduate_project.study_system.entity.User;
-import com.ysw.graduate_project.study_system.entity.infocast;
+import com.ysw.graduate_project.study_system.entity.*;
 import com.ysw.graduate_project.study_system.service.CommunityService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,11 +75,21 @@ public class CommunityController {
     }
 
     @RequestMapping("questionFindById")
-    public String questionFind(int id, Model model){
+    public String questionFind(int id, Model model,HttpServletRequest request){
         Question theQuestion = communityService.questionFindById(id);
         model.addAttribute("theQuestion",theQuestion);
+        request.getSession().setAttribute("theQuestion_plus",theQuestion);
         log.info(communityService.questionFindById(id).getName());
         log.info("This is the info:[{}]",communityService.questionFindById(id).getQuestionInfo());
         return "questionFindById"; //return "redirect:/findAll
+    }
+
+    @RequestMapping("commentFindById")
+    @ResponseBody
+    public List<Comment> findInfoAll(HttpServletRequest request){
+        Question question = (Question) request.getSession().getAttribute("theQuestion_plus");
+        int id = question.getId();
+        log.info("This is question id:[{}]",id);
+        return communityService.showComment(id);
     }
 }

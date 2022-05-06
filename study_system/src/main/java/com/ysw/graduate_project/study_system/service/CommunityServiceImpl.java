@@ -2,6 +2,7 @@ package com.ysw.graduate_project.study_system.service;
 
 import com.ysw.graduate_project.study_system.dao.CommunityDao;
 import com.ysw.graduate_project.study_system.dao.DataItemDao;
+import com.ysw.graduate_project.study_system.entity.Comment;
 import com.ysw.graduate_project.study_system.entity.Question;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -39,5 +40,10 @@ public class CommunityServiceImpl implements CommunityService{
     @Override
     public Question questionFindById(int id) {
         return communityDao.questionFindById(id);
+    }
+
+    @Override
+    public List<Comment> showComment(int id) {
+        return communityDao.showComment(id);
     }
 }

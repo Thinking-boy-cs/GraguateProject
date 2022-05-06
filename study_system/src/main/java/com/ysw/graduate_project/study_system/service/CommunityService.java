@@ -1,5 +1,6 @@
 package com.ysw.graduate_project.study_system.service;
 
+import com.ysw.graduate_project.study_system.entity.Comment;
 import com.ysw.graduate_project.study_system.entity.Question;
 import com.ysw.graduate_project.study_system.entity.infocast;
 
@@ -22,4 +23,7 @@ public interface CommunityService {
 
     //4.查看讨论问题
     Question questionFindById(int id);
+
+    //5.对应问题的评论
+    List<Comment> showComment(int id);
 }

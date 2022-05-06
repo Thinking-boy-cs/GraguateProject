@@ -19,4 +19,10 @@
         select * from question where id=#{id}
     </select>
 
+    <select id="showComment" parameterType="Integer" resultType="Comment">
+        select comment.*
+        from comment,question
+        where question.id=#{id} and question.questionInfo=comment.questionInfo
+    </select>
+
 </mapper>
