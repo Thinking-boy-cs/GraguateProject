@@ -33,5 +33,8 @@ public interface SignItemDao {
     //6.查看自己的打卡记录
     List<SignItem> showSelf(String telNumber);
 
+    //7.注销用户相关操作
+    void destroySign(String telNumber);
+
 
 }

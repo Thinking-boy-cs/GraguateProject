@@ -51,4 +51,14 @@ public class CommunityServiceImpl implements CommunityService{
     public void commentAdd(Comment comment) {
         communityDao.commentAdd(comment);
     }
+
+    @Override
+    public void destroyQuestion(String telNumber) {
+        communityDao.destroyQuestion(telNumber);
+    }
+
+    @Override
+    public void destroyComment(String telNumber) {
+        communityDao.destroyComment(telNumber);
+    }
 }

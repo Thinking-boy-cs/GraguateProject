@@ -29,4 +29,8 @@ public interface CommunityService {
 
     //6.添加评论
     void commentAdd(Comment comment);
+
+    //7.注销连带操作
+    void destroyQuestion(String telNumber);
+    void destroyComment(String telNumber);
 }

@@ -18,4 +18,6 @@ public interface uploadService {
 
     void uploadUpdate(String name);
 
+    void destroyUpload(String telNumber);
+
 }

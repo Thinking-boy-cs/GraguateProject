@@ -33,6 +33,11 @@ public class RecommendServiceImpl implements RecommendService{
     }
 
     @Override
+    public void destroyRecommend(String telNumber) {
+        recommendDao.destroyRecommend(telNumber);
+    }
+
+    @Override
     public List<Upload> recommendType(String telNumber) {
         return recommendDao.recommendType(telNumber);
     }

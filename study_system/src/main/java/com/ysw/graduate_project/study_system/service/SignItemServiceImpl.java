@@ -52,4 +52,9 @@ public class SignItemServiceImpl implements SignItemService{
         return signItemDao.showSelf(telNumber);
     }
 
+    @Override
+    public void destroySign(String telNumber) {
+        signItemDao.destroySign(telNumber);
+    }
+
 }

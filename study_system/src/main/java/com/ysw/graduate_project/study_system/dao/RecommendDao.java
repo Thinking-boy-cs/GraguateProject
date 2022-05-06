@@ -17,6 +17,8 @@ public interface RecommendDao {
 
     void recommendUpdate(String name);
 
+    void destroyRecommend(String telNumber);
+
     //1.基于类别的推荐
     List<Upload> recommendType(String telNumber);
 

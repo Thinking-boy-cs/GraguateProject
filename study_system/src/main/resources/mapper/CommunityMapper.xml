@@ -26,7 +26,15 @@
     </select>
 
     <insert id="commentAdd" parameterType="comment" useGeneratedKeys="true" keyProperty="id">
-        insert into comment values(#{id},#{name},#{questionInfo},#{commentInfo},#{time})
+        insert into comment values(#{id},#{telNumber},#{name},#{questionInfo},#{commentInfo},#{time})
     </insert>
+
+    <delete id="destroyQuestion" parameterType="String">
+        delete from question where telNumber=#{telNumber}
+    </delete>
+
+    <delete id="destroyComment" parameterType="String">
+        delete from comment where telNumber=#{telNumber}
+    </delete>
 
 </mapper>

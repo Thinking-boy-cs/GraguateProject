@@ -2,8 +2,7 @@ package com.ysw.graduate_project.study_system.controller;
 
 import com.ysw.graduate_project.study_system.entity.Manager;
 import com.ysw.graduate_project.study_system.entity.User;
-import com.ysw.graduate_project.study_system.service.ManagerService;
-import com.ysw.graduate_project.study_system.service.UserService;
+import com.ysw.graduate_project.study_system.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +28,17 @@ public class UserController {
     @Autowired
     private ManagerService managerService;
 
+    @Autowired
+    private RecommendService recommendService;
+
+    @Autowired
+    private CommunityService communityService;
+
+    @Autowired
+    private SignItemService signItemService;
+
+    @Autowired
+    private com.ysw.graduate_project.study_system.service.uploadService uploadService;
 
     @RequestMapping("find")
     public String findAll(Model model){
@@ -90,7 +100,16 @@ public class UserController {
 
     @RequestMapping("delete")
     public String deleteUser(int id){
+        User user = userService.findById(id);
+        String telNumber = user.getTelNumber();
+        log.info("The destroy user id is:[{}]",id);
+        log.info("The destroy user telNumber is:[{}]",telNumber);
         userService.delete(id);
+        uploadService.destroyUpload(telNumber);
+        recommendService.destroyRecommend(telNumber);
+        communityService.destroyComment(telNumber);
+        communityService.destroyQuestion(telNumber);
+        signItemService.destroySign(telNumber);
         return "redirect:/user/find";
     }
 

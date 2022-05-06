@@ -3,6 +3,11 @@
 
 <mapper namespace="com.ysw.graduate_project.study_system.dao.RecommendDao">
 
+    <delete id="destroyRecommend" parameterType="String">
+        delete from recommend where telNumber=#{telNumber}
+    </delete>
+
+
     <insert id="recommendAdd" parameterType="Upload" useGeneratedKeys="true" keyProperty="id">
         insert into recommend values(#{id},#{name},#{author},#{telNumber},#{type},#{time},#{count})
     </insert>

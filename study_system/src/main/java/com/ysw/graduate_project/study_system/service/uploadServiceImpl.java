@@ -38,4 +38,9 @@ public class uploadServiceImpl implements uploadService{
     public void uploadUpdate(String name) {
         uploadDao.uploadUpdate(name);
     }
+
+    @Override
+    public void destroyUpload(String telNumber) {
+        uploadDao.destroyUpload(telNumber);
+    }
 }

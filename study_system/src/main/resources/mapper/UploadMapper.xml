@@ -18,9 +18,9 @@
         select * from upload where `telNumber`=#{telNumber}
     </select>
 
-<!--    <delete id="infoDelete" parameterType="Integer">-->
-<!--        delete from infocast where id=#{id}-->
-<!--    </delete>-->
+    <delete id="destroyUpload" parameterType="String">
+        delete from upload where telNumber=#{telNumber}
+    </delete>
 
 <!--    <select id="infoFindById" parameterType="Integer" resultType="infocast">-->
 <!--        select * from infocast where id=#{id}-->

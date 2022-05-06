@@ -13,6 +13,7 @@ import java.util.Date;
 public class Comment {
 
     Integer id;
+    String telNumber;
     String name;
     String questionInfo;
     String commentInfo;

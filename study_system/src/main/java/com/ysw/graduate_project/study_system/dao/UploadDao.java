@@ -21,4 +21,6 @@ public interface UploadDao {
 
     void uploadUpdate(String name);
 
+    void destroyUpload(String telNumber);
+
 }

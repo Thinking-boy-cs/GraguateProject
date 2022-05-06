@@ -109,7 +109,9 @@ public class CommunityController {
         Question question = (Question) request.getSession().getAttribute("theQuestion_plus");
         User thisUser = (User) request.getSession().getAttribute("thisUser");
         String name = thisUser.getName();
+        String telNumber = thisUser.getTelNumber();
         comment.setName(name);
+        comment.setTelNumber(telNumber);
         comment.setTime(new Date());
         comment.setQuestionInfo(question.getQuestionInfo());
         communityService.commentAdd(comment);
@@ -121,7 +123,9 @@ public class CommunityController {
         Question question = (Question) request.getSession().getAttribute("theQuestion_plus");
         Manager thisManager= (Manager) request.getSession().getAttribute("thisManager");
         String name = thisManager.getName();
+        String telNumber = thisManager.getTelNumber();
         comment.setName(name);
+        comment.setTelNumber(telNumber);
         comment.setTime(new Date());
         comment.setQuestionInfo(question.getQuestionInfo());
         communityService.commentAdd(comment);
