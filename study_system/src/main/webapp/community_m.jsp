@@ -12,26 +12,24 @@
     <style>
         .layui-anim{animation-duration: 1.2s; -webkit-animation-duration: 1.2s;}
 
-
-
-                              table{
-                                  /*设置表格的宽度*/
-                                  width: 800px;
-                                  height: 70px;
-                                  /*设置居中*/
-                                  margin: 0 auto;
-                                  /*设置边框*/
-                                  border: 2px solid black;
-                                  /**
-                                   *     table的td之间默认有一个距离，通过border-spacing属性可以设置这个像素
-                                   */
-                                  /*border-spacing: 0px;*/
-                                  /**
-                                   *     border-collapse可以用来设置表格的边框合并，如果设置了该属性，border-spacing会自动失效
-                                   */
-                                  /*border-collapse: collapse;*/
-                                  background: #8EC5FC;
-                              }
+        table{
+            /*设置表格的宽度*/
+            width: 800px;
+            height: 70px;
+            /*设置居中*/
+            margin: 0 auto;
+            /*设置边框*/
+            border: 2px solid black;
+            /**
+             *     table的td之间默认有一个距离，通过border-spacing属性可以设置这个像素
+             */
+            /*border-spacing: 0px;*/
+            /**
+             *     border-collapse可以用来设置表格的边框合并，如果设置了该属性，border-spacing会自动失效
+             */
+            /*border-collapse: collapse;*/
+            background: #f988ff;
+        }
 
         /**
          *     伪类nth-child的even参数可以选中偶数行，而odd则可以选中奇数行。
@@ -47,7 +45,7 @@
          *     当鼠标移入到tr标签后，会改变颜色
          */
         tr:hover{
-            background-color: #6a6bff;
+            background-color: #e765e5;
         }
 
         /*为td标签设置样式*/
@@ -117,12 +115,10 @@
             max-width: 1140px;
             margin: 0 auto;
         }
-
-
     </style>
 </head>
-<body style="background-color: #0093E9;
-background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%);background-repeat:no-repeat;background-size: 100% 100% ;
+<body style="background-color: #8EC5FC;
+      background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 50%, #f344ed 100%);background-repeat:no-repeat;background-size: 100% 100% ;
     background-attachment: fixed;">
 <br><br>
 <center>
@@ -133,7 +129,7 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%)
 
 <%--    <h3 style="margin:30px;">This is my graduate project.</h3>--%>
     <button type="button" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal">
-        <a href="${pageContext.request.contextPath}/view/questionAdd">发布问题</a>
+        <a href="${pageContext.request.contextPath}/view/questionAdd_m">发布问题</a>
     </button>
 
 </div>

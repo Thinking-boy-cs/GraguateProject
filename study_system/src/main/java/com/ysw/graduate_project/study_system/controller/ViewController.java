@@ -163,6 +163,21 @@ public class ViewController {
         return "community";
     }
 
+    @RequestMapping("questionAdd")
+    public String questionAdd(){
+        return "questionAdd";
+    }
+
+    @RequestMapping("community_m")
+    public String community_m(){
+        return "community_m";
+    }
+
+    @RequestMapping("questionAdd_m")
+    public String questionAdd_m(){
+        return "questionAdd_m";
+    }
+
 }
 
 
