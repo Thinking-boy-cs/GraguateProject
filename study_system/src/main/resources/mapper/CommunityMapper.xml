@@ -25,4 +25,8 @@
         where question.id=#{id} and question.questionInfo=comment.questionInfo
     </select>
 
+    <insert id="commentAdd" parameterType="comment" useGeneratedKeys="true" keyProperty="id">
+        insert into comment values(#{id},#{name},#{questionInfo},#{commentInfo},#{time})
+    </insert>
+
 </mapper>

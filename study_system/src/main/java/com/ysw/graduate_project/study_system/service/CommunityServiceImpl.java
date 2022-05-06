@@ -46,4 +46,9 @@ public class CommunityServiceImpl implements CommunityService{
     public List<Comment> showComment(int id) {
         return communityDao.showComment(id);
     }
+
+    @Override
+    public void commentAdd(Comment comment) {
+        communityDao.commentAdd(comment);
+    }
 }

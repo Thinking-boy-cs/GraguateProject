@@ -26,4 +26,7 @@ public interface CommunityService {
 
     //5.对应问题的评论
     List<Comment> showComment(int id);
+
+    //6.添加评论
+    void commentAdd(Comment comment);
 }

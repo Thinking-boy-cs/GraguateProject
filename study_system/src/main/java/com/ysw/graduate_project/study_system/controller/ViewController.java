@@ -178,6 +178,15 @@ public class ViewController {
         return "questionAdd_m";
     }
 
+    @RequestMapping("commentAdd")
+    public String commentAdd(){
+        return "commentAdd";
+    }
+
+    @RequestMapping("commentAdd_m")
+    public String commentAdd_m(){
+        return "commentAdd_m";
+    }
 }
 
 

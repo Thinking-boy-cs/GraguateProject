@@ -84,12 +84,47 @@ public class CommunityController {
         return "questionFindById"; //return "redirect:/findAll
     }
 
+    @RequestMapping("questionFindById_m")
+    public String questionFind_m(int id, Model model,HttpServletRequest request){
+        Question theQuestion = communityService.questionFindById(id);
+        model.addAttribute("theQuestion",theQuestion);
+        request.getSession().setAttribute("theQuestion_plus",theQuestion);
+        log.info(communityService.questionFindById(id).getName());
+        log.info("This is the info:[{}]",communityService.questionFindById(id).getQuestionInfo());
+        return "questionFindById_m"; //return "redirect:/findAll
+    }
+
+
     @RequestMapping("commentFindById")
     @ResponseBody
-    public List<Comment> findInfoAll(HttpServletRequest request){
+    public List<Comment> commentFindAll(HttpServletRequest request){
         Question question = (Question) request.getSession().getAttribute("theQuestion_plus");
         int id = question.getId();
         log.info("This is question id:[{}]",id);
         return communityService.showComment(id);
+    }
+
+    @RequestMapping("commentAdd_u")
+    public String commentAdd(Comment comment, HttpServletRequest request){
+        Question question = (Question) request.getSession().getAttribute("theQuestion_plus");
+        User thisUser = (User) request.getSession().getAttribute("thisUser");
+        String name = thisUser.getName();
+        comment.setName(name);
+        comment.setTime(new Date());
+        comment.setQuestionInfo(question.getQuestionInfo());
+        communityService.commentAdd(comment);
+        return "redirect:/community/findAll";
+    }
+
+    @RequestMapping("commentAdd_m")
+    public String commentAdd_m(Comment comment, HttpServletRequest request){
+        Question question = (Question) request.getSession().getAttribute("theQuestion_plus");
+        Manager thisManager= (Manager) request.getSession().getAttribute("thisManager");
+        String name = thisManager.getName();
+        comment.setName(name);
+        comment.setTime(new Date());
+        comment.setQuestionInfo(question.getQuestionInfo());
+        communityService.commentAdd(comment);
+        return "redirect:/community/findAll";
     }
 }
