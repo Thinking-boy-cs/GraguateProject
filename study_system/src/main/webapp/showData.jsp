@@ -321,7 +321,7 @@ background-repeat:no-repeat;background-size: 100% 100% ;
                 myChart_2.setOption({        //加载数据图表
 
                     title: {
-                        text: '男生&女生的平台注册情况',
+                        text: '不同学历的平台注册情况',
                         subtext: 'Real-time data',
                         left: 'center'
                     },
@@ -420,7 +420,7 @@ background-repeat:no-repeat;background-size: 100% 100% ;
                     myChart_3.setOption({        //加载数据图表
 
                         title: {
-                            text: '某年打卡情况',
+                            text: year+'年打卡情况',
                             subtext: 'Real-time data',
                             left: 'center'
                         },
@@ -613,7 +613,7 @@ background-repeat:no-repeat;background-size: 100% 100% ;
                     myChart_5.setOption({        //加载数据图表
 
                         title: {
-                            text: '某年打卡情况',
+                            text: year_s+'年'+month_s+'月打卡情况',
                             subtext: 'Real-time data',
                             left: 'center'
                         },
