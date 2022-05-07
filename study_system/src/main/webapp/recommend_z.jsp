@@ -148,7 +148,7 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%)
 
                     <tr>
                         <td style="width: 100px;"><span>#NAME#</span></td>
-                        <td style="width: 100px"><span>#USERNAME#</span></td>
+                        <td style="width: 100px"><span>#AUTHOR#</span></td>
                         <td style="width: 300px"><span>#TYPE#</span></td>
                         <td style="width: 300px"><span>#TIME#</span></td>
 
@@ -183,7 +183,7 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%)
                         .replace("#NAME#", data_1[i].name)
                         .replace("#NAME2#", data_1[i].name)
                         .replace("#TIME#", data_1[i].time)
-                        .replace("#USERNAME#", data_1[i].userName)
+                        .replace("#AUTHOR#", data_1[i].author)
                         .replace("#TYPE#", data_1[i].type)
                     )
                 }
