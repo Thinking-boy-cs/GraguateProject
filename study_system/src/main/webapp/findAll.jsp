@@ -45,7 +45,7 @@
          *     当鼠标移入到tr标签后，会改变颜色
          */
         tr:hover{
-            background-color: #6a6bff;
+            background-color: #e765e5;
         }
 
         /*为td标签设置样式*/

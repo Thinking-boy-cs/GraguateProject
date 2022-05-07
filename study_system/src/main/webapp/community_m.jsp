@@ -28,7 +28,7 @@
              *     border-collapse可以用来设置表格的边框合并，如果设置了该属性，border-spacing会自动失效
              */
             /*border-collapse: collapse;*/
-            background: #f988ff;
+            background: #8EC5FC;
         }
 
         /**
