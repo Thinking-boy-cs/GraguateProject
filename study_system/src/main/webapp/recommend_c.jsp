@@ -141,6 +141,7 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%)
                         <th>上传者</th>
                         <th>类型</th>
                         <th>时间</th>
+                        <th>操作</th>
                     </tr>
                     </thead>
 
