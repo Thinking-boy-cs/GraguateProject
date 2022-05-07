@@ -90,18 +90,21 @@ public class FileController {
         upload.setCount(0);
         upload.setAuthor(author);
         uploadService.uploadAdd(upload);
+        upload.setTelNumber("");
         recommendService.recommendAdd(upload);
     }
 
 
     //下载文件
     @GetMapping("/{fileName}")
-    public void download(@PathVariable String fileName, HttpServletResponse response) throws IOException{
+    public void download(@PathVariable String fileName, HttpServletResponse response,HttpServletRequest request) throws IOException{
         response.setContentType("application/octet-stream");
         response.addHeader("Content-Disposition","attachment;filename=" + URLEncoder.encode(fileName,"UTF-8"));
 
+        User user = (User) request.getSession().getAttribute("thisUser");
+        String telNumber = user.getTelNumber();
         //uploadService.uploadUpdate(fileName);
-        recommendService.recommendUpdate(fileName);
+        recommendService.recommendUpdate(telNumber,fileName);
 
         final WritableByteChannel writableByteChannel = Channels.newChannel(response.getOutputStream());
         final FileChannel fileChannel = new FileInputStream(Paths.get(saveFilePath + File.separator +fileName).toFile()).getChannel();

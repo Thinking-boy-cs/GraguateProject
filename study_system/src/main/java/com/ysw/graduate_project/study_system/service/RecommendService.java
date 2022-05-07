@@ -12,7 +12,7 @@ public interface RecommendService {
 
     void recommendAdd(Upload upload);
 
-    void recommendUpdate(String name);
+    void recommendUpdate(String telNumber,String name);
 
     void destroyRecommend(String telNumber);
 

@@ -28,8 +28,8 @@ public class RecommendServiceImpl implements RecommendService{
     }
 
     @Override
-    public void recommendUpdate(String name) {
-        recommendDao.recommendUpdate(name);
+    public void recommendUpdate(String telNumber,String name) {
+        recommendDao.recommendUpdate(telNumber,name);
     }
 
     @Override
