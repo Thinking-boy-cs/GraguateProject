@@ -15,6 +15,8 @@ public interface UploadDao {
 
     List<Upload> findAll();
 
+    List<Upload> showFileItemByName(String type);
+
     void uploadAdd(Upload upload);
 
     Upload findUploadByTelNumber(String telNumber);

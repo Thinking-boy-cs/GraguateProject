@@ -22,7 +22,7 @@
         delete from upload where telNumber=#{telNumber}
     </delete>
 
-<!--    <select id="infoFindById" parameterType="Integer" resultType="infocast">-->
-<!--        select * from infocast where id=#{id}-->
-<!--    </select>-->
+    <select id="showFileItemByName" parameterType="String" resultType="Upload">
+        select * from upload where `type`=#{type}
+    </select>
 </mapper>

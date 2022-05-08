@@ -12,6 +12,8 @@ public interface uploadService {
 
     List<Upload> findAll();
 
+    List<Upload> showFileItemByName(String type);
+
     void uploadAdd(Upload upload);
 
     Upload findUploadByTelNumber(String telNumber);

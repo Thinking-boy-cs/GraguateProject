@@ -1,5 +1,6 @@
 package com.ysw.graduate_project.study_system.controller;
 
+import com.ysw.graduate_project.study_system.entity.SignItem;
 import com.ysw.graduate_project.study_system.entity.Upload;
 import com.ysw.graduate_project.study_system.entity.User;
 import com.ysw.graduate_project.study_system.entity.infocast;
@@ -132,7 +133,21 @@ public class FileController {
 
 
 
+    @RequestMapping("showFileByType")
+    @ResponseBody
+    public List<Upload> showFileByType(HttpServletRequest request){
+        String type = (String) request.getSession().getAttribute("type");
+        log.info("This is name:{}",type);
+        return uploadService.showFileItemByName(type);
+    }
 
+    @RequestMapping("showFileByType_favor")
+    public String showFileByType_favor(HttpServletRequest request){
+        String type = request.getParameter("type");
+        log.info("This is the typeName:[{}]",type);
+        request.getSession().setAttribute("type",type);
+        return "findFileByType";
+    }
 
 
 }

@@ -25,6 +25,11 @@ public class uploadServiceImpl implements uploadService{
     }
 
     @Override
+    public List<Upload> showFileItemByName(String type) {
+        return uploadDao.showFileItemByName(type);
+    }
+
+    @Override
     public void uploadAdd(Upload upload) {
         uploadDao.uploadAdd(upload);
     }

@@ -139,8 +139,15 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%)
 <section>
     <div class="container">
         <br><br><br><br>
-<div id="infoDiv" >
-    <div id="infoData" style="display: none">
+        <center>
+            <form action="/study_system/file/showFileByType_favor" method="post" id="fileForm">
+                <input type="text" name="type" id="type" style="height: 25px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button" id="btn" class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal" >类别搜索</button>
+            </form>
+        </center>
+        <br><br>
+<div id="fileDiv" >
+    <div id="fileData" style="display: none">
         <table>
 
             <thead>
@@ -178,6 +185,16 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%)
 
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
+
+
+    $("#btn").click(function () {
+
+
+        $("#fileForm").submit();
+
+    })
+
+
     $.ajax({
         type:'get',
         url:'${pageContext.request.contextPath}/file/findUploadAll',
@@ -187,7 +204,7 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%, #3587d6 100%)
             console.log("成功===",data);
             if(data.length>0){
                 for(var i = 0,l=data.length;i<l;i++){
-                    $("#infoDiv").append($("#infoData").html()
+                    $("#fileDiv").append($("#fileData").html()
                             .replace("#ID#",data[i].id)
                             .replace("#ID2#",data[i].id)
                             .replace("#NAME#", data[i].name)
