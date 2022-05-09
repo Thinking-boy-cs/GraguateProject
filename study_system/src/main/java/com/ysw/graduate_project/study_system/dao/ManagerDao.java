@@ -16,9 +16,9 @@ public interface ManagerDao {
 
     List<Manager> findAll();
 
-    void insertUser(Manager manager);
+    void insertManager(Manager manager);
 
-    void deleteUser(Integer id);
+    void deleteManager(Integer id);
 
     void updateManager(Manager manager);
 

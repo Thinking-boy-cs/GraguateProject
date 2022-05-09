@@ -38,26 +38,30 @@ public interface RecommendDao {
      */
     Integer totalCount(String telNumber);
 
+    //性别
     Integer manCount(String telNumber);
     Integer womanCount(String telNumber);
 
+    //政治面貌
     Integer partyCount(String telNumber);
     Integer groupCount(String telNumber);
     Integer peopleCount(String telNumber);
 
+    //下载的资料总数
     Integer uploadCount(String telNumber);
 
-
+    //学历
     Integer undergraduateCount(String telNumber);
     Integer postgraduateCount(String telNumber);
     Integer doctorCount(String telNumber);
 
-
+    //学院
     Integer scCollegeCount(String telNumber);
     Integer dkCollegeCount(String telNumber);
     Integer smCollegeCount(String telNumber);
     Integer dyCollegeCount(String telNumber);
 
+    //资料类型
     Integer artCount(String telNumber);
     Integer textCount(String telNumber);
     Integer techCount(String telNumber);
