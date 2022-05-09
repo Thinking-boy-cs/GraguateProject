@@ -22,7 +22,7 @@
         delete from upload where telNumber=#{telNumber}
     </delete>
 
-    <select id="showFileItemByName" parameterType="String" resultType="Upload">
+    <select id="showFileItemByType" parameterType="String" resultType="Upload">
         select * from upload where `type`=#{type}
     </select>
 </mapper>

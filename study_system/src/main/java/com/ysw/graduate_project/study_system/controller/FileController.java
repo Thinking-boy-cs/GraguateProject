@@ -138,7 +138,7 @@ public class FileController {
     public List<Upload> showFileByType(HttpServletRequest request){
         String type = (String) request.getSession().getAttribute("type");
         log.info("This is name:{}",type);
-        return uploadService.showFileItemByName(type);
+        return uploadService.showFileItemByType(type);
     }
 
     @RequestMapping("showFileByType_favor")

@@ -31,12 +31,12 @@ public class ManagerServiceImpl implements ManagerService{
 
     @Override
     public void insertManager(Manager manager) {
-        managerDao.insertUser(manager);
+        managerDao.insertManager(manager);
     }
 
     @Override
     public void delete(Integer id) {
-        managerDao.deleteUser(id);
+        managerDao.deleteManager(id);
     }
 
     @Override

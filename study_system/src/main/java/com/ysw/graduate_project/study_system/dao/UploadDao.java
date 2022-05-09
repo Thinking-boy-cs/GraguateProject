@@ -15,7 +15,7 @@ public interface UploadDao {
 
     List<Upload> findAll();
 
-    List<Upload> showFileItemByName(String type);
+    List<Upload> showFileItemByType(String type);
 
     void uploadAdd(Upload upload);
 
