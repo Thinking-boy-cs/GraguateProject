@@ -71,8 +71,6 @@ public class InfoCastController {
 
     @RequestMapping("info_find")
     public String info_find(int id,Model model){
-        //三种方法请求作用域
-        //HttpServletRequest request, Model model, ModelAndView modelAndView
         infocast theInfo = infoCastService.infoFindById(id);
         model.addAttribute("theInfo",theInfo);
         log.info(infoCastService.infoFindById(id).getTitle());

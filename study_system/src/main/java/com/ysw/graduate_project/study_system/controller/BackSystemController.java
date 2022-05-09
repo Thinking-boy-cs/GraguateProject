@@ -22,18 +22,18 @@ public class BackSystemController {
 
     @RequestMapping("backControl")
     public String test(){
-        return "backSystem"; //跳转到以"index"为名的jsp了
+        return "backSystem"; //跳转到以"backSystem"为名的jsp了
     }
 
 
     @RequestMapping("backSystem_u")
     public String backSystem_u(){
-        return "backSystem"; //跳转到以"index"为名的jsp了
+        return "backSystem";
     }
 
     @RequestMapping("backSystem_m")
     public String backSystem_m(){
-        return "backSystem_m"; //跳转到以"index"为名的jsp了
+        return "backSystem_m";
     }
 
 }

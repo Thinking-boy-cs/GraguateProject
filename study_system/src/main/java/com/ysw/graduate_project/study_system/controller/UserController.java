@@ -187,10 +187,6 @@ public class UserController {
     @RequestMapping("login2")
     public String login2(HttpServletRequest request){
         log.info("I am Here!!!");
-//        manager.setId(1);
-//        manager.setMail("1");
-//        manager.setPassWord("123456");
-//        manager.setTelNumber("15340416216");
         String managerTelNumber = request.getParameter("telNumber");
         String managerPassWord = request.getParameter("passWord");
 

@@ -99,15 +99,6 @@ public class SignController {
     }
 
 
-//
-//    @RequestMapping("findSignByTelNumber")
-//    public String findSignByTelNumber(String telNumber,Model model){
-//        //三种方法请求作用域
-//        //HttpServletRequest request, Model model, ModelAndView modelAndView
-//        List<SignItem> SignList = signItemService.showSignItemByTelNumber(telNumber);
-//        model.addAttribute("SignList",SignList);
-//        return "findSignItemByTelNumber"; //return "redirect:/findAll
-//    }
 
 
 }
