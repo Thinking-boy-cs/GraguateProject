@@ -182,7 +182,7 @@ background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 50%, #f344ed 100%);
         <br>
     </div>
 </div>
-<a href="${pageContext.request.contextPath}/view/insert">添加</a>
+<%--<a href="${pageContext.request.contextPath}/view/insert">添加</a>--%>
     </div>
 </section>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
